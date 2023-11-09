@@ -17,9 +17,9 @@ class StagesViewCell: UICollectionViewCell {
         button.setImage(UIImage(named: "A"), for: .disabled)
         return button
     }()
-
+    
     let levelManager = LevelAccessManager.shared
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -39,21 +39,35 @@ class StagesViewCell: UICollectionViewCell {
     private func setupConstraints() {
         stageButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(40)
-            make.leading.equalToSuperview().offset(20)
+            make.centerX.equalToSuperview()
             make.width.equalTo(205)
             make.height.equalTo(140)
         }
     }
     
+    
     //MARK: Actions
     public func configureButton(with letter: Int){
-        if letter == -1 {
-            stageButton.setImage(UIImage(), for: .normal)
+        print(letter)
+        stageButton.setImage(UIImage(named: String(letter)), for: .normal)
+        if !(levelManager.checkLevelAccess(level: letter)) {
+            stageButton.isEnabled = false
+        }
+        if letter % 2 == 0 {
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(40)
+                make.leading.equalToSuperview().offset(20)
+                make.width.equalTo(205)
+                make.height.equalTo(140)
+            }
         } else {
-            stageButton.setImage(UIImage(named: String(letter-1)), for: .normal)
-            if !(levelManager.checkLevelAccess(level: letter-1)) {
-                stageButton.isEnabled = false
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(40)
+                make.leading.equalToSuperview().offset(-140)
+                make.width.equalTo(205)
+                make.height.equalTo(140)
             }
         }
+        
     }
 }

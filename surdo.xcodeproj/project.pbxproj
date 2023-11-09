@@ -16,6 +16,14 @@
 		5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A95F2AF50FFA00176F6C /* StagesViewController.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
 		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
+		549BC47B2AFD2AF70058FA68 /* FirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */; };
+		549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47D2AFD31C40058FA68 /* AppColor.swift */; };
+		549BC4802AFD32000058FA68 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47F2AFD32000058FA68 /* AppImage.swift */; };
+		549BC4822AFD32600058FA68 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4812AFD32600058FA68 /* AppFont.swift */; };
+		549BC4A02AFD436D0058FA68 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49E2AFD38C40058FA68 /* Inter-SemiBold.ttf */; };
+		549BC4A12AFD43700058FA68 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49C2AFD38C30058FA68 /* Inter-Regular.ttf */; };
+		549BC4A22AFD43730058FA68 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49D2AFD38C40058FA68 /* Inter-Medium.ttf */; };
+		549BC4A32AFD43750058FA68 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49F2AFD38C40058FA68 /* Inter-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +37,14 @@
 		5443A95C2AF50FA900176F6C /* StagesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewCell.swift; sourceTree = "<group>"; };
 		5443A95F2AF50FFA00176F6C /* StagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewController.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
+		549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLetter.swift; sourceTree = "<group>"; };
+		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		549BC47F2AFD32000058FA68 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		549BC4812AFD32600058FA68 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		549BC49C2AFD38C30058FA68 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		549BC49D2AFD38C40058FA68 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		549BC49E2AFD38C40058FA68 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		549BC49F2AFD38C40058FA68 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,8 @@
 		5443A9472AF50ED900176F6C /* surdo */ = {
 			isa = PBXGroup;
 			children = (
+				549BC47C2AFD31970058FA68 /* UI Resources */,
+				549BC4782AFD2AD20058FA68 /* Letters */,
 				5443A95E2AF50FB700176F6C /* Stages */,
 				5443A9482AF50ED900176F6C /* AppDelegate.swift */,
 				5443A94A2AF50ED900176F6C /* SceneDelegate.swift */,
@@ -81,6 +99,44 @@
 				549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */,
 			);
 			path = Stages;
+			sourceTree = "<group>";
+		};
+		549BC4782AFD2AD20058FA68 /* Letters */ = {
+			isa = PBXGroup;
+			children = (
+				549BC4792AFD2AE10058FA68 /* 1 */,
+			);
+			path = Letters;
+			sourceTree = "<group>";
+		};
+		549BC4792AFD2AE10058FA68 /* 1 */ = {
+			isa = PBXGroup;
+			children = (
+				549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */,
+			);
+			path = 1;
+			sourceTree = "<group>";
+		};
+		549BC47C2AFD31970058FA68 /* UI Resources */ = {
+			isa = PBXGroup;
+			children = (
+				549BC4982AFD37540058FA68 /* Fonts */,
+				549BC47D2AFD31C40058FA68 /* AppColor.swift */,
+				549BC47F2AFD32000058FA68 /* AppImage.swift */,
+				549BC4812AFD32600058FA68 /* AppFont.swift */,
+			);
+			path = "UI Resources";
+			sourceTree = "<group>";
+		};
+		549BC4982AFD37540058FA68 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				549BC49F2AFD38C40058FA68 /* Inter-Bold.ttf */,
+				549BC49D2AFD38C40058FA68 /* Inter-Medium.ttf */,
+				549BC49C2AFD38C30058FA68 /* Inter-Regular.ttf */,
+				549BC49E2AFD38C40058FA68 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +203,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549BC4A32AFD43750058FA68 /* Inter-Bold.ttf in Resources */,
+				549BC4A02AFD436D0058FA68 /* Inter-SemiBold.ttf in Resources */,
 				5443A9552AF50EDA00176F6C /* LaunchScreen.storyboard in Resources */,
+				549BC4A12AFD43700058FA68 /* Inter-Regular.ttf in Resources */,
+				549BC4A22AFD43730058FA68 /* Inter-Medium.ttf in Resources */,
 				5443A9522AF50EDA00176F6C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,11 +220,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */,
+				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
+				549BC47B2AFD2AF70058FA68 /* FirstLetter.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,
+				549BC4822AFD32600058FA68 /* AppFont.swift in Sources */,
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,
 				5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */,
+				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

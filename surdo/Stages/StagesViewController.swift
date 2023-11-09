@@ -8,11 +8,23 @@
 import UIKit
 
 class StagesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    private lazy var levelLabel: UILabel = {
+        let label = UILabel()
+        label.text = "ӘРІПТЕР"
+        label.textColor = .blue
+        label.font = AppFont.bold.s24()
+        return label
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = .zero
+        layout.minimumLineSpacing = 100
+        layout.minimumInteritemSpacing = 300
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(StagesViewCell.self, forCellWithReuseIdentifier: StagesViewCell.identifier)
@@ -23,49 +35,44 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 150
-        layout.minimumInteritemSpacing = 100
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        view.backgroundColor = .white
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        // Register your custom cell class
-        collectionView.register(StagesViewCell.self, forCellWithReuseIdentifier: "CustomCellReuseIdentifier")
-        
-        // Add the collection view to the view controller's view
-        view.addSubview(collectionView)
+        collectionView.register(StagesViewCell.self, forCellWithReuseIdentifier: "StagesViewCell")
+        setupViews()
         setupConstraints()
     }
     
-    // Implement UICollectionViewDataSource methods to define the number of items and cell content
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 88
+        return 46
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let letterQueue = indexPath.row
-       
-        if letterQueue % 2 == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCellReuseIdentifier", for: indexPath) as! StagesViewCell
-            cell.configureButton(with: letterQueue/2)
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCellReuseIdentifier", for: indexPath) as! StagesViewCell
-            cell.configureButton(with: -1)
-            return cell
-            
-        }
-       
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell", for: indexPath) as! StagesViewCell
+        
+        cell.configureButton(with: letterQueue)
+        return cell
 
     }
     
+    private func setupViews() {
+        view.addSubview(collectionView)
+        view.addSubview(levelLabel)
+    }
+    
     private func setupConstraints() {
-        collectionView.snp.makeConstraints { make in
+        levelLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
-            make.leading.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-15)
+            make.trailing.equalToSuperview().offset(-5)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(levelLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-100)
         }
     }
