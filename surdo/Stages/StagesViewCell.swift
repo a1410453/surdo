@@ -13,8 +13,9 @@ class StagesViewCell: UICollectionViewCell {
     static let identifier = "StagesViewCell"
     
     private let stageButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setImage(UIImage(named: "A"), for: .disabled)
+        button.backgroundColor = .clear
         return button
     }()
     
@@ -40,34 +41,48 @@ class StagesViewCell: UICollectionViewCell {
         stageButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(40)
             make.centerX.equalToSuperview()
-            make.width.equalTo(205)
-            make.height.equalTo(140)
+            make.width.equalTo(103)
+            make.height.equalTo(70)
         }
     }
-    
     
     //MARK: Actions
     public func configureButton(with letter: Int){
         print(letter)
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
+        stageButton.imageView?.layer.masksToBounds = true
+        stageButton.imageView?.contentMode = .scaleAspectFit
+        stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         if !(levelManager.checkLevelAccess(level: letter)) {
             stageButton.isEnabled = false
+        } else {
+            stageButton.isEnabled = true
         }
-        if letter % 2 == 0 {
+        if letter % 4 == 0 {
             stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(40)
-                make.leading.equalToSuperview().offset(20)
-                make.width.equalTo(205)
-                make.height.equalTo(140)
+                make.top.equalToSuperview().offset(5)
+                make.leading.equalToSuperview().offset(15)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
+            }
+        } else if  letter % 4 == 2 {
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.trailing.equalToSuperview().offset(-15)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
             }
         } else {
             stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(40)
-                make.leading.equalToSuperview().offset(-140)
-                make.width.equalTo(205)
-                make.height.equalTo(140)
+                make.top.equalToSuperview().offset(5)
+                make.centerX.equalToSuperview()
+                make.width.equalTo(103)
+                make.height.equalTo(70)
             }
         }
+    }
+    
+    @objc func tappedButton() {
         
     }
 }

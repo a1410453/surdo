@@ -20,8 +20,9 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 100
-        layout.minimumInteritemSpacing = 300
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 100
+        layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionView.isPagingEnabled = true
@@ -57,6 +58,8 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     }
     
+
+    
     private func setupViews() {
         view.addSubview(collectionView)
         view.addSubview(levelLabel)
@@ -66,7 +69,6 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         levelLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
             make.trailing.equalToSuperview().offset(-15)
-            make.trailing.equalToSuperview().offset(-5)
         }
         
         collectionView.snp.makeConstraints { make in
