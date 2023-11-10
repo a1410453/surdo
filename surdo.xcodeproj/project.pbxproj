@@ -24,6 +24,9 @@
 		549BC4A12AFD43700058FA68 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49C2AFD38C30058FA68 /* Inter-Regular.ttf */; };
 		549BC4A22AFD43730058FA68 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49D2AFD38C40058FA68 /* Inter-Medium.ttf */; };
 		549BC4A32AFD43750058FA68 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BC49F2AFD38C40058FA68 /* Inter-Bold.ttf */; };
+		549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */; };
+		549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A72AFE830A0058FA68 /* TabItem.swift */; };
+		549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		549BC49D2AFD38C40058FA68 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		549BC49E2AFD38C40058FA68 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		549BC49F2AFD38C40058FA68 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		549BC4A72AFE830A0058FA68 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		5443A9472AF50ED900176F6C /* surdo */ = {
 			isa = PBXGroup;
 			children = (
+				549BC4A42AFE829F0058FA68 /* Tab Bar */,
 				549BC47C2AFD31970058FA68 /* UI Resources */,
 				549BC4782AFD2AD20058FA68 /* Letters */,
 				5443A95E2AF50FB700176F6C /* Stages */,
@@ -137,6 +144,16 @@
 				549BC49E2AFD38C40058FA68 /* Inter-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		549BC4A42AFE829F0058FA68 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */,
+				549BC4A72AFE830A0058FA68 /* TabItem.swift */,
+				549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */,
 				5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */,
 				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
+				549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
+				549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */,
 				549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,

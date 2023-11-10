@@ -53,7 +53,10 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         let letterQueue = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell", for: indexPath) as! StagesViewCell
         cell.configureButton(with: letterQueue)
-        
+        cell.onStageButtonTap = { [weak self] in
+            let viewController = FirstLetterController()
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }
         return cell
 
     }

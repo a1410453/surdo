@@ -30,4 +30,10 @@ extension AppImageProtocol {
 
 enum AppImage: String, AppImageProtocol {
     case gesture = "gesture"
+    case mainTab = "house"
+    case translatorTab = "hand.raised.square.on.square"
+    case profileTab = "person.crop.circle"
+    case mainTabSelected = "house.fill"
+    case translatorTabSelected = "hand.raised.square.on.square.fill"
+    case profileTabSelected = "person.crop.circle.fill"
 }

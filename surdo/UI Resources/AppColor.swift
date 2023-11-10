@@ -25,5 +25,6 @@ extension AppColorProtocol {
 enum AppColor: String, AppColorProtocol {
     case red = "red"
     case beige = "beige"
+    case tabbar = "tabbar"
 }
 

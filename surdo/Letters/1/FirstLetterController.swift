@@ -8,7 +8,7 @@
 import UIKit
 
 class FirstLetterController: UIViewController {
-
+    
     private lazy var gestureView: UIImageView = {
         let iconView = UIImageView()
         iconView.image = AppImage.gesture.uiImage

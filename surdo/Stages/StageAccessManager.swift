@@ -15,7 +15,7 @@ class LevelAccessManager {
     }
     
     func checkLevelAccess(level: Int) -> Bool {
-        guard level >= 0 && level <= levelAccessArray.count else {
+        guard level >= 0 && level <= levelAccessArray.count - 1 else {
             return false
         }
         return levelAccessArray[level]
