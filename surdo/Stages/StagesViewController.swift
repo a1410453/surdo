@@ -12,7 +12,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
         label.text = "ӘРІПТЕР"
-        label.textColor = .blue
+        label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s24()
         return label
     }()
@@ -24,7 +24,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         layout.minimumInteritemSpacing = 100
         layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        collectionView.backgroundColor = AppColor.beige.uiColor
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -36,7 +36,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = AppColor.beige.uiColor
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -52,8 +52,8 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let letterQueue = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell", for: indexPath) as! StagesViewCell
-        
         cell.configureButton(with: letterQueue)
+        
         return cell
 
     }

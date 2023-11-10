@@ -50,6 +50,7 @@ class StagesViewCell: UICollectionViewCell {
     public func configureButton(with letter: Int){
         print(letter)
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
+        stageButton.setImage(UIImage(named: "disabled"), for: .disabled)
         stageButton.imageView?.layer.masksToBounds = true
         stageButton.imageView?.contentMode = .scaleAspectFit
         stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
@@ -61,14 +62,14 @@ class StagesViewCell: UICollectionViewCell {
         if letter % 4 == 0 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(15)
+                make.leading.equalToSuperview().offset(25)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 4 == 2 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.trailing.equalToSuperview().offset(-15)
+                make.trailing.equalToSuperview().offset(-25)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
@@ -83,6 +84,8 @@ class StagesViewCell: UICollectionViewCell {
     }
     
     @objc func tappedButton() {
-        
+        let controller = FirstLetterController()
+        controller.hidesBottomBarWhenPushed = true
+        // self.navigationController?.pushViewController(controller, animated: true)
     }
 }

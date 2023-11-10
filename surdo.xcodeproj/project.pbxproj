@@ -16,7 +16,7 @@
 		5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A95F2AF50FFA00176F6C /* StagesViewController.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
 		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
-		549BC47B2AFD2AF70058FA68 /* FirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */; };
+		549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */; };
 		549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47D2AFD31C40058FA68 /* AppColor.swift */; };
 		549BC4802AFD32000058FA68 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47F2AFD32000058FA68 /* AppImage.swift */; };
 		549BC4822AFD32600058FA68 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4812AFD32600058FA68 /* AppFont.swift */; };
@@ -37,7 +37,7 @@
 		5443A95C2AF50FA900176F6C /* StagesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewCell.swift; sourceTree = "<group>"; };
 		5443A95F2AF50FFA00176F6C /* StagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewController.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
-		549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLetter.swift; sourceTree = "<group>"; };
+		549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLetterController.swift; sourceTree = "<group>"; };
 		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		549BC47F2AFD32000058FA68 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		549BC4812AFD32600058FA68 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		549BC4792AFD2AE10058FA68 /* 1 */ = {
 			isa = PBXGroup;
 			children = (
-				549BC47A2AFD2AF70058FA68 /* FirstLetter.swift */,
+				549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */,
 			);
 			path = 1;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 				5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */,
 				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
-				549BC47B2AFD2AF70058FA68 /* FirstLetter.swift in Sources */,
+				549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,
 				549BC4822AFD32600058FA68 /* AppFont.swift in Sources */,

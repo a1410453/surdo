@@ -1,5 +1,5 @@
 //
-//  FirstLetter.swift
+//  FirstLetterController.swift
 //  surdo
 //
 //  Created by Rustem Orazbayev on 11/9/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstLetter: UIViewController {
+class FirstLetterController: UIViewController {
 
     private lazy var gestureView: UIImageView = {
         let iconView = UIImageView()
