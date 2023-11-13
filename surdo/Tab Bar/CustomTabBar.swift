@@ -13,15 +13,15 @@ final class CustomTabBar: UITabBar {
         super.init(frame: frame)
         setup()
     }
-
     required init?(coder: NSCoder) { nil }
 
     private func setup() {
-        layer.backgroundColor = AppColor.tabbar.cgColor
         layer.borderColor = AppColor.tabbar.cgColor
         layer.borderWidth = 1
         layer.masksToBounds = true
-        layer.cornerRadius = 20
+        layer.cornerRadius = 40
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        barTintColor = AppColor.tabbar.uiColor
+        tintColor = AppColor.red.uiColor
     }
 }

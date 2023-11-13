@@ -14,6 +14,7 @@
 		5443A9552AF50EDA00176F6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5443A9532AF50EDA00176F6C /* LaunchScreen.storyboard */; };
 		5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A95C2AF50FA900176F6C /* StagesViewCell.swift */; };
 		5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A95F2AF50FFA00176F6C /* StagesViewController.swift */; };
+		544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D46312B0221DC00EB49E0 /* StagesHeaderSectionView.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
 		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
 		549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */; };
@@ -39,6 +40,7 @@
 		5443A9562AF50EDA00176F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5443A95C2AF50FA900176F6C /* StagesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewCell.swift; sourceTree = "<group>"; };
 		5443A95F2AF50FFA00176F6C /* StagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesViewController.swift; sourceTree = "<group>"; };
+		544D46312B0221DC00EB49E0 /* StagesHeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesHeaderSectionView.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
 		549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLetterController.swift; sourceTree = "<group>"; };
 		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -85,9 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				549BC4A42AFE829F0058FA68 /* Tab Bar */,
-				549BC47C2AFD31970058FA68 /* UI Resources */,
 				549BC4782AFD2AD20058FA68 /* Letters */,
 				5443A95E2AF50FB700176F6C /* Stages */,
+				549BC47C2AFD31970058FA68 /* UI Resources */,
 				5443A9482AF50ED900176F6C /* AppDelegate.swift */,
 				5443A94A2AF50ED900176F6C /* SceneDelegate.swift */,
 				5443A94C2AF50ED900176F6C /* ViewController.swift */,
@@ -104,6 +106,7 @@
 				5443A95C2AF50FA900176F6C /* StagesViewCell.swift */,
 				5443A95F2AF50FFA00176F6C /* StagesViewController.swift */,
 				549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */,
+				544D46312B0221DC00EB49E0 /* StagesHeaderSectionView.swift */,
 			);
 			path = Stages;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				549BC4822AFD32600058FA68 /* AppFont.swift in Sources */,
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,
 				5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */,
+				544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */,
 				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

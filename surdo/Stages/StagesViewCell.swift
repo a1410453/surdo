@@ -61,20 +61,48 @@ class StagesViewCell: UICollectionViewCell {
         } else {
             stageButton.isEnabled = true
         }
-        if letter % 4 == 0 {
+        if letter % 8 == 1 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
                 make.leading.equalToSuperview().offset(80)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
-        } else if  letter % 4 == 2 {
+        } else if  letter % 8 == 2 {
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.leading.equalToSuperview().offset(50)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
+            }
+        } else if  letter % 8 == 3 {
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.leading.equalToSuperview().offset(80)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
+            }
+        } else if  letter % 8 == 5 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
                 make.trailing.equalToSuperview().offset(-80)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
+        } else if  letter % 8 == 6 {
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.trailing.equalToSuperview().offset(-50)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
+            }
+        } else if  letter % 8 == 7 {
+                stageButton.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().offset(5)
+                    make.trailing.equalToSuperview().offset(-80)
+                    make.width.equalTo(103)
+                    make.height.equalTo(70)
+                }
         } else {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
