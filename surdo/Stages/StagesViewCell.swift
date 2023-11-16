@@ -50,7 +50,6 @@ class StagesViewCell: UICollectionViewCell {
     
     //MARK: Actions
     public func configureButton(with letter: Int){
-        print(letter)
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
         stageButton.setImage(UIImage(named: "disabled"), for: .disabled)
         stageButton.imageView?.layer.masksToBounds = true
@@ -64,42 +63,42 @@ class StagesViewCell: UICollectionViewCell {
         if letter % 8 == 1 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(80)
+                make.centerX.equalToSuperview().offset(65)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 2 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(50)
+                make.centerX.equalToSuperview().offset(85)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 3 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(80)
+                make.centerX.equalToSuperview().offset(65)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 5 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.trailing.equalToSuperview().offset(-80)
+                make.centerX.equalToSuperview().offset(-65)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 6 {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)
-                make.trailing.equalToSuperview().offset(-50)
+                make.centerX.equalToSuperview().offset(-85)
                 make.width.equalTo(103)
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 7 {
                 stageButton.snp.remakeConstraints { make in
                     make.top.equalToSuperview().offset(5)
-                    make.trailing.equalToSuperview().offset(-80)
+                    make.centerX.equalToSuperview().offset(-65)
                     make.width.equalTo(103)
                     make.height.equalTo(70)
                 }

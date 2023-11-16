@@ -11,8 +11,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 30
-        layout.minimumInteritemSpacing = 100
+        layout.minimumLineSpacing = 20
         layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = AppColor.beige.uiColor
@@ -63,7 +62,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.configureButton(with: letterQueue)
         cell.onStageButtonTap = { [weak self] in
             let viewController = FirstLetterController()
-            self?.navigationController?.pushViewController(viewController, animated: true)
+            self?.navigationController?.pushViewController(viewController, animated: false)
         }
         return cell
         
