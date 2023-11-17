@@ -29,6 +29,8 @@
 		544D46542B05287000EB49E0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D46532B05287000EB49E0 /* AuthManager.swift */; };
 		544D46562B05288300EB49E0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D46552B05288300EB49E0 /* DatabaseManager.swift */; };
 		544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D46572B05288F00EB49E0 /* StorageManager.swift */; };
+		544D465B2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */; };
+		544D465D2B06707E00EB49E0 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
 		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
 		549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */; };
@@ -60,6 +62,8 @@
 		544D46532B05287000EB49E0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		544D46552B05288300EB49E0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		544D46572B05288F00EB49E0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormVieViewModel.swift; sourceTree = "<group>"; };
+		544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
 		549BC47A2AFD2AF70058FA68 /* FirstLetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLetterController.swift; sourceTree = "<group>"; };
 		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		5443A9472AF50ED900176F6C /* surdo */ = {
 			isa = PBXGroup;
 			children = (
+				544D46592B066C0E00EB49E0 /* Profile */,
 				544D464F2B05277800EB49E0 /* Models */,
 				544D46522B05285500EB49E0 /* Networking */,
 				544D46372B04EF7100EB49E0 /* App Resources */,
@@ -166,6 +171,15 @@
 				544D46572B05288F00EB49E0 /* StorageManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		544D46592B066C0E00EB49E0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */,
+				544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		549BC4782AFD2AD20058FA68 /* Letters */ = {
@@ -321,8 +335,10 @@
 				544D46542B05287000EB49E0 /* AuthManager.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,
 				549BC4822AFD32600058FA68 /* AppFont.swift in Sources */,
+				544D465B2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift in Sources */,
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,
 				5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */,
+				544D465D2B06707E00EB49E0 /* ProfileViewViewModel.swift in Sources */,
 				544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */,
 				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 			);
