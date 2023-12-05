@@ -5,6 +5,8 @@
 # Finder
 .DS_Store
 
+xcuserdata/rickby999.xcuserdatad/UserInterfaceState.xcuserstate
+
 # Xcode - User files
 xcuserdata/
 
@@ -14,7 +16,7 @@ xcuserdata/
 **/*.xcodeproj/project.xcworkspace/xcshareddata/*
 !**/*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
 
-**/*.xcodeproj/project.xcworkspace/xcuserdata/rickby999.xcuserdatad/*.xuserstate
+
 
 **/*.playground/playground.xcworkspace/*
 !**/*.playground/playground.xcworkspace/xcshareddata
