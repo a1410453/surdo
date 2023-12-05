@@ -44,6 +44,11 @@
 		549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */; };
 		549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A72AFE830A0058FA68 /* TabItem.swift */; };
 		549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */; };
+		54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */; };
+		54C7A8E32B1F568F00B925A9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 54C7A8E22B1F568F00B925A9 /* SDWebImage */; };
+		54C7A8E52B1F568F00B925A9 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54C7A8E42B1F568F00B925A9 /* SDWebImageMapKit */; };
+		54C7A8E72B1F576F00B925A9 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */; };
+		54C7A8E92B1F59EE00B925A9 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +81,9 @@
 		549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		549BC4A72AFE830A0058FA68 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
+		54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +99,9 @@
 				544D46402B04F0DD00EB49E0 /* FirebaseDatabase in Frameworks */,
 				544D463C2B04F0DD00EB49E0 /* FirebaseAuth in Frameworks */,
 				544D46442B04F0DD00EB49E0 /* FirebaseFirestore in Frameworks */,
+				54C7A8E32B1F568F00B925A9 /* SDWebImage in Frameworks */,
 				544D46462B04F0DD00EB49E0 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				54C7A8E52B1F568F00B925A9 /* SDWebImageMapKit in Frameworks */,
 				544D46482B04F0DD00EB49E0 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +188,9 @@
 			children = (
 				544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */,
 				544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */,
+				54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */,
+				54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */,
+				54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -257,6 +270,8 @@
 				544D46472B04F0DD00EB49E0 /* FirebaseFirestoreSwift */,
 				544D46492B04F0DD00EB49E0 /* FirebaseStorage */,
 				544D464B2B04F0DD00EB49E0 /* FirebaseStorageCombine-Community */,
+				54C7A8E22B1F568F00B925A9 /* SDWebImage */,
+				54C7A8E42B1F568F00B925A9 /* SDWebImageMapKit */,
 			);
 			productName = surdo;
 			productReference = 5443A9452AF50ED900176F6C /* surdo.app */;
@@ -289,6 +304,7 @@
 			packageReferences = (
 				549BC4732AFA96220058FA68 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				544D463A2B04F0DD00EB49E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5443A9462AF50ED900176F6C /* Products */;
 			projectDirPath = "";
@@ -323,12 +339,14 @@
 			files = (
 				549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */,
 				5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */,
+				54C7A8E72B1F576F00B925A9 /* ProfileTableViewHeader.swift in Sources */,
 				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
 				544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */,
 				549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */,
 				544D46562B05288300EB49E0 /* DatabaseManager.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
 				549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */,
+				54C7A8E92B1F59EE00B925A9 /* TweetTableViewCell.swift in Sources */,
 				549BC47B2AFD2AF70058FA68 /* FirstLetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				544D46512B05278600EB49E0 /* SurdoUser.swift in Sources */,
@@ -339,6 +357,7 @@
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,
 				5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */,
 				544D465D2B06707E00EB49E0 /* ProfileViewViewModel.swift in Sources */,
+				54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */,
 				544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */,
 				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 			);
@@ -574,6 +593,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -626,6 +653,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 549BC4732AFA96220058FA68 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		54C7A8E22B1F568F00B925A9 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		54C7A8E42B1F568F00B925A9 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

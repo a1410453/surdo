@@ -46,6 +46,7 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "StagesHeaderSectionView", for: indexPath) as! StagesHeaderSectionView
+            headerView.configureLevelLabel(with: indexPath)
             return headerView
         }
         

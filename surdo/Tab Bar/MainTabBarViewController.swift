@@ -16,9 +16,6 @@ final class MainTabBarViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        // let customTabBarHeight: CGFloat = 400.0
-        // tabBar.frame.size.height = customTabBarHeight
-        
         let customTabBar = CustomTabBar(frame: CGRect(x: 0, y: -30, width: tabBar.frame.width, height: tabBar.frame.height))
         tabBar.addSubview(customTabBar)
         tabBar.barTintColor = AppColor.tabbar.uiColor
@@ -27,7 +24,7 @@ final class MainTabBarViewController: UITabBarController {
         view.backgroundColor = AppColor.tabbar.uiColor
         let main = UINavigationController(rootViewController: StagesViewController())
         let translator = UINavigationController(rootViewController: FirstLetterController())
-        let profile = UINavigationController(rootViewController: FirstLetterController())
+        let profile = UINavigationController(rootViewController: ProfileViewController())
         main.tabBarItem = tabItem(for: .main)
         translator.tabBarItem = tabItem(for: .translator)
         profile.tabBarItem = tabItem(for: .profile)

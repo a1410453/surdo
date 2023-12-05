@@ -49,6 +49,9 @@ class StagesHeaderSectionView: UICollectionReusableView {
         levelLabel.text = "ӘРІПТЕР"
     }
     
-    public func configureLevelLabel(with letter: Int){
+    public func configureLevelLabel(with letter: IndexPath){
+        if letter.section > 0 {
+            levelLabel.text = "САНДАР"
+        }
     }
 }
