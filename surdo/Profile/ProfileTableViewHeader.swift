@@ -8,14 +8,11 @@
 import UIKit
 
 class ProfileTableViewHeader: UIView {
-    
     private enum SectionTabs: String {
         case tweets = "Friends"
         case tweetsAndReplies = "Statistics"
         case media = "Social Media"
         case likes = "Likes"
-        
-        
         var index: Int {
             switch self {
             case .tweets:
@@ -30,35 +27,31 @@ class ProfileTableViewHeader: UIView {
         }
 
     }
-    
     private var leadingAnchors: [NSLayoutConstraint] = []
     private var trailingAnchors: [NSLayoutConstraint] = []
-    
     private let indicator: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = AppColor.red.uiColor
         return view
     }()
-    
     private var selectedTab: Int = 0 {
-        didSet{
-            for i in 0..<tabs.count{
+        didSet {
+            for index in 0..<tabs.count {
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) { [weak self] in
-                    self?.sectionStack.arrangedSubviews[i].tintColor = i == self?.selectedTab ? .label : .secondaryLabel
-                    self?.leadingAnchors[i].isActive = i == self?.selectedTab ? true : false
-                    self?.trailingAnchors[i].isActive = i == self?.selectedTab ? true : false
+                    self?.sectionStack.arrangedSubviews[index].tintColor = index ==
+                        self?.selectedTab ? .label : .secondaryLabel
+                    self?.leadingAnchors[index].isActive = index == self?.selectedTab ? true : false
+                    self?.trailingAnchors[index].isActive = index == self?.selectedTab ? true : false
                     self?.layoutIfNeeded()
                 } completion: { _ in
 
                 }
-                
             }
         }
     }
-    
     private var tabs: [UIButton] = [ "Achievements", "Friends", "Statistics", "Social Media" ]
-        .map{ buttonTitle in
+        .map { buttonTitle in
             let button = UIButton(type: .system)
             button.setTitle(buttonTitle, for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
@@ -66,7 +59,6 @@ class ProfileTableViewHeader: UIView {
             button.translatesAutoresizingMaskIntoConstraints = false
             return button
         }
-    
     private lazy var sectionStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: tabs)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +67,6 @@ class ProfileTableViewHeader: UIView {
         stackView.alignment = .center
         return stackView
     }()
-    
     var joinDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -83,9 +74,7 @@ class ProfileTableViewHeader: UIView {
         label.text = "05.12.2023"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
-        
     }()
-    
     private let joinDateImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
@@ -93,8 +82,6 @@ class ProfileTableViewHeader: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    
     var userBioLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -103,8 +90,6 @@ class ProfileTableViewHeader: UIView {
         label.text = "I am learning sign language, open to new conversations"
         return label
     }()
-    
-    
     var usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -112,10 +97,7 @@ class ProfileTableViewHeader: UIView {
         label.text = "rickby999"
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
-        
     }()
-    
-    
     var displayNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +106,6 @@ class ProfileTableViewHeader: UIView {
         label.text = "Rustem Orazbayev"
         return label
     }()
-    
     var profileAvatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -135,7 +116,6 @@ class ProfileTableViewHeader: UIView {
         imageView.image = UIImage(named: "gesture")
         return imageView
     }()
-    
     private let profileHeaderImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -144,9 +124,7 @@ class ProfileTableViewHeader: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
@@ -160,11 +138,9 @@ class ProfileTableViewHeader: UIView {
         configureConstraints()
         configureStackButton()
     }
-    
-    private func configureStackButton(){
+    private func configureStackButton() {
         for (i, button) in sectionStack.arrangedSubviews.enumerated(){
             guard let button = button as? UIButton else { return }
-            
             if i == selectedTab {
                 button.tintColor = .label
             } else {
@@ -173,7 +149,6 @@ class ProfileTableViewHeader: UIView {
             button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
         }
     }
-    
     @objc private func didTapTab(_ sender: UIButton) {
         guard let label = sender.titleLabel?.text else { return }
         switch label {
@@ -189,10 +164,8 @@ class ProfileTableViewHeader: UIView {
             selectedTab = 0
         }
     }
-    
-    private func configureConstraints(){
-        
-        for i in 0..<tabs.count{
+    private func configureConstraints() {
+        for i in 0..<tabs.count {
             let leadingAnchor = indicator.leadingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].leadingAnchor)
             leadingAnchors.append(leadingAnchor)
             let trailingAnchor = indicator.trailingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
