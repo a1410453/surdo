@@ -14,6 +14,8 @@ xcuserdata/
 **/*.xcodeproj/project.xcworkspace/xcshareddata/*
 !**/*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
 
+**/*.xcodeproj/project.xcworkspace/xcuserdata/rickby999.xcuserdatad/*.xuserstate
+
 **/*.playground/playground.xcworkspace/*
 !**/*.playground/playground.xcworkspace/xcshareddata
 
@@ -155,6 +157,6 @@ Dependencies/
 Packages
 xcuserdata
 *.xcodeproj
-*.xuserstate
-*.DS_Store
+
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,cocoapods,objective-c
