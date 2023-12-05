@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A9482AF50ED900176F6C /* AppDelegate.swift */; };
 		5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A94A2AF50ED900176F6C /* SceneDelegate.swift */; };
-		5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A94C2AF50ED900176F6C /* ViewController.swift */; };
 		5443A9522AF50EDA00176F6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5443A9512AF50EDA00176F6C /* Assets.xcassets */; };
 		5443A9552AF50EDA00176F6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5443A9532AF50EDA00176F6C /* LaunchScreen.storyboard */; };
 		5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A95C2AF50FA900176F6C /* StagesViewCell.swift */; };
@@ -55,7 +54,6 @@
 		5443A9452AF50ED900176F6C /* surdo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surdo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5443A9482AF50ED900176F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5443A94A2AF50ED900176F6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5443A94C2AF50ED900176F6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5443A9512AF50EDA00176F6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5443A9542AF50EDA00176F6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5443A9562AF50EDA00176F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				549BC4782AFD2AD20058FA68 /* Letters */,
 				5443A95E2AF50FB700176F6C /* Stages */,
 				549BC47C2AFD31970058FA68 /* UI Resources */,
-				5443A94C2AF50ED900176F6C /* ViewController.swift */,
 			);
 			path = surdo;
 			sourceTree = "<group>";
@@ -360,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */,
-				5443A94D2AF50ED900176F6C /* ViewController.swift in Sources */,
 				54C7A8E72B1F576F00B925A9 /* ProfileTableViewHeader.swift in Sources */,
 				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
 				544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */,

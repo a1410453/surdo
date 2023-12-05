@@ -48,8 +48,9 @@ class StagesViewCell: UICollectionViewCell {
         }
     }
     
-    //MARK: Actions
-    public func configureButton(with letter: Int){
+    // MARK: Actions
+    // swiftlint: disable all
+    public func configureButton(with letter: Int) {
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
         stageButton.setImage(UIImage(named: "disabled"), for: .disabled)
         stageButton.imageView?.layer.masksToBounds = true
@@ -111,6 +112,7 @@ class StagesViewCell: UICollectionViewCell {
             }
         }
     }
+    // swiftlint: enable all
     
     @objc func tappedButton() {
         self.onStageButtonTap?()

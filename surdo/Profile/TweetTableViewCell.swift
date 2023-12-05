@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol TweetTableViewCellDelegate: AnyObject{
+protocol TweetTableViewCellDelegate: AnyObject {
     func tweetTableViewCellDidTapReply()
     func tweetTableViewCellDidTapRetweet()
     func tweetTableViewCellDidTapLike()
@@ -59,7 +59,6 @@ class TweetTableViewCell: UITableViewCell {
 
     }()
     
-    
     private let replyButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -96,9 +95,6 @@ class TweetTableViewCell: UITableViewCell {
         
     }()
     
-    
-    
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
@@ -110,101 +106,91 @@ class TweetTableViewCell: UITableViewCell {
         contentView.addSubview(likeButton)
         contentView.addSubview(shareButton)
         
-        
         configureConstraints()
         
         configureButtons()
     }
     
-    @objc private func didTapReply(){
+    @objc private func didTapReply() {
         delegate?.tweetTableViewCellDidTapReply()
     }
     
-    @objc private func didTapRetweet(){
+    @objc private func didTapRetweet() {
         delegate?.tweetTableViewCellDidTapRetweet()
     }
     
-    @objc private func didTapLike(){
+    @objc private func didTapLike() {
         delegate?.tweetTableViewCellDidTapLike()
     }
     
-    @objc private func didTapShare(){
+    @objc private func didTapShare() {
         delegate?.tweetTableViewCellDidTapShare()
     }
     
-    
-    private func configureButtons(){
+    private func configureButtons() {
         replyButton.addTarget(self, action: #selector(didTapReply), for: .touchUpInside)
         retweetButton.addTarget(self, action: #selector(didTapRetweet), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
     }
     
-    
-    func configureTweet(with displayName: String, username: String, tweetTextContent: String, avatarPath: String) {
+    func configureTweet(with displayName: String, 
+                        username: String,
+                        tweetTextContent: String,
+                        avatarPath: String) {
         displayNameLabel.text = displayName
         usernameLabel.text = "@\(username)"
         tweetTextContentLabel.text = tweetTextContent
         avatarImageView.sd_setImage(with: URL(string: avatarPath))
     }
     
+    // swiftlint: disable all
     private func configureConstraints() {
-        
-        
         let avatarImageViewConstraints = [
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14),
             avatarImageView.heightAnchor.constraint(equalToConstant: 50),
             avatarImageView.widthAnchor.constraint(equalToConstant: 50)
         ]
-        
-        
         let displayNameLabelConstraints = [
-            displayNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
+            displayNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor,
+                                                      constant: 20),
             displayNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20)
         ]
-        
-        
         let usernameLabelConstraints = [
-            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 10),
-           
+            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, 
+                                                   constant: 10),
             usernameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor)
         ]
-        
-        
         let tweetTextContentLabelConstraints = [
             tweetTextContentLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            tweetTextContentLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10),
-            tweetTextContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
-            
+            tweetTextContentLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, 
+                                                       constant: 10),
+            tweetTextContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                            constant: -15)
         ]
-        
         let replyButtonConstraints = [
             replyButton.leadingAnchor.constraint(equalTo: tweetTextContentLabel.leadingAnchor),
-            replyButton.topAnchor.constraint(equalTo: tweetTextContentLabel.bottomAnchor, constant: 10),
-            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+            replyButton.topAnchor.constraint(equalTo: tweetTextContentLabel.bottomAnchor, 
+                                             constant: 10),
+            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, 
+                                                constant: -15)
         ]
-        
-        
         let retweetButtonConstraints = [
-            retweetButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor, constant: actionSpacing),
+            retweetButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor,
+                                                   constant: actionSpacing),
             retweetButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
         ]
-        
         let likeButtonConstraints = [
-            likeButton.leadingAnchor.constraint(equalTo: retweetButton.trailingAnchor, constant: actionSpacing),
+            likeButton.leadingAnchor.constraint(equalTo: retweetButton.trailingAnchor, 
+                                                constant: actionSpacing),
             likeButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
         ]
-        
-        
         let shareButtonConstraints = [
-            shareButton.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, constant: actionSpacing),
+            shareButton.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, 
+                                                 constant: actionSpacing),
             shareButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
         ]
-        
-
-        
-        
         NSLayoutConstraint.activate(avatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(usernameLabelConstraints)
@@ -213,10 +199,8 @@ class TweetTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(retweetButtonConstraints)
         NSLayoutConstraint.activate(shareButtonConstraints)
         NSLayoutConstraint.activate(likeButtonConstraints)
-        
-        
-        
     }
+    // swiftlint: enable all
     
     required init?(coder: NSCoder) {
         fatalError()

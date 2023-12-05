@@ -23,7 +23,10 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
-    private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0, y: 0, width: profileTableView.frame.width, height: 380))
+    private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0, 
+                                                                       y: 0,
+                                                                       width: profileTableView.frame.width,
+                                                                       height: 380))
     
     private let profileTableView: UITableView = {
         let tableView = UITableView()
@@ -64,20 +67,22 @@ class ProfileViewController: UIViewController {
  var learningScore: String = ""
  var socialMedia: String = ""
  */
-    private func bindViews(){
+    private func bindViews() {
         viewModel.$user.sink { [weak self] user in
             guard let user = user else { return }
             self?.headerView.displayNameLabel.text = user.fullName
             self?.headerView.usernameLabel.text = "@\(user.username)"
             self?.headerView.userBioLabel.text = user.learningScore
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
-            self?.headerView.joinDateLabel.text = "Joined \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "") "
+            self?.headerView.joinDateLabel.text = """
+                                Joined \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "")
+                                """
             
         }
         .store(in: &subscriptions)
     }
     
-    private func configureConstraints(){
+    private func configureConstraints() {
         let profileTableViewConstraints = [
             profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             profileTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -95,10 +100,7 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate(profileTableViewConstraints)
         NSLayoutConstraint.activate(statusBarConstraints)
     }
-
-
 }
-
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,7 +108,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, for: indexPath) as? TweetTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, 
+                                                       for: indexPath) as? TweetTableViewCell else {
             return UITableViewCell()
         }
         return cell

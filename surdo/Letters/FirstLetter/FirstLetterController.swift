@@ -27,7 +27,10 @@ class FirstLetterController: UIViewController {
     
     private lazy var levelDescription: UILabel = {
         let label = UILabel()
-        label.text = "Бұл А әрпі. \nҚолды жұдырыққа қысыңыз және көрсетіңіз\n\n\n Это буква А. \nЗажмите руку в кулак и покажите"
+        label.text = """
+        Бұл А әрпі.
+        Қолды жұдырыққа қысыңыз және көрсетіңіз\n\n\n Это буква А. \nЗажмите руку в кулак и покажите
+        """
         label.textColor = AppColor.red.uiColor
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -43,7 +46,6 @@ class FirstLetterController: UIViewController {
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         return button
     }()
-    
     
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +92,7 @@ class FirstLetterController: UIViewController {
             make.height.equalTo(100)
         }
         
-        nextButton.imageView?.snp.makeConstraints{ make in
+        nextButton.imageView?.snp.makeConstraints { make in
             make.size.equalTo(80)
         }
     }

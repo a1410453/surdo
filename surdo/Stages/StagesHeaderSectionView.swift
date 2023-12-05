@@ -43,13 +43,13 @@ class StagesHeaderSectionView: UICollectionReusableView {
         }
     }
     
-    //MARK: Actions
+    // MARK: Actions
     override func prepareForReuse() {
         super.prepareForReuse()
         levelLabel.text = "ӘРІПТЕР"
     }
     
-    public func configureLevelLabel(with letter: IndexPath){
+    public func configureLevelLabel(with letter: IndexPath) {
         if letter.section > 0 {
             levelLabel.text = "САНДАР"
         }

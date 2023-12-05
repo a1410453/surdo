@@ -37,6 +37,4 @@ final class ProfileViewViewModel: ObservableObject {
         return dateFormatter.string(from: date)
         
     }
-    
-    
 }

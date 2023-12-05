@@ -14,12 +14,12 @@ enum FirestorageError: Error {
     case invalidImageId
 }
 
-final class StorageManager{
+final class StorageManager {
     static let shared = StorageManager()
     
     let storage = Storage.storage()
     
-    func getDownloadURL(for id: String?) -> AnyPublisher<URL, Error>{
+    func getDownloadURL(for id: String?) -> AnyPublisher<URL, Error> {
         guard let id = id else {
             return Fail(error: FirestorageError.invalidImageId)
                 .eraseToAnyPublisher()
@@ -31,7 +31,9 @@ final class StorageManager{
             .eraseToAnyPublisher()
     }
     
-    func uploadProfilePhoto(with randomID: String, image: Data, metaData: StorageMetadata) -> AnyPublisher<StorageMetadata, Error> {
+    func uploadProfilePhoto(with randomID: String, 
+                            image: Data,
+                            metaData: StorageMetadata) -> AnyPublisher<StorageMetadata, Error> {
         return storage
             .reference()
             .child("images/\(randomID).jpg")
@@ -39,7 +41,4 @@ final class StorageManager{
             .print()
             .eraseToAnyPublisher()
     }
-    
-    
 }
-

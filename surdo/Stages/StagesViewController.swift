@@ -7,7 +7,11 @@
 
 import UIKit
 
-class StagesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class StagesViewController: UIViewController, 
+                                UICollectionViewDataSource,
+                                UICollectionViewDelegate,
+                                UICollectionViewDelegateFlowLayout {
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -43,23 +47,40 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         return 46
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, 
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "StagesHeaderSectionView", for: indexPath) as! StagesHeaderSectionView
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier:
+                                                                                "StagesHeaderSectionView",
+                                                                             for:
+                                                                                indexPath) 
+                    as? StagesHeaderSectionView else {
+                print("Unable to cast the dequeued view to StagesHeaderSectionView")
+                return UICollectionReusableView()
+            }
             headerView.configureLevelLabel(with: indexPath)
             return headerView
         }
-        
         return UICollectionReusableView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.size.width, height: 50)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, 
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let letterQueue = indexPath.row
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell", for: indexPath) as! StagesViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
+                                                      for: indexPath) as? StagesViewCell
+            else {
+            print("Unable to cast the dequeued cell to StagesViewCell")
+            return UICollectionViewCell()
+        }
         cell.configureButton(with: letterQueue)
         cell.onStageButtonTap = { [weak self] in
             let viewController = FirstLetterController()
@@ -68,7 +89,6 @@ class StagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
         
     }
-    
     
     private func setupViews() {
         view.addSubview(collectionView)

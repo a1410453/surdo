@@ -16,7 +16,10 @@ final class MainTabBarViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        let customTabBar = CustomTabBar(frame: CGRect(x: 0, y: -30, width: tabBar.frame.width, height: tabBar.frame.height))
+        let customTabBar = CustomTabBar(frame: CGRect(x: 0, 
+                                                      y: -30,
+                                                      width: tabBar.frame.width,
+                                                      height: tabBar.frame.height))
         tabBar.addSubview(customTabBar)
         tabBar.barTintColor = AppColor.tabbar.uiColor
         tabBar.tintColor = AppColor.red.uiColor

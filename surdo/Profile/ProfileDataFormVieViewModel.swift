@@ -11,8 +11,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 
-
-final class ProfileDataFormViewViewModel: ObservableObject{
+final class ProfileDataFormViewViewModel: ObservableObject {
     
     private var subscriptions: Set<AnyCancellable> = []
     
@@ -29,8 +28,6 @@ final class ProfileDataFormViewViewModel: ObservableObject{
     @Published var learningScore: String?
     @Published var socialMedia: String?
 
-    
-    
     func validateUserProfileForm() {
         guard let fullName = fullName,
               fullName.count > 2,
@@ -97,6 +94,4 @@ final class ProfileDataFormViewViewModel: ObservableObject{
             .store(in: &subscriptions)
         
     }
-    
-    
 }

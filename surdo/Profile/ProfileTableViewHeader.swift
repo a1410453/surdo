@@ -9,10 +9,10 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     private enum SectionTabs: String {
-        case tweets = "Friends"
-        case tweetsAndReplies = "Statistics"
-        case media = "Social Media"
-        case likes = "Likes"
+        case tweets = "Achivements"
+        case tweetsAndReplies = "Friends"
+        case media = "Statistics"
+        case likes = "Social Media"
         var index: Int {
             switch self {
             case .tweets:
@@ -77,7 +77,8 @@ class ProfileTableViewHeader: UIView {
     }()
     private let joinDateImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
+        imageView.image = UIImage(systemName: "calendar", 
+                                  withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
         imageView.tintColor = .secondaryLabel
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -139,7 +140,7 @@ class ProfileTableViewHeader: UIView {
         configureStackButton()
     }
     private func configureStackButton() {
-        for (i, button) in sectionStack.arrangedSubviews.enumerated(){
+        for (i, button) in sectionStack.arrangedSubviews.enumerated() {
             guard let button = button as? UIButton else { return }
             if i == selectedTab {
                 button.tintColor = .label
@@ -164,11 +165,14 @@ class ProfileTableViewHeader: UIView {
             selectedTab = 0
         }
     }
+    // swiftlint: disable all
     private func configureConstraints() {
         for i in 0..<tabs.count {
-            let leadingAnchor = indicator.leadingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].leadingAnchor)
+            let leadingAnchor = indicator.leadingAnchor.constraint(
+                equalTo: sectionStack.arrangedSubviews[i].leadingAnchor)
             leadingAnchors.append(leadingAnchor)
-            let trailingAnchor = indicator.trailingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
+            let trailingAnchor = indicator.trailingAnchor.constraint(
+                equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
             trailingAnchors.append(trailingAnchor)
         }
         
@@ -181,14 +185,17 @@ class ProfileTableViewHeader: UIView {
         
         let profileAvatarImageViewConstraints = [
             profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            profileAvatarImageView.centerYAnchor.constraint(equalTo: profileHeaderImageView.bottomAnchor, constant: 10),
+            profileAvatarImageView.centerYAnchor.constraint(equalTo: profileHeaderImageView.bottomAnchor, 
+                                                            constant: 10),
             profileAvatarImageView.widthAnchor.constraint(equalToConstant: 80),
             profileAvatarImageView.heightAnchor.constraint(equalToConstant: 80)
         ]
         
         let displayNameLabelConstraints = [
-            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor, constant: 20),
-            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, constant: 20)
+            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor, 
+                                                      constant: 20),
+            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, 
+                                                  constant: 20)
         ]
         
         let usernameLabelConstraints = [
@@ -238,9 +245,9 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(indicatorConstraints)
     }
     
+    // swiftlint: enable all
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-    
 }
