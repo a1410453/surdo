@@ -54,7 +54,6 @@ class TweetTableViewCell: UITableViewCell {
     private let tweetTextContentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
 

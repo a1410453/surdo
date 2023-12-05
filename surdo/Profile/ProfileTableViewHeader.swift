@@ -41,7 +41,6 @@ class ProfileTableViewHeader: UIView {
         return view
     }()
     
-    
     private var selectedTab: Int = 0 {
         didSet{
             for i in 0..<tabs.count{
@@ -74,7 +73,6 @@ class ProfileTableViewHeader: UIView {
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.alignment = .center
-        
         return stackView
     }()
     
@@ -82,6 +80,7 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
+        label.text = "05.12.2023"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
         
@@ -101,6 +100,7 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 3
         label.textColor = .label
+        label.text = "I am learning sign language, open to new conversations"
         return label
     }()
     
@@ -109,6 +109,7 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
+        label.text = "rickby999"
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
         
@@ -120,8 +121,8 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .label
+        label.text = "Rustem Orazbayev"
         return label
-        
     }()
     
     var profileAvatarImageView: UIImageView = {
@@ -131,13 +132,14 @@ class ProfileTableViewHeader: UIView {
         imageView.layer.cornerRadius = 40
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "gesture")
         return imageView
     }()
     
     private let profileHeaderImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "naruto")
+        imageView.image = UIImage(named: "gesture")
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -145,7 +147,6 @@ class ProfileTableViewHeader: UIView {
     
     
     override init(frame: CGRect){
-        
         super.init(frame: frame)
         addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
@@ -169,10 +170,7 @@ class ProfileTableViewHeader: UIView {
             } else {
                 button.tintColor = .secondaryLabel
             }
-            
             button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
-            
-            
         }
     }
     
@@ -201,7 +199,6 @@ class ProfileTableViewHeader: UIView {
             trailingAnchors.append(trailingAnchor)
         }
         
-        
         let profileHeaderImageViewConstraints = [
             profileHeaderImageView.topAnchor.constraint(equalTo: topAnchor),
             profileHeaderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -219,20 +216,17 @@ class ProfileTableViewHeader: UIView {
         let displayNameLabelConstraints = [
             displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor, constant: 20),
             displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, constant: 20)
-        
         ]
         
         let usernameLabelConstraints = [
             usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5)
-        
         ]
         
         let userBioLabelConstraints = [
             userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             userBioLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
-        
         ]
         
         let joinDateImageViewConstraints = [
@@ -242,10 +236,8 @@ class ProfileTableViewHeader: UIView {
         ]
         
         let joinDateLabelConstraints = [
-            
             joinDateLabel.leadingAnchor.constraint(equalTo: joinDateImageView.trailingAnchor, constant: 2),
             joinDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
-        
         ]
         
         let sectionStackConstraints = [
