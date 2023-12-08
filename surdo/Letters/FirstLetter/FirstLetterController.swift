@@ -100,6 +100,7 @@ class FirstLetterController: UIViewController {
     // MARK: Action
     @objc func tappedNextButton() {
         self.tabBarController?.tabBar.isHidden = false
-        navigationController?.popViewController(animated: true)
+        let viewController = QuizViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

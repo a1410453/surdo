@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
     private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0, 
                                                                        y: 0,
                                                                        width: profileTableView.frame.width,
-                                                                       height: 380))
+                                                                       height: 415))
     
     private let profileTableView: UITableView = {
         let tableView = UITableView()
@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = AppColor.beige.uiColor
         navigationItem.title = "Profile"
         view.addSubview(profileTableView)
         view.addSubview(statusBar)
@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,6 +114,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
                 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
