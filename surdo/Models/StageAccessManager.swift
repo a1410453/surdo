@@ -12,6 +12,10 @@ class LevelAccessManager {
     private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
         levelAccessArray[0] = true
+        levelAccessArray[1] = true
+        levelAccessArray[2] = true
+        levelAccessArray[3] = true
+        levelAccessArray[4] = true
     }
     
     func checkLevelAccess(level: Int) -> Bool {

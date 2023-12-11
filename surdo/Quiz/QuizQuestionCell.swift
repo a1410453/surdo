@@ -31,7 +31,7 @@ final class QuizQuestionCell: UICollectionViewCell {
     
     private func configureConstraints() {
         signImage.snp.makeConstraints { make in
-            make.top.leading.equalTo(contentView).offset(5)
+            make.top.leading.equalTo(contentView).offset(13)
             make.size.equalTo(180)
         }
     }
@@ -47,4 +47,5 @@ final class QuizQuestionCell: UICollectionViewCell {
     func didPressedWrongAnswer() {
         signImage.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
     }
+    
 }

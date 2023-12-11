@@ -10,7 +10,23 @@ import SnapKit
 
 final class QuizViewController: UIViewController {
     
-    // MARK: - Outlets
+    // MARK: - UI
+    private lazy var questionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.red.uiColor
+        label.text = "Сұрақ:"
+        label.font = AppFont.bold.s24()
+       
+        return label
+    }()
+    
+    private lazy var questionIndicatorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.red.uiColor
+        label.text = "1/5"
+        label.font = AppFont.bold.s24()
+        return label
+    }()
     
     private lazy var collectionView: UICollectionView = {
         let flowLayout: UICollectionViewFlowLayout = {
@@ -29,25 +45,65 @@ final class QuizViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(AppImage.next.systemImage, for: .normal)
+        button.tintColor = AppColor.red.uiColor
+        button.imageView?.layer.masksToBounds = false
+        button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
-        setupHierarchy()
+        setupViews()
         setupLayout()
     }
     
     // MARK: - Setup
     
-    private func setupHierarchy() {
+    private func setupViews() {
+        view.addSubview(questionLabel)
+        view.addSubview(questionIndicatorLabel)
         view.addSubview(collectionView)
+        view.addSubview(nextButton)
+        nextButton.isHidden = true
+        nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupLayout() {
-        collectionView.snp.makeConstraints { make in
-            make.left.top.right.bottom.equalTo(view)
+        questionLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(100)
+            make.leading.equalToSuperview().offset(40)
         }
+        
+        questionIndicatorLabel.snp.makeConstraints { make in
+            make.top.equalTo(questionLabel)
+            make.trailing.equalToSuperview().offset(-40)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(questionLabel).offset(50)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-300)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+        }
+        
+    }
+    
+    // MARK: Action
+    @objc func tappedNextButton() {
+        
     }
 }
 
@@ -63,7 +119,7 @@ extension QuizViewController: UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, 
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuizQuestionCell.identifier,
-                                                            for: indexPath)
+                                                      for: indexPath)
         return cell
     }
     
@@ -84,6 +140,7 @@ extension QuizViewController: UICollectionViewDataSource,
         }
         if indexPath.item == 1 {
             cell.didPressedRightAnswer()
+            nextButton.isHidden = false
         } else {
             cell.didPressedWrongAnswer()
         }

@@ -157,7 +157,6 @@
 			children = (
 				5443A95C2AF50FA900176F6C /* StagesViewCell.swift */,
 				5443A95F2AF50FFA00176F6C /* StagesViewController.swift */,
-				549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */,
 				544D46312B0221DC00EB49E0 /* StagesHeaderSectionView.swift */,
 			);
 			path = Stages;
@@ -179,6 +178,7 @@
 		544D464F2B05277800EB49E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */,
 				544D46502B05278600EB49E0 /* SurdoUser.swift */,
 			);
 			path = Models;
