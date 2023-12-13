@@ -83,7 +83,7 @@ class StagesViewController: UIViewController,
         }
         cell.configureButton(with: letterQueue)
         cell.onStageButtonTap = { [weak self] in
-            let viewController = FirstLetterController()
+            let viewController = LetterController()
             self?.navigationController?.pushViewController(viewController, animated: false)
         }
         return cell

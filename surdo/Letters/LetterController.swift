@@ -1,13 +1,15 @@
 //
-//  FirstLetterController.swift
+//  LetterController.swift
 //  surdo
 //
 //  Created by Rustem Orazbayev on 11/9/23.
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class FirstLetterController: UIViewController {
+class LetterController: UIViewController {
     
     // MARK: UI components
     private lazy var gestureView: UIImageView = {
@@ -47,6 +49,12 @@ class FirstLetterController: UIViewController {
         return button
     }()
     
+// swiftlint: disable all
+    
+    let player = AVPlayer(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/alphabet_videos%2FA.mp4?alt=media&token=1a4737d2-9388-406b-bc33-7adb0d5941f0")!)
+    
+    var counterOfRepetitions = 0
+   
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,7 +65,17 @@ class FirstLetterController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds.offsetBy(dx: 0, dy: 20)
+        self.view.layer.addSublayer(playerLayer)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: player.currentItem)
+        player.play()
+        
     }
+// swiftlint: enable all
     
     private func setupViews() {
         view.backgroundColor = .clear
@@ -65,6 +83,7 @@ class FirstLetterController: UIViewController {
         view.addSubview(levelLabel)
         view.addSubview(levelDescription)
         view.addSubview(nextButton)
+        nextButton.isHidden = true
     }
 
     private func setupConstraints() {
@@ -103,4 +122,17 @@ class FirstLetterController: UIViewController {
         let viewController = QuizViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    @objc func playerDidFinishPlaying(_ notification: Notification) {
+        if counterOfRepetitions < 3 {
+            player.seek(to: CMTime.zero)
+            player.play()
+            counterOfRepetitions += 1
+        } else {
+            counterOfRepetitions = 0
+            player.pause()
+            nextButton.isHidden = false
+        }
+    }
+    
 }

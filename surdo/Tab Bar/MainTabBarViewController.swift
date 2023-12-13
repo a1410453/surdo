@@ -26,7 +26,7 @@ final class MainTabBarViewController: UITabBarController {
         tabBar.backgroundColor = AppColor.tabbar.uiColor
         view.backgroundColor = AppColor.tabbar.uiColor
         let main = UINavigationController(rootViewController: StagesViewController())
-        let translator = UINavigationController(rootViewController: FirstLetterController())
+        let translator = UINavigationController(rootViewController: LetterController())
         let profile = UINavigationController(rootViewController: ProfileViewController())
         main.tabBarItem = tabItem(for: .main)
         translator.tabBarItem = tabItem(for: .translator)
