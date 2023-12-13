@@ -23,20 +23,7 @@ final class LetterController: UIViewController {
         let label = UILabel()
         label.text = "A"
         label.textColor = AppColor.red.uiColor
-        label.font = AppFont.bold.s36()
-        return label
-    }()
-    
-    private lazy var levelDescription: UILabel = {
-        let label = UILabel()
-        label.text = """
-        Бұл А әрпі.
-        Қолды жұдырыққа қысыңыз және көрсетіңіз\n\n\n Это буква А. \nЗажмите руку в кулак и покажите
-        """
-        label.textColor = AppColor.red.uiColor
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = AppFont.semibold.s16()
+        label.font = AppFont.bold.s37()
         return label
     }()
     
@@ -49,8 +36,11 @@ final class LetterController: UIViewController {
         return button
     }()
     
+    private let containerView = UIView()
+    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: "A"))
+    private var playerLayer: AVPlayerLayer!
+    
 // swiftlint: disable all
-    let player = AVPlayer(url: AppConstants.makeURL(middlePart: "1"))
     
     var counterOfRepetitions = 0
    
@@ -64,54 +54,49 @@ final class LetterController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.view.bounds.offsetBy(dx: 0, dy: 20)
-        self.view.layer.addSublayer(playerLayer)
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)),
-                                               name: .AVPlayerItemDidPlayToEndTime,
-                                               object: player.currentItem)
-        player.play()
+        setupVideo()
         
     }
 // swiftlint: enable all
     
     private func setupViews() {
         view.backgroundColor = .clear
-        view.addSubview(gestureView)
         view.addSubview(levelLabel)
-        view.addSubview(levelDescription)
         view.addSubview(nextButton)
+        view.addSubview(containerView)
         nextButton.isHidden = true
     }
 
     private func setupConstraints() {
-        gestureView.snp.makeConstraints { make in
-            make.top.equalTo(100)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(200)
-            make.height.equalTo(200)
-        }
-        
         levelLabel.snp.makeConstraints { make in
-            make.top.equalTo(gestureView.snp.bottom).offset(20)
+            make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
-        
-        levelDescription.snp.makeConstraints { make in
-            make.top.equalTo(levelLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+
+        containerView.snp.makeConstraints { make in
+            make.top.equalTo(levelLabel.snp.bottom).offset(-250)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(400)
         }
         
         nextButton.snp.makeConstraints { make in
-            make.top.equalTo(levelDescription.snp.bottom).offset(150)
+            make.top.equalTo(containerView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(100)
         }
-        
-        nextButton.imageView?.snp.makeConstraints { make in
-            make.size.equalTo(80)
-        }
+    }
+    
+    private func setupVideo() {
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspect
+        playerLayer.frame = self.view.bounds.insetBy(dx: 20, dy: 0)
+        containerView.layer.addSublayer(playerLayer)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: player.currentItem)
+        player.play()
     }
     
     // MARK: Action
@@ -122,7 +107,7 @@ final class LetterController: UIViewController {
     }
     
     @objc func playerDidFinishPlaying(_ notification: Notification) {
-        if counterOfRepetitions < 3 {
+        if counterOfRepetitions < 2 {
             player.seek(to: CMTime.zero)
             player.play()
             counterOfRepetitions += 1

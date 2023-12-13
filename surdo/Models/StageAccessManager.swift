@@ -8,6 +8,7 @@ import Foundation
 
 final class LevelAccessManager {
     static let shared = LevelAccessManager()
+    private let alphabet = "AӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ"
     
     private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
