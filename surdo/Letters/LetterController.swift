@@ -9,7 +9,7 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class LetterController: UIViewController {
+final class LetterController: UIViewController {
     
     // MARK: UI components
     private lazy var gestureView: UIImageView = {
@@ -50,8 +50,7 @@ class LetterController: UIViewController {
     }()
     
 // swiftlint: disable all
-    
-    let player = AVPlayer(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/alphabet_videos%2FA.mp4?alt=media&token=1a4737d2-9388-406b-bc33-7adb0d5941f0")!)
+    let player = AVPlayer(url: AppConstants.makeURL(middlePart: "1"))
     
     var counterOfRepetitions = 0
    
@@ -65,7 +64,6 @@ class LetterController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
-        
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.view.bounds.offsetBy(dx: 0, dy: 20)
         self.view.layer.addSublayer(playerLayer)

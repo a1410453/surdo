@@ -6,16 +6,12 @@
 //
 import Foundation
 
-class LevelAccessManager {
+final class LevelAccessManager {
     static let shared = LevelAccessManager()
     
     private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
         levelAccessArray[0] = true
-        levelAccessArray[1] = true
-        levelAccessArray[2] = true
-        levelAccessArray[3] = true
-        levelAccessArray[4] = true
     }
     
     func checkLevelAccess(level: Int) -> Bool {
@@ -25,10 +21,10 @@ class LevelAccessManager {
         return levelAccessArray[level]
     }
     
-    func setLevelAccess(level: Int, hasAccess: Bool) {
+    func unlockLevelAccess(level: Int) {
         guard level >= 0 && level <= levelAccessArray.count else {
             return
         }
-        levelAccessArray[level] = hasAccess
+        levelAccessArray[level] = true
     }
 }
