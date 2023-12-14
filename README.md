@@ -1,1 +1,1 @@
-#Application to learn Kazakh Sign Language
+## Application to learn Kazakh Sign Language
