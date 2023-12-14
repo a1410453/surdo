@@ -32,6 +32,11 @@
 		544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D46572B05288F00EB49E0 /* StorageManager.swift */; };
 		544D465B2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */; };
 		544D465D2B06707E00EB49E0 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */; };
+		546199C12B2B413200560D28 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C02B2B413200560D28 /* OnboardingViewController.swift */; };
+		546199C32B2B424500560D28 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C22B2B424500560D28 /* RegisterViewController.swift */; };
+		546199C62B2B42A000560D28 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */; };
+		546199C82B2B42FA00560D28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C72B2B42FA00560D28 /* LoginViewController.swift */; };
+		546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C92B2B455400560D28 /* HomeViewViewModel.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
 		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
 		549BC47B2AFD2AF70058FA68 /* LetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* LetterController.swift */; };
@@ -72,6 +77,11 @@
 		544D46572B05288F00EB49E0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormVieViewModel.swift; sourceTree = "<group>"; };
 		544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
+		546199C02B2B413200560D28 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		546199C22B2B424500560D28 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
+		546199C72B2B42FA00560D28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		546199C92B2B455400560D28 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
 		549BC47A2AFD2AF70058FA68 /* LetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterController.swift; sourceTree = "<group>"; };
 		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -141,6 +151,8 @@
 		5443A9472AF50ED900176F6C /* surdo */ = {
 			isa = PBXGroup;
 			children = (
+				546199C42B2B428700560D28 /* ViewModel */,
+				546199BF2B2B40ED00560D28 /* Onboarding */,
 				541D31302B21C702009D7E85 /* Quiz */,
 				544D46592B066C0E00EB49E0 /* Profile */,
 				544D464F2B05277800EB49E0 /* Models */,
@@ -207,6 +219,25 @@
 				54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		546199BF2B2B40ED00560D28 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				546199C02B2B413200560D28 /* OnboardingViewController.swift */,
+				546199C22B2B424500560D28 /* RegisterViewController.swift */,
+				546199C72B2B42FA00560D28 /* LoginViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		546199C42B2B428700560D28 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */,
+				546199C92B2B455400560D28 /* HomeViewViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		549BC4782AFD2AD20058FA68 /* Letters */ = {
@@ -365,21 +396,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546199C32B2B424500560D28 /* RegisterViewController.swift in Sources */,
 				549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */,
 				54C7A8E72B1F576F00B925A9 /* ProfileTableViewHeader.swift in Sources */,
 				541D31342B21C9CD009D7E85 /* QuizQuestionCell.swift in Sources */,
 				549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */,
+				546199C82B2B42FA00560D28 /* LoginViewController.swift in Sources */,
 				544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */,
 				549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */,
 				544D46562B05288300EB49E0 /* DatabaseManager.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
+				546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */,
 				549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */,
 				54C7A8E92B1F59EE00B925A9 /* TweetTableViewCell.swift in Sources */,
 				549BC47B2AFD2AF70058FA68 /* LetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				544D46512B05278600EB49E0 /* SurdoUser.swift in Sources */,
+				546199C12B2B413200560D28 /* OnboardingViewController.swift in Sources */,
 				544D46542B05287000EB49E0 /* AuthManager.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,
+				546199C62B2B42A000560D28 /* AuthenticationViewViewModel.swift in Sources */,
 				549BC4822AFD32600058FA68 /* AppFont.swift in Sources */,
 				544D465B2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift in Sources */,
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,

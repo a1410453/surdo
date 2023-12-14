@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Combine
 
 class StagesViewController: UIViewController, 
                                 UICollectionViewDataSource,
                                 UICollectionViewDelegate,
                                 UICollectionViewDelegateFlowLayout {
     
+    private var viewModel = HomeViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    // MARK: UI
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -31,6 +37,15 @@ class StagesViewController: UIViewController,
         return collectionView
     }()
     
+    // MARK: lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        handleAuthentication()
+        viewModel.retrieveUser()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
@@ -39,6 +54,31 @@ class StagesViewController: UIViewController,
         setupViews()
         setupConstraints()
     }
+    
+    private func handleAuthentication() {
+        if Auth.auth().currentUser == nil {
+            let vc = UINavigationController(rootViewController: OnboardingViewController())
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+        }
+    }
+    
+    // MARK: Constraints
+    private func setupViews() {
+        view.addSubview(collectionView)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func setupConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-10)
+        }
+    }
+    
+    // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
@@ -54,8 +94,7 @@ class StagesViewController: UIViewController,
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier:
                                                                                 "StagesHeaderSectionView",
-                                                                             for:
-                                                                                indexPath) 
+                                                                             for: indexPath)
                     as? StagesHeaderSectionView else {
                 print("Unable to cast the dequeued view to StagesHeaderSectionView")
                 return UICollectionReusableView()
@@ -88,19 +127,5 @@ class StagesViewController: UIViewController,
         }
         return cell
         
-    }
-    
-    private func setupViews() {
-        view.addSubview(collectionView)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    private func setupConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
-            make.bottom.equalToSuperview().offset(-10)
-        }
     }
 }
