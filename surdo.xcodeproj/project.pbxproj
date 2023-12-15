@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540C7EDF2B2CC606009A1DB5 /* ProfileDataFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540C7EDE2B2CC606009A1DB5 /* ProfileDataFormViewController.swift */; };
 		541D31322B21C71C009D7E85 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541D31312B21C71C009D7E85 /* QuizViewController.swift */; };
 		541D31342B21C9CD009D7E85 /* QuizQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541D31332B21C9CD009D7E85 /* QuizQuestionCell.swift */; };
 		5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443A9482AF50ED900176F6C /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540C7EDE2B2CC606009A1DB5 /* ProfileDataFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewController.swift; sourceTree = "<group>"; };
 		541D31312B21C71C009D7E85 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		541D31332B21C9CD009D7E85 /* QuizQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionCell.swift; sourceTree = "<group>"; };
 		5443A9452AF50ED900176F6C /* surdo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surdo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,11 +214,10 @@
 		544D46592B066C0E00EB49E0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */,
-				544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */,
 				54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */,
 				54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */,
 				54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */,
+				540C7EDE2B2CC606009A1DB5 /* ProfileDataFormViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -235,7 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */,
+				544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */,
 				546199C92B2B455400560D28 /* HomeViewViewModel.swift */,
+				544D465A2B066C3100EB49E0 /* ProfileDataFormVieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				549BC47B2AFD2AF70058FA68 /* LetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				544D46512B05278600EB49E0 /* SurdoUser.swift in Sources */,
+				540C7EDF2B2CC606009A1DB5 /* ProfileDataFormViewController.swift in Sources */,
 				546199C12B2B413200560D28 /* OnboardingViewController.swift in Sources */,
 				544D46542B05287000EB49E0 /* AuthManager.swift in Sources */,
 				5443A95D2AF50FA900176F6C /* StagesViewCell.swift in Sources */,

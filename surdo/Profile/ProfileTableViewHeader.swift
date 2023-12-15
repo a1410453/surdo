@@ -146,19 +146,19 @@ class ProfileTableViewHeader: UIView {
         return imageView
     }()
     
-    private let profileHeaderImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "gesture")
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
+//    private let profileHeaderImageView: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.contentMode = .scaleAspectFill
+//        imageView.image = AppImage.next.systemImage
+//        imageView.clipsToBounds = true
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
+//
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = AppColor.beige.uiColor
-        addSubview(profileHeaderImageView)
+        // addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
         addSubview(usernameLabel)
@@ -208,18 +208,17 @@ class ProfileTableViewHeader: UIView {
                 equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
             trailingAnchors.append(trailingAnchor)
         }
-        
-        let profileHeaderImageViewConstraints = [
-            profileHeaderImageView.topAnchor.constraint(equalTo: topAnchor),
-            profileHeaderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            profileHeaderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            profileHeaderImageView.heightAnchor.constraint(equalToConstant: 150)
-        ]
-        
+//        
+//        let profileHeaderImageViewConstraints = [
+//            profileHeaderImageView.topAnchor.constraint(equalTo: topAnchor),
+//            profileHeaderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            profileHeaderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            profileHeaderImageView.heightAnchor.constraint(equalToConstant: 150)
+//        ]
+//        
         let profileAvatarImageViewConstraints = [
             profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            profileAvatarImageView.centerYAnchor.constraint(equalTo: profileHeaderImageView.bottomAnchor, 
-                                                            constant: 10),
+            profileAvatarImageView.centerYAnchor.constraint(equalTo: topAnchor, constant: 10),
             profileAvatarImageView.widthAnchor.constraint(equalToConstant: 80),
             profileAvatarImageView.heightAnchor.constraint(equalToConstant: 80)
         ]
@@ -259,8 +258,10 @@ class ProfileTableViewHeader: UIView {
         ]
         
         let followersTextLabelConstraints = [
-            followersTextLabel.leadingAnchor.constraint(equalTo: followersCountLabel.trailingAnchor, constant: 2),
-            followersTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
+            followersTextLabel.leadingAnchor.constraint(equalTo: followersCountLabel.trailingAnchor, 
+                                                        constant: 2),
+            followersTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, 
+                                                    constant: 10)
         ]
         
         let sectionStackConstraints = [
@@ -276,8 +277,8 @@ class ProfileTableViewHeader: UIView {
             indicator.topAnchor.constraint(equalTo: sectionStack.arrangedSubviews[0].bottomAnchor),
             indicator.heightAnchor.constraint(equalToConstant: 4)
         ]
-        
-        NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
+//        
+//        NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(usernameLabelConstraints)

@@ -37,4 +37,5 @@ enum AppImage: String, AppImageProtocol {
     case translatorTabSelected = "hand.raised.square.on.square.fill"
     case profileTabSelected = "person.crop.circle.fill"
     case next = "arrow.forward.circle.fill"
+    case signOut = "rectangle.portrait.and.arrow.right"
 }

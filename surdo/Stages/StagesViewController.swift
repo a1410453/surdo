@@ -37,8 +37,19 @@ class StagesViewController: UIViewController,
         return collectionView
     }()
     
-    // MARK: lifecycle
-    
+    private lazy var signOutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = AppColor.red.uiColor
+        button.tintColor = .white
+        button.setImage(AppImage.signOut.systemImage, for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 30
+        button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
@@ -55,6 +66,7 @@ class StagesViewController: UIViewController,
         setupConstraints()
     }
     
+    // MARK: Actions
     private func handleAuthentication() {
         if Auth.auth().currentUser == nil {
             let vc = UINavigationController(rootViewController: OnboardingViewController())
@@ -63,15 +75,43 @@ class StagesViewController: UIViewController,
         }
     }
     
+    private func completeUserOnboarding() {
+        let vc = UINavigationController(rootViewController: ProfileDataFormViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc private func didTapSignOut() {
+        try? Auth.auth().signOut()
+        handleAuthentication()
+    }
+    
+    func bindViews() {
+        viewModel.$user.sink { [weak self] user in
+            guard let user = user else { return }
+            if !user.isUserOnboarded {
+                self?.completeUserOnboarding()
+            }
+        }
+        .store(in: &subscriptions)
+    }
+    
     // MARK: Constraints
     private func setupViews() {
+        view.addSubview(signOutButton)
         view.addSubview(collectionView)
         navigationController?.isNavigationBarHidden = true
     }
     
     private func setupConstraints() {
+        signOutButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(100)
+            make.trailing.equalToSuperview().offset(-40)
+            make.size.equalTo(40)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalTo(signOutButton.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-10)

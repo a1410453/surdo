@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
-    private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0, 
+    private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0,
                                                                        y: 0,
                                                                        width: profileTableView.frame.width,
                                                                        height: 415))
@@ -56,17 +56,6 @@ class ProfileViewController: UIViewController {
         viewModel.retrieveUser()
     }
     
-/*
- var fullName: String = ""
- var username: String = ""
- var createdOn: Date = Date()
- var avatarPath: String = ""
- var isUserOnboarded: Bool = false
- var learningProgress: String = ""
- var achievements: String = ""
- var learningScore: String = ""
- var socialMedia: String = ""
- */
     private func bindViews() {
         viewModel.$user.sink { [weak self] user in
             guard let user = user else { return }
