@@ -63,6 +63,7 @@ class StagesViewController: UIViewController,
         collectionView.dataSource = self
         collectionView.delegate = self
         setupViews()
+        bindViews()
         setupConstraints()
     }
     
