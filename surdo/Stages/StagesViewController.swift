@@ -44,7 +44,7 @@ class StagesViewController: UIViewController,
         button.tintColor = .white
         button.setImage(AppImage.signOut.systemImage, for: .normal)
         button.clipsToBounds = true
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
         return button
     }()

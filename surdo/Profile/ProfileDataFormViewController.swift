@@ -239,7 +239,7 @@ class ProfileDataFormViewController: UIViewController {
 extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        scrollView.setContentOffset(CGPoint(x: 0, y: textView.frame.origin.y - 100),
+        scrollView.setContentOffset(CGPoint(x: 0, y: textView.frame.origin.y - 150),
                                     animated: true)
         if textView.textColor == .gray {
             textView.textColor = .label
@@ -262,7 +262,7 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: textField.frame.origin.y - 100), animated: true)
+        scrollView.setContentOffset(CGPoint(x: 0, y: textField.frame.origin.y - 200), animated: true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
