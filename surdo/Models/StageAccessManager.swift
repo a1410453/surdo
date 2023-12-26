@@ -9,7 +9,7 @@ import Foundation
 final class LevelAccessManager {
     static let shared = LevelAccessManager()
     private let alphabet = "AӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ"
-    
+    static var currentLevel: Int = 0
     private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
         levelAccessArray[0] = true
@@ -26,6 +26,7 @@ final class LevelAccessManager {
         guard level >= 0 && level <= levelAccessArray.count else {
             return
         }
+        LevelAccessManager.currentLevel = level
         levelAccessArray[level] = true
     }
 }

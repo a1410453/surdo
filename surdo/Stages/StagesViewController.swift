@@ -37,6 +37,12 @@ class StagesViewController: UIViewController,
         return collectionView
     }()
     
+    private lazy var completionProgressView: CompletionProgressView = {
+        let view = CompletionProgressView()
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
     private lazy var signOutButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,8 +69,39 @@ class StagesViewController: UIViewController,
         collectionView.dataSource = self
         collectionView.delegate = self
         setupViews()
-        bindViews()
         setupConstraints()
+        bindViews()
+        completionProgressView.changeProgress(by: LevelAccessManager.currentLevel)
+    }
+
+    // MARK: Constraints
+    private func setupViews() {
+        view.addSubview(signOutButton)
+        view.addSubview(completionProgressView)
+        view.addSubview(collectionView)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func setupConstraints() {
+        completionProgressView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(100)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalTo(signOutButton.snp.leading).offset(-20)
+            make.height.equalTo(40)
+        }
+        
+        signOutButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(100)
+            make.trailing.equalToSuperview().offset(-40)
+            make.size.equalTo(40)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(signOutButton.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-10)
+        }
     }
     
     // MARK: Actions
@@ -95,28 +132,6 @@ class StagesViewController: UIViewController,
             }
         }
         .store(in: &subscriptions)
-    }
-    
-    // MARK: Constraints
-    private func setupViews() {
-        view.addSubview(signOutButton)
-        view.addSubview(collectionView)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    private func setupConstraints() {
-        signOutButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(100)
-            make.trailing.equalToSuperview().offset(-40)
-            make.size.equalTo(40)
-        }
-        
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(signOutButton.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
-            make.bottom.equalToSuperview().offset(-10)
-        }
     }
     
     // MARK: Collection View
