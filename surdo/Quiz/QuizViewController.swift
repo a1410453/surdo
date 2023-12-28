@@ -47,15 +47,16 @@ final class QuizViewController: UIViewController {
     
     private lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(AppImage.next.systemImage, for: .normal)
-        button.tintColor = AppColor.red.uiColor
-        button.imageView?.layer.masksToBounds = false
-        button.imageView?.contentMode = .scaleAspectFit
+        button.backgroundColor = AppColor.red.uiColor
+        button.tintColor = AppColor.beige.uiColor
+        button.setTitle("Next", for: .normal)
+        button.titleLabel?.font = AppFont.medium.s24()
+        button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        button.layer.cornerRadius = 12
         return button
     }()
     
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
@@ -95,10 +96,9 @@ final class QuizViewController: UIViewController {
         nextButton.snp.makeConstraints { make in
             make.top.equalTo(collectionView.snp.bottom).offset(50)
             make.centerX.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(100)
+            make.width.equalTo(200)
+            make.height.equalTo(80)
         }
-        
     }
     
     // MARK: Action

@@ -29,10 +29,12 @@ final class LetterController: UIViewController {
     
     private lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(AppImage.next.systemImage, for: .normal)
-        button.tintColor = AppColor.red.uiColor
-        button.imageView?.layer.masksToBounds = true
+        button.backgroundColor = AppColor.red.uiColor
+        button.tintColor = AppColor.beige.uiColor
+        button.setTitle("Next", for: .normal)
+        button.titleLabel?.font = AppFont.medium.s24()
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        button.layer.cornerRadius = 12
         return button
     }()
     
@@ -81,10 +83,10 @@ final class LetterController: UIViewController {
         }
         
         nextButton.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.bottom).offset(20)
+            make.bottom.equalToSuperview().offset(-100)
             make.centerX.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(100)
+            make.width.equalTo(200)
+            make.height.equalTo(80)
         }
     }
     
@@ -107,7 +109,7 @@ final class LetterController: UIViewController {
     }
     
     @objc func playerDidFinishPlaying(_ notification: Notification) {
-        if counterOfRepetitions < 2 {
+        if counterOfRepetitions < 1 {
             player.seek(to: CMTime.zero)
             player.play()
             counterOfRepetitions += 1
