@@ -7,8 +7,12 @@
 
 import UIKit
 import SnapKit
+import PanModal
 
 final class QuizViewController: UIViewController {
+    // MARK: - Variables
+    private var currentQuestion: Int = 1
+    private var rightAnswer: Int = RandomNumberGenerator
     
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
@@ -23,7 +27,7 @@ final class QuizViewController: UIViewController {
     private lazy var questionIndicatorLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.red.uiColor
-        label.text = "1/5"
+        label.text = "\(currentQuestion)/5"
         label.font = AppFont.bold.s24()
         return label
     }()
@@ -103,7 +107,19 @@ final class QuizViewController: UIViewController {
     
     // MARK: Action
     @objc func tappedNextButton() {
-        
+        if currentQuestion < 5 {
+            currentQuestion += 1
+            
+            questionIndicatorLabel.text = "\(currentQuestion)/5"
+        } else {
+            let controller = FinishedViewController()
+            self.presentPanModal(controller)
+        }
+    }
+    
+    func refreshQuestions() {
+        cell
+        collectionView(<#T##collectionView: UICollectionView##UICollectionView#>, cellForItemAt: <#T##IndexPath#>)
     }
 }
 
@@ -118,8 +134,15 @@ extension QuizViewController: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, 
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuizQuestionCell.identifier,
-                                                      for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuizQuestionCell.identifier,
+                                                      for: indexPath) as? QuizQuestionCell else {
+        return UICollectionViewCell()
+    }
+        
+        
+        // swiftlint: disable all
+        cell.setImageForQuiz(with: AppImage.next.systemImage!)
+        // swiftlint: enable all
         return cell
     }
     

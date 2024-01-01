@@ -52,6 +52,8 @@
 		549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A72AFE830A0058FA68 /* TabItem.swift */; };
 		549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */; };
 		54B7ED3B2B29E9F20064D80C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7ED3A2B29E9F20064D80C /* AppConstants.swift */; };
+		54BE77A62B3D781300800D43 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 54BE77A52B3D781300800D43 /* PanModal */; };
+		54BE77A82B3D787D00800D43 /* FinishedQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */; };
 		54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */; };
 		54C7A8E32B1F568F00B925A9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 54C7A8E22B1F568F00B925A9 /* SDWebImage */; };
 		54C7A8E52B1F568F00B925A9 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54C7A8E42B1F568F00B925A9 /* SDWebImageMapKit */; };
@@ -98,6 +100,7 @@
 		549BC4A72AFE830A0058FA68 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		54B7ED3A2B29E9F20064D80C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedQuizController.swift; sourceTree = "<group>"; };
 		54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		54C7A8E82B1F59EE00B925A9 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			files = (
 				544D46422B04F0DD00EB49E0 /* FirebaseDatabaseSwift in Frameworks */,
 				549BC4752AFA96220058FA68 /* SnapKit in Frameworks */,
+				54BE77A62B3D781300800D43 /* PanModal in Frameworks */,
 				544D464C2B04F0DD00EB49E0 /* FirebaseStorageCombine-Community in Frameworks */,
 				544D464A2B04F0DD00EB49E0 /* FirebaseStorage in Frameworks */,
 				544D463E2B04F0DD00EB49E0 /* FirebaseAuthCombine-Community in Frameworks */,
@@ -132,6 +136,7 @@
 			children = (
 				541D31312B21C71C009D7E85 /* QuizViewController.swift */,
 				541D31332B21C9CD009D7E85 /* QuizQuestionCell.swift */,
+				54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				544D464B2B04F0DD00EB49E0 /* FirebaseStorageCombine-Community */,
 				54C7A8E22B1F568F00B925A9 /* SDWebImage */,
 				54C7A8E42B1F568F00B925A9 /* SDWebImageMapKit */,
+				54BE77A52B3D781300800D43 /* PanModal */,
 			);
 			productName = surdo;
 			productReference = 5443A9452AF50ED900176F6C /* surdo.app */;
@@ -349,6 +355,7 @@
 				549BC4732AFA96220058FA68 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				544D463A2B04F0DD00EB49E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				54BE77A42B3D781300800D43 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 5443A9462AF50ED900176F6C /* Products */;
 			projectDirPath = "";
@@ -412,6 +419,7 @@
 				544D46582B05288F00EB49E0 /* StorageManager.swift in Sources */,
 				549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */,
 				544D46562B05288300EB49E0 /* DatabaseManager.swift in Sources */,
+				54BE77A82B3D787D00800D43 /* FinishedQuizController.swift in Sources */,
 				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
 				546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */,
 				549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */,
@@ -667,6 +675,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		54BE77A42B3D781300800D43 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		54C7A8E12B1F568F00B925A9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -727,6 +743,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 549BC4732AFA96220058FA68 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		54BE77A52B3D781300800D43 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54BE77A42B3D781300800D43 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		54C7A8E22B1F568F00B925A9 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,7 +10,6 @@ import AVKit
 import AVFoundation
 
 final class LetterController: UIViewController {
-    
     // MARK: UI components
     private lazy var gestureView: UIImageView = {
         let iconView = UIImageView()
@@ -43,7 +42,6 @@ final class LetterController: UIViewController {
     private var playerLayer: AVPlayerLayer!
     
 // swiftlint: disable all
-    
     var counterOfRepetitions = 0
    
     // MARK: Lifecycle
@@ -66,7 +64,8 @@ final class LetterController: UIViewController {
         view.addSubview(levelLabel)
         view.addSubview(nextButton)
         view.addSubview(containerView)
-        nextButton.isHidden = true
+        // for testing purposes:
+        nextButton.isHidden = false
     }
 
     private func setupConstraints() {
