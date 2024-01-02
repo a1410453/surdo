@@ -8,11 +8,12 @@
 import UIKit
 import SnapKit
 import PanModal
+import SDWebImage
 
 final class QuizViewController: UIViewController {
     // MARK: - Variables
     private var currentQuestion: Int = 1
-    private var rightAnswer: Int = RandomNumberGenerator
+    private var rightAnswer: Int = Int.random(in: 0..<4)
     
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
@@ -66,6 +67,7 @@ final class QuizViewController: UIViewController {
         view.backgroundColor = AppColor.beige.uiColor
         setupViews()
         setupLayout()
+        print(rightAnswer)
     }
     
     // MARK: - Setup
@@ -118,8 +120,7 @@ final class QuizViewController: UIViewController {
     }
     
     func refreshQuestions() {
-        cell
-        collectionView(<#T##collectionView: UICollectionView##UICollectionView#>, cellForItemAt: <#T##IndexPath#>)
+        
     }
 }
 
@@ -138,10 +139,8 @@ extension QuizViewController: UICollectionViewDataSource,
                                                       for: indexPath) as? QuizQuestionCell else {
         return UICollectionViewCell()
     }
-        
-        
         // swiftlint: disable all
-        cell.setImageForQuiz(with: AppImage.next.systemImage!)
+        cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: "A"))
         // swiftlint: enable all
         return cell
     }

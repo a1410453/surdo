@@ -48,8 +48,8 @@ final class QuizQuestionCell: UICollectionViewCell {
         signImage.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
     }
     
-    func setImageForQuiz(with image: UIImage) {
-        signImage.image = image
+    func setImageForQuiz(url: URL) {
+        signImage.sd_setImage(with: url)
     }
     
 }
