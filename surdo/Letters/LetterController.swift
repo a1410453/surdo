@@ -38,7 +38,7 @@ final class LetterController: UIViewController {
     }()
     
     private let containerView = UIView()
-    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: "A"))
+    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: 1))
     private var playerLayer: AVPlayerLayer!
     
 // swiftlint: disable all

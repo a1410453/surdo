@@ -13,7 +13,7 @@ final class QuizQuestionCell: UICollectionViewCell {
     
     private lazy var signImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = AppImage.gesture.uiImage
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
@@ -46,6 +46,10 @@ final class QuizQuestionCell: UICollectionViewCell {
     
     func didPressedWrongAnswer() {
         signImage.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
+    }
+    
+    func didNotPressedAnswer() {
+        signImage.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0)
     }
     
     func setImageForQuiz(url: URL) {

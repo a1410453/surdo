@@ -14,7 +14,6 @@ final class QuizViewController: UIViewController {
     // MARK: - Variables
     private var currentQuestion: Int = 1
     private var rightAnswer: Int = Int.random(in: 0..<4)
-    
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
@@ -67,7 +66,6 @@ final class QuizViewController: UIViewController {
         view.backgroundColor = AppColor.beige.uiColor
         setupViews()
         setupLayout()
-        print(rightAnswer)
     }
     
     // MARK: - Setup
@@ -117,10 +115,14 @@ final class QuizViewController: UIViewController {
             let controller = FinishedViewController()
             self.presentPanModal(controller)
         }
+        
+        nextButton.isHidden = true
+        rightAnswer = Int.random(in: 0..<4)
+        refreshQuestions()
     }
     
     func refreshQuestions() {
-        
+        collectionView.reloadData()
     }
 }
 
@@ -139,9 +141,13 @@ extension QuizViewController: UICollectionViewDataSource,
                                                       for: indexPath) as? QuizQuestionCell else {
         return UICollectionViewCell()
     }
-        // swiftlint: disable all
-        cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: "A"))
-        // swiftlint: enable all
+        if indexPath.item == rightAnswer {
+            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: currentQuestion))
+        } else {
+            let falseAnswer: Int = Int.random(in: 1..<42)
+            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: falseAnswer))
+        }
+        cell.didNotPressedAnswer()
         return cell
     }
     
@@ -160,7 +166,7 @@ extension QuizViewController: UICollectionViewDataSource,
         guard let cell = collectionView.cellForItem(at: indexPath) as? QuizQuestionCell else {
             return
         }
-        if indexPath.item == 1 {
+        if indexPath.item == rightAnswer {
             cell.didPressedRightAnswer()
             nextButton.isHidden = false
         } else {
