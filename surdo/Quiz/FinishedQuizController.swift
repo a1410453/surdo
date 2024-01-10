@@ -14,7 +14,7 @@ final class FinishedViewController: UIViewController {
     // MARK: - UI
     private lazy var exclamationMarkImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = AppImage.gesture.uiImage
+        imageView.image = AppImage.achieviment.uiImage
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

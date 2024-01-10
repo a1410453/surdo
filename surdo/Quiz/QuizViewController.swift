@@ -13,6 +13,7 @@ import SDWebImage
 final class QuizViewController: UIViewController {
     // MARK: - Variables
     private var currentQuestion: Int = 1
+    private var currentLetter: Int = 1
     private var rightAnswer: Int = Int.random(in: 0..<4)
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
@@ -142,7 +143,7 @@ extension QuizViewController: UICollectionViewDataSource,
         return UICollectionViewCell()
     }
         if indexPath.item == rightAnswer {
-            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: currentQuestion))
+            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: currentLetter))
         } else {
             let falseAnswer: Int = Int.random(in: 1..<42)
             cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: falseAnswer))
