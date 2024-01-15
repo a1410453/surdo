@@ -31,8 +31,10 @@ final class QuizQuestionCell: UICollectionViewCell {
     
     private func configureConstraints() {
         signImage.snp.makeConstraints { make in
-            make.top.leading.equalTo(contentView).offset(13)
-            make.size.equalTo(180)
+            // make.top.leading.equalTo(contentView).offset(13)
+            // make.trailing.bottom.equalTo(contentView).offset(-13)
+            // make.size.equalTo(180)
+            make.size.equalToSuperview()
         }
     }
     

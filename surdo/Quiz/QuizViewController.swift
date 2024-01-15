@@ -15,6 +15,8 @@ final class QuizViewController: UIViewController {
     private var currentQuestion: Int = 1
     private var currentLetter: Int = 1
     private var rightAnswer: Int = Int.random(in: 0..<4)
+    private var falseAnswers = Set<Int>()
+    
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
@@ -65,6 +67,7 @@ final class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
+        falseAnswers = generateUniqueRandomNumbers()
         setupViews()
         setupLayout()
     }
@@ -110,20 +113,30 @@ final class QuizViewController: UIViewController {
     @objc func tappedNextButton() {
         if currentQuestion < 5 {
             currentQuestion += 1
-            
             questionIndicatorLabel.text = "\(currentQuestion)/5"
+            nextButton.isHidden = true
+            rightAnswer = Int.random(in: 0..<4)
+            falseAnswers = generateUniqueRandomNumbers()
+            refreshQuestions()
         } else {
             let controller = FinishedViewController()
             self.presentPanModal(controller)
         }
-        
-        nextButton.isHidden = true
-        rightAnswer = Int.random(in: 0..<4)
-        refreshQuestions()
     }
     
     func refreshQuestions() {
         collectionView.reloadData()
+    }
+    
+    func generateUniqueRandomNumbers() -> Set<Int> {
+        var uniqueNumbers = Set<Int>()
+        uniqueNumbers.insert(currentLetter)
+        while uniqueNumbers.count < 4 {
+            let randomNumber = Int.random(in: 0...42)
+            uniqueNumbers.insert(randomNumber)
+        }
+        uniqueNumbers.remove(currentLetter)
+        return uniqueNumbers
     }
 }
 
@@ -145,7 +158,7 @@ extension QuizViewController: UICollectionViewDataSource,
         if indexPath.item == rightAnswer {
             cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: currentLetter))
         } else {
-            let falseAnswer: Int = Int.random(in: 1..<42)
+            let falseAnswer = falseAnswers.removeFirst()
             cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: falseAnswer))
         }
         cell.didNotPressedAnswer()

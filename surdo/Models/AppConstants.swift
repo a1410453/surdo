@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 // swiftlint: disable all
 struct AppConstants {
     // MARK: Video
@@ -23,7 +24,6 @@ struct AppConstants {
     
     static func makePictureURL(middlePart: Int) -> URL {
         let urlString = "\(basePictureURL)\(middlePart)\(tokenPictureURL)"
-        print(urlString)
         return URL(string: urlString)!
     }
 }

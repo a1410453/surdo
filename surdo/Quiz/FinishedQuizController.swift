@@ -101,7 +101,7 @@ final class FinishedViewController: UIViewController {
 
     // MARK: - Actions
     @objc private func didPressedConfirmButton() {
-        
+        print("finished")
     }
 }
 
