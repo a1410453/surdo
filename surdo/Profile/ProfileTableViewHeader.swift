@@ -10,7 +10,6 @@ import UIKit
 class ProfileTableViewHeader: UIView {
     private enum SectionTabs: String {
         case tweets = "Achivements"
-        case tweetsAndReplies = "*****"
         case media = "Statistics"
         case likes = "Social Media"
         
@@ -18,12 +17,10 @@ class ProfileTableViewHeader: UIView {
             switch self {
             case .tweets:
                 return 0
-            case .tweetsAndReplies:
-                return 1
             case .media:
-                return 2
+                return 1
             case .likes:
-                return 3
+                return 2
             }
         }
 
@@ -53,7 +50,7 @@ class ProfileTableViewHeader: UIView {
             }
         }
     }
-    private var tabs: [UIButton] = [ "Achievements", "***", "Statistics", "Social Media" ]
+    private var tabs: [UIButton] = [ "Achievements", "Statistics", "Social Media" ]
         .map { buttonTitle in
             let button = UIButton(type: .system)
             button.setTitle(buttonTitle, for: .normal)
@@ -145,20 +142,10 @@ class ProfileTableViewHeader: UIView {
         imageView.image = UIImage(named: "gesture")
         return imageView
     }()
-    
-//    private let profileHeaderImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.image = AppImage.next.systemImage
-//        imageView.clipsToBounds = true
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-//
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = AppColor.beige.uiColor
-        // addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
         addSubview(usernameLabel)
@@ -172,6 +159,7 @@ class ProfileTableViewHeader: UIView {
         configureConstraints()
         configureStackButton()
     }
+    
     private func configureStackButton() {
         for (i, button) in sectionStack.arrangedSubviews.enumerated() {
             guard let button = button as? UIButton else { return }
@@ -183,17 +171,16 @@ class ProfileTableViewHeader: UIView {
             button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
         }
     }
+    
     @objc private func didTapTab(_ sender: UIButton) {
         guard let label = sender.titleLabel?.text else { return }
         switch label {
         case SectionTabs.tweets.rawValue:
             selectedTab = 0
-        case SectionTabs.tweetsAndReplies.rawValue:
-            selectedTab = 1
         case SectionTabs.media.rawValue:
-            selectedTab = 2
+            selectedTab = 1
         case SectionTabs.likes.rawValue:
-            selectedTab = 3
+            selectedTab = 2
         default:
             selectedTab = 0
         }
@@ -208,17 +195,10 @@ class ProfileTableViewHeader: UIView {
                 equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
             trailingAnchors.append(trailingAnchor)
         }
-//        
-//        let profileHeaderImageViewConstraints = [
-//            profileHeaderImageView.topAnchor.constraint(equalTo: topAnchor),
-//            profileHeaderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            profileHeaderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            profileHeaderImageView.heightAnchor.constraint(equalToConstant: 150)
-//        ]
-//        
+
         let profileAvatarImageViewConstraints = [
             profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            profileAvatarImageView.centerYAnchor.constraint(equalTo: topAnchor, constant: 10),
+            profileAvatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             profileAvatarImageView.widthAnchor.constraint(equalToConstant: 80),
             profileAvatarImageView.heightAnchor.constraint(equalToConstant: 80)
         ]

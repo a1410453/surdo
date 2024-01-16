@@ -74,7 +74,7 @@ class ProfileViewController: UIViewController {
     private func configureConstraints() {
         let profileTableViewConstraints = [
             profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            profileTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             profileTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             profileTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ]
