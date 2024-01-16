@@ -102,11 +102,11 @@ final class FinishedViewController: UIViewController {
     // MARK: - Actions
     @objc private func didPressedConfirmButton() {
         print("finished")
+        print(CurrentScore.learningScore)
     }
 }
 
 // MARK: - Pan Presentation
-
 extension FinishedViewController: PanModalPresentable {
 
     var panScrollable: UIScrollView? {
