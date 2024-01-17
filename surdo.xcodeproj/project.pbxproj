@@ -167,7 +167,7 @@
 				541D31302B21C702009D7E85 /* Quiz */,
 				544D46592B066C0E00EB49E0 /* Profile */,
 				544D464F2B05277800EB49E0 /* Models */,
-				544D46522B05285500EB49E0 /* Networking */,
+				544D46522B05285500EB49E0 /* Managers */,
 				544D46372B04EF7100EB49E0 /* App Resources */,
 				549BC4A42AFE829F0058FA68 /* Tab Bar */,
 				549BC4782AFD2AD20058FA68 /* Letters */,
@@ -212,14 +212,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		544D46522B05285500EB49E0 /* Networking */ = {
+		544D46522B05285500EB49E0 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				544D46532B05287000EB49E0 /* AuthManager.swift */,
 				544D46552B05288300EB49E0 /* DatabaseManager.swift */,
 				544D46572B05288F00EB49E0 /* StorageManager.swift */,
 			);
-			path = Networking;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		544D46592B066C0E00EB49E0 /* Profile */ = {

@@ -8,10 +8,17 @@
 import UIKit
 import SnapKit
 import PanModal
+import Combine
+import FirebaseAuth
+import FirebaseStorage
 
 final class FinishedViewController: UIViewController {
     
     var onDismiss: (() -> Void)?
+    
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    @Published var error: String = ""
     
     // MARK: - UI
     private lazy var exclamationMarkImageView: UIImageView = {
@@ -20,7 +27,7 @@ final class FinishedViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     private lazy var sureCancelOrderLabel: UILabel = {
         let label = UILabel()
         label.text = "Вы прошли этот урок"
@@ -30,7 +37,7 @@ final class FinishedViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
+    
     private lazy var blockInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "Поздравляю вы можете перейти к следующему уровню. Продолжайте в том же духе!"
@@ -40,7 +47,7 @@ final class FinishedViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
+    
     private lazy var confirmButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16
@@ -51,28 +58,28 @@ final class FinishedViewController: UIViewController {
         button.addTarget(self, action: #selector(didPressedConfirmButton), for: .touchUpInside)
         return button
     }()
-
+    
     // MARK: - LifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         unlockNextLevel()
         setupViews()
         setupConstraints()
     }
-
+    
     // MARK: - Setup Views
     private func setupViews() {
         view.backgroundColor = AppColor.tabbar.uiColor
-
-        [exclamationMarkImageView, 
+        
+        [exclamationMarkImageView,
          sureCancelOrderLabel,
          blockInfoLabel,
          confirmButton].forEach {
             view.addSubview($0)
         }
     }
-
+    
     // MARK: - Setup Constraints
     private func setupConstraints() {
         exclamationMarkImageView.snp.makeConstraints { make in
@@ -80,19 +87,19 @@ final class FinishedViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.size.equalTo(200)
         }
-
+        
         sureCancelOrderLabel.snp.makeConstraints { make in
             make.top.equalTo(exclamationMarkImageView.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
-
+        
         blockInfoLabel.snp.makeConstraints { make in
             make.top.equalTo(sureCancelOrderLabel.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
-
+        
         confirmButton.snp.makeConstraints { make in
             make.top.equalTo(blockInfoLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
@@ -100,14 +107,32 @@ final class FinishedViewController: UIViewController {
             make.height.equalTo(51)
         }
     }
-
+    
     // MARK: - Actions
     @objc private func didPressedConfirmButton() {
-        print("finished")
-        print(CurrentScore.learningScore)
+        updateUserScore()
         self.dismiss(animated: true) {
             self.onDismiss?()
         }
+    }
+    
+    private func updateUserScore() {
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        
+        let updatedFields: [String: Any] = [
+            "learningScore": "\(CurrentScore.learningScore)",
+            "learningProgress": "\(LevelAccessManager.currentLevel)"
+        ]
+        
+        DatabaseManager.shared.collectionUsers(updateFields: updatedFields, for: id)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    print(error.localizedDescription)
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { _ in
+            }
+            .store(in: &subscriptions)
     }
     
     private func unlockNextLevel() {
@@ -118,15 +143,15 @@ final class FinishedViewController: UIViewController {
 
 // MARK: - Pan Presentation
 extension FinishedViewController: PanModalPresentable {
-
+    
     var panScrollable: UIScrollView? {
         return nil
     }
-
+    
     var shortFormHeight: PanModalHeight {
         return .contentHeight(398)
     }
-
+    
     var longFormHeight: PanModalHeight {
         return .maxHeightWithTopInset(40)
     }
