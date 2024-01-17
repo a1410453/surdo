@@ -10,6 +10,9 @@ import AVKit
 import AVFoundation
 
 final class LetterController: UIViewController {
+    
+    var onDismiss: (() -> Void)?
+    
     // MARK: UI components
     private lazy var gestureView: UIImageView = {
         let iconView = UIImageView()
@@ -38,7 +41,7 @@ final class LetterController: UIViewController {
     }()
     
     private let containerView = UIView()
-    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: 1))
+    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: LevelAccessManager.currentLevel+1))
     private var playerLayer: AVPlayerLayer!
     
 // swiftlint: disable all
@@ -66,6 +69,7 @@ final class LetterController: UIViewController {
         view.addSubview(containerView)
         // for testing purposes:
         nextButton.isHidden = false
+        //
     }
 
     private func setupConstraints() {
@@ -105,6 +109,10 @@ final class LetterController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         let viewController = QuizViewController()
         navigationController?.pushViewController(viewController, animated: true)
+        viewController.onDismiss = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+            self?.onDismiss?()
+        }
     }
     
     @objc func playerDidFinishPlaying(_ notification: Notification) {

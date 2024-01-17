@@ -10,7 +10,9 @@ import SnapKit
 import PanModal
 
 final class FinishedViewController: UIViewController {
-
+    
+    var onDismiss: (() -> Void)?
+    
     // MARK: - UI
     private lazy var exclamationMarkImageView: UIImageView = {
         let imageView = UIImageView()
@@ -54,7 +56,7 @@ final class FinishedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        unlockNextLevel()
         setupViews()
         setupConstraints()
     }
@@ -103,6 +105,14 @@ final class FinishedViewController: UIViewController {
     @objc private func didPressedConfirmButton() {
         print("finished")
         print(CurrentScore.learningScore)
+        self.dismiss(animated: true) {
+            self.onDismiss?()
+        }
+    }
+    
+    private func unlockNextLevel() {
+        LevelAccessManager.currentLevel += 1
+        LevelAccessManager.shared.unlockLevelAccess()
     }
 }
 

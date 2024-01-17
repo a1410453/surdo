@@ -23,7 +23,7 @@ class ProfileTableViewHeader: UIView {
                 return 2
             }
         }
-
+        
     }
     
     private var leadingAnchors: [NSLayoutConstraint] = []
@@ -40,12 +40,12 @@ class ProfileTableViewHeader: UIView {
             for index in 0..<tabs.count {
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) { [weak self] in
                     self?.sectionStack.arrangedSubviews[index].tintColor = index ==
-                        self?.selectedTab ? .label : .secondaryLabel
+                    self?.selectedTab ? .label : .secondaryLabel
                     self?.leadingAnchors[index].isActive = index == self?.selectedTab ? true : false
                     self?.trailingAnchors[index].isActive = index == self?.selectedTab ? true : false
                     self?.layoutIfNeeded()
                 } completion: { _ in
-
+                    
                 }
             }
         }
@@ -80,7 +80,7 @@ class ProfileTableViewHeader: UIView {
     
     private let joinDateImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "calendar", 
+        imageView.image = UIImage(systemName: "calendar",
                                   withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
         imageView.tintColor = .secondaryLabel
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -142,7 +142,7 @@ class ProfileTableViewHeader: UIView {
         imageView.image = UIImage(named: "gesture")
         return imageView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = AppColor.beige.uiColor
@@ -185,6 +185,7 @@ class ProfileTableViewHeader: UIView {
             selectedTab = 0
         }
     }
+    
     // swiftlint: disable all
     private func configureConstraints() {
         for i in 0..<tabs.count {
@@ -195,7 +196,7 @@ class ProfileTableViewHeader: UIView {
                 equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
             trailingAnchors.append(trailingAnchor)
         }
-
+        
         let profileAvatarImageViewConstraints = [
             profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             profileAvatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -204,61 +205,51 @@ class ProfileTableViewHeader: UIView {
         ]
         
         let displayNameLabelConstraints = [
-            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor, 
+            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor,
                                                       constant: 20),
-            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, 
+            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor,
                                                   constant: 20)
         ]
-        
         let usernameLabelConstraints = [
             usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5)
         ]
-        
         let userBioLabelConstraints = [
             userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             userBioLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
         ]
-        
         let joinDateImageViewConstraints = [
             joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 5)
-        
         ]
-        
         let joinDateLabelConstraints = [
             joinDateLabel.leadingAnchor.constraint(equalTo: joinDateImageView.trailingAnchor, constant: 2),
             joinDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
         ]
-        
         let followersCountLabelConstraints = [
             followersCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             followersCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
         ]
-        
         let followersTextLabelConstraints = [
-            followersTextLabel.leadingAnchor.constraint(equalTo: followersCountLabel.trailingAnchor, 
+            followersTextLabel.leadingAnchor.constraint(equalTo: followersCountLabel.trailingAnchor,
                                                         constant: 2),
-            followersTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, 
+            followersTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
                                                     constant: 10)
         ]
-        
         let sectionStackConstraints = [
             sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             sectionStack.topAnchor.constraint(equalTo: followersTextLabel.bottomAnchor, constant: 5),
             sectionStack.heightAnchor.constraint(equalToConstant: 35)
         ]
-        
         let indicatorConstraints = [
             leadingAnchors[0],
             trailingAnchors[0],
             indicator.topAnchor.constraint(equalTo: sectionStack.arrangedSubviews[0].bottomAnchor),
             indicator.heightAnchor.constraint(equalToConstant: 4)
         ]
-//        
-//        NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
+        
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(usernameLabelConstraints)
@@ -270,7 +261,6 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(sectionStackConstraints)
         NSLayoutConstraint.activate(indicatorConstraints)
     }
-    
     // swiftlint: enable all
     
     required init?(coder: NSCoder) {

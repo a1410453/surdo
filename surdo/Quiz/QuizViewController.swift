@@ -13,9 +13,11 @@ import SDWebImage
 final class QuizViewController: UIViewController {
     // MARK: - Variables
     private var currentQuestion: Int = 1
-    private var currentLetter: Int = 1
+    private var currentLetter: Int = LevelAccessManager.currentLevel + 1
     private var rightAnswer: Int = Int.random(in: 0..<4)
     private var falseAnswers = Set<Int>()
+    
+    var onDismiss: (() -> Void)?
     
     // MARK: - UI
     private lazy var questionLabel: UILabel = {
@@ -121,6 +123,10 @@ final class QuizViewController: UIViewController {
         } else {
             let controller = FinishedViewController()
             self.presentPanModal(controller)
+            controller.onDismiss = { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+                self?.onDismiss?()
+            }
         }
     }
     

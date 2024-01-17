@@ -134,6 +134,10 @@ class StagesViewController: UIViewController,
         .store(in: &subscriptions)
     }
     
+    func reloadCells() {
+        collectionView.reloadData()
+    }
+    
     // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
@@ -180,6 +184,10 @@ class StagesViewController: UIViewController,
         cell.onStageButtonTap = { [weak self] in
             let viewController = LetterController()
             self?.navigationController?.pushViewController(viewController, animated: false)
+            viewController.onDismiss = { [weak self] in
+                self?.reloadCells()
+                self?.navigationController?.pushViewController(MainTabBarViewController(), animated: false)
+            }
         }
         return cell
         

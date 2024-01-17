@@ -22,11 +22,8 @@ final class LevelAccessManager {
         return levelAccessArray[level]
     }
     
-    func unlockLevelAccess(level: Int) {
-        guard level >= 0 && level <= levelAccessArray.count else {
-            return
-        }
-        LevelAccessManager.currentLevel = level
-        levelAccessArray[level] = true
+    func unlockLevelAccess() {
+        levelAccessArray[LevelAccessManager.currentLevel] = true
+        print(levelAccessArray)
     }
 }

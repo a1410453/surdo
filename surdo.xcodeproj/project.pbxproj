@@ -40,7 +40,7 @@
 		546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C92B2B455400560D28 /* HomeViewViewModel.swift */; };
 		54872BF12B56D66600DA7A5D /* CurrentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54872BF02B56D66600DA7A5D /* CurrentScore.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
-		549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */; };
+		549BC4772AFCF6F30058FA68 /* LevelAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */; };
 		549BC47B2AFD2AF70058FA68 /* LetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47A2AFD2AF70058FA68 /* LetterController.swift */; };
 		549BC47E2AFD31C40058FA68 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47D2AFD31C40058FA68 /* AppColor.swift */; };
 		549BC4802AFD32000058FA68 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC47F2AFD32000058FA68 /* AppImage.swift */; };
@@ -89,7 +89,7 @@
 		546199C72B2B42FA00560D28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		546199C92B2B455400560D28 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		54872BF02B56D66600DA7A5D /* CurrentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScore.swift; sourceTree = "<group>"; };
-		549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageAccessManager.swift; sourceTree = "<group>"; };
+		549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAccessManager.swift; sourceTree = "<group>"; };
 		549BC47A2AFD2AF70058FA68 /* LetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterController.swift; sourceTree = "<group>"; };
 		549BC47D2AFD31C40058FA68 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		549BC47F2AFD32000058FA68 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 		544D464F2B05277800EB49E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				549BC4762AFCF6F30058FA68 /* StageAccessManager.swift */,
+				549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */,
 				544D46502B05278600EB49E0 /* SurdoUser.swift */,
 				54B7ED3A2B29E9F20064D80C /* AppConstants.swift */,
 				54872BF02B56D66600DA7A5D /* CurrentScore.swift */,
@@ -423,7 +423,7 @@
 				549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */,
 				544D46562B05288300EB49E0 /* DatabaseManager.swift in Sources */,
 				54BE77A82B3D787D00800D43 /* FinishedQuizController.swift in Sources */,
-				549BC4772AFCF6F30058FA68 /* StageAccessManager.swift in Sources */,
+				549BC4772AFCF6F30058FA68 /* LevelAccessManager.swift in Sources */,
 				546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */,
 				549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */,
 				54C7A8E92B1F59EE00B925A9 /* TweetTableViewCell.swift in Sources */,
