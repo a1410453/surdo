@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
-        navigationItem.title = "Profile"
+        navigationItem.title = "Профиль"
         view.addSubview(profileTableView)
         view.addSubview(statusBar)
         
@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController {
             self?.headerView.userBioLabel.text = user.learningScore
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
             self?.headerView.joinDateLabel.text = """
-                                Joined \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "")
+                                Начал изучение \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "")
                                 """
             
         }

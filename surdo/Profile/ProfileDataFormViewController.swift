@@ -31,7 +31,7 @@ class ProfileDataFormViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 8
-        textField.attributedPlaceholder = NSAttributedString(string: "Display Name",
+        textField.attributedPlaceholder = NSAttributedString(string: "ФИО",
                                                              attributes:
                                                                 [NSAttributedString.Key.foregroundColor:
                                                                     UIColor.gray])
@@ -47,7 +47,7 @@ class ProfileDataFormViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 8
-        textField.attributedPlaceholder = NSAttributedString(string: "Username",
+        textField.attributedPlaceholder = NSAttributedString(string: "Имя Пользователя",
                                                              attributes:
                                                                 [NSAttributedString.Key.foregroundColor:
                                                                     UIColor.gray])
@@ -71,14 +71,13 @@ class ProfileDataFormViewController: UIViewController {
     private let hintLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Fill in your data"
+        label.text = "Заполните ваши данные"
         label.font = .systemFont(ofSize: 32, weight: .bold)
         label.textColor = .label
         return label
     }()
     
     private let bioTextView: UITextView = {
-        
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.layer.masksToBounds = true
@@ -86,15 +85,14 @@ class ProfileDataFormViewController: UIViewController {
         textView.layer.cornerRadius = 8
         textView.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
         textView.font = .systemFont(ofSize: 16)
-        textView.text = "Tell the World about yourself"
+        textView.text = "О себе"
         textView.textColor = .gray
         return textView
-        
     }()
     
     private let submitButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Submit", for: .normal)
+        button.setTitle("Отправить", for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
@@ -256,7 +254,7 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
         if textView.text.isEmpty {
-            textView.text = "Tell the World about yourself"
+            textView.text = "О себе"
             textView.textColor = .gray
         }
     }

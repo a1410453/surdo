@@ -15,7 +15,7 @@ class RegisterViewController: UIViewController {
     
     private let registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Create Account", for: .normal)
+        button.setTitle("Создать Аккаунт", for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
     private let registerTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Create your account"
+        label.text = "Создать ваш аккаунт"
         label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
     }()
@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Email",
+            string: "Электронная почта",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         return textField
@@ -50,12 +50,11 @@ class RegisterViewController: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Password",
+            string: "Пароль",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         textField.isSecureTextEntry = true
         return textField
-        
     }()
     
     @objc private func didChangeEmailField() {

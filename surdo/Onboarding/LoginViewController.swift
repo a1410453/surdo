@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Войти", for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     private let loginTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Login to your account"
+        label.text = "Войти в ваш аккаунт"
         label.font = AppFont.bold.s32()
         return label
     }()
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Email",
+            string: "Почта",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         return textField
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Password",
+            string: "Пароль",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         textField.isSecureTextEntry = true
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
     }
     
     private func presentAlert(with error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
         let okayButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okayButton)
         present(alert, animated: true)
