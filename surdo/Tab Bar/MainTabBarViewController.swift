@@ -26,13 +26,13 @@ final class MainTabBarViewController: UITabBarController {
         tabBar.backgroundColor = AppColor.tabbar.uiColor
         view.backgroundColor = AppColor.tabbar.uiColor
         let main = UINavigationController(rootViewController: StagesViewController())
-        let translator = UINavigationController(rootViewController: LetterController())
+        let leaderboard = UINavigationController(rootViewController: LeaderboardViewController())
         let profile = UINavigationController(rootViewController: ProfileViewController())
         main.tabBarItem = tabItem(for: .main)
-        translator.tabBarItem = tabItem(for: .translator)
+        leaderboard.tabBarItem = tabItem(for: .translator)
         profile.tabBarItem = tabItem(for: .profile)
         
-        setViewControllers([main, translator, profile], animated: false)
+        setViewControllers([main, leaderboard, profile], animated: false)
         selectedIndex = 0
         
     }

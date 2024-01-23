@@ -130,6 +130,7 @@ class StagesViewController: UIViewController,
             if !user.isUserOnboarded {
                 self?.completeUserOnboarding()
             }
+            CurrentScore.learningScore = Int(user.learningScore) ?? 0
         }
         .store(in: &subscriptions)
     }

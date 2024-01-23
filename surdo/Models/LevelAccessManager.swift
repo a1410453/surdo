@@ -24,6 +24,5 @@ final class LevelAccessManager {
     
     func unlockLevelAccess() {
         levelAccessArray[LevelAccessManager.currentLevel] = true
-        print(levelAccessArray)
     }
 }

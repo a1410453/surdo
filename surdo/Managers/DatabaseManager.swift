@@ -39,4 +39,29 @@ class DatabaseManager {
             .eraseToAnyPublisher()
         
     }
+    
+    func collectionUsers(completion: @escaping ([(username: String,
+                                                  learningScore: String)]) -> Void) {
+        db.collection(usersPath)
+            .order(by: "learningScore", descending: true)
+            .getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting users: \(error)")
+                    completion([])
+                } else {
+                    let users = querySnapshot?.documents.compactMap { document -> (username: String,
+                                                                                   learningScore: String)? in
+                        guard let username = document["username"] as? String,
+                              let learningScore = document["learningScore"] as? String else {
+                            return nil
+                        }
+                        return (username: username,
+                                learningScore: learningScore)
+                    } ?? []
+                    
+                    completion(users)
+                }
+            }
+    }
+    
 }

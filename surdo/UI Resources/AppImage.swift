@@ -39,4 +39,5 @@ enum AppImage: String, AppImageProtocol {
     case next = "arrow.forward.circle.fill"
     case signOut = "rectangle.portrait.and.arrow.right"
     case achieviment = "achievement"
+    case pedestal = "pedestal"
 }
