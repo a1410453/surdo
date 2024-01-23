@@ -71,7 +71,8 @@ class StagesViewController: UIViewController,
         setupViews()
         setupConstraints()
         bindViews()
-        completionProgressView.changeProgress(by: LevelAccessManager.currentLevel)
+        completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
+        print(LevelAccessManager.currentLevel)
     }
 
     // MARK: Constraints
@@ -131,6 +132,9 @@ class StagesViewController: UIViewController,
                 self?.completeUserOnboarding()
             }
             CurrentScore.learningScore = Int(user.learningScore) ?? 0
+            LevelAccessManager.currentLevel = Int(user.learningProgress) ?? 0
+            LevelAccessManager.shared.unlockLevelAccess()
+            self?.reloadCells()
         }
         .store(in: &subscriptions)
     }

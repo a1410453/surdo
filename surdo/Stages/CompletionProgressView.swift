@@ -12,7 +12,9 @@ final class CompletionProgressView: UIView {
     // MARK: UI
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = AppColor.beige.uiColor
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -26,6 +28,16 @@ final class CompletionProgressView: UIView {
         let view = UIView()
         view.backgroundColor = AppColor.gray.uiColor
         return view
+    }()
+    
+    private lazy var progressLabelView: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Ваш прогресс"
+        label.font = AppFont.medium.s18()
+        label.textAlignment = .center
+        label.textColor = AppColor.tabbar.uiColor
+        return label
     }()
     
     // MARK: Lifecycle
@@ -43,6 +55,7 @@ final class CompletionProgressView: UIView {
     private func setupViews() {
         containerView.addSubview(completedPartView)
         containerView.addSubview(uncompletedPartView)
+        containerView.addSubview(progressLabelView)
         self.addSubview(containerView)
     }
 
@@ -54,22 +67,26 @@ final class CompletionProgressView: UIView {
         
         completedPartView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview()
             make.width.equalTo(60)
         }
         
         uncompletedPartView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.equalTo(completedPartView.snp.trailing)
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview()
+        }
+        
+        progressLabelView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
     
-    func changeProgress(by width: Int) {
+    func changeProgress(by width: Double) {
         completedPartView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
-            make.width.equalTo(width)
+            make.leading.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(width)
         }
     }
 }

@@ -10,19 +10,21 @@ final class LevelAccessManager {
     static let shared = LevelAccessManager()
     private let alphabet = "AӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ"
     static var currentLevel: Int = 0
-    private var levelAccessArray = [Bool](repeating: false, count: 42)
+    static private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
-        levelAccessArray[0] = true
+        LevelAccessManager.levelAccessArray[0] = true
     }
     
     func checkLevelAccess(level: Int) -> Bool {
-        guard level >= 0 && level <= levelAccessArray.count - 1 else {
+        guard level >= 0 && level <= LevelAccessManager.levelAccessArray.count - 1 else {
             return false
         }
-        return levelAccessArray[level]
+        return LevelAccessManager.levelAccessArray[level]
     }
     
     func unlockLevelAccess() {
-        levelAccessArray[LevelAccessManager.currentLevel] = true
+        for i in 0...LevelAccessManager.currentLevel {
+            LevelAccessManager.levelAccessArray[i] = true
+        }
     }
 }

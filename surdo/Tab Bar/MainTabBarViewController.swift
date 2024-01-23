@@ -29,7 +29,7 @@ final class MainTabBarViewController: UITabBarController {
         let leaderboard = UINavigationController(rootViewController: LeaderboardViewController())
         let profile = UINavigationController(rootViewController: ProfileViewController())
         main.tabBarItem = tabItem(for: .main)
-        leaderboard.tabBarItem = tabItem(for: .translator)
+        leaderboard.tabBarItem = tabItem(for: .pedestal)
         profile.tabBarItem = tabItem(for: .profile)
         
         setViewControllers([main, leaderboard, profile], animated: false)

@@ -107,7 +107,7 @@ final class QuizViewController: UIViewController {
             make.top.equalTo(collectionView.snp.bottom).offset(50)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
-            make.height.equalTo(80)
+            make.height.equalTo(60)
         }
     }
     

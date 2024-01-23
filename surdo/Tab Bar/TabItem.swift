@@ -9,13 +9,13 @@ import UIKit
 
 enum TabItem: Int {
     case main
-    case translator
+    case pedestal
     case profile
 
     var image: UIImage? {
         switch self {
         case .main: return AppImage.mainTab.systemImage
-        case .translator: return AppImage.translatorTab.systemImage
+        case .pedestal: return AppImage.pedestalTab.systemImage
         case .profile: return AppImage.profileTab.systemImage
         }
     }
@@ -23,7 +23,7 @@ enum TabItem: Int {
     var selectedImage: UIImage? {
         switch self {
         case .main: return AppImage.mainTabSelected.systemImage
-        case .translator: return AppImage.translatorTabSelected.systemImage
+        case .pedestal: return AppImage.pedestalTabSelected.systemImage
         case .profile: return AppImage.profileTabSelected.systemImage
         }
     }

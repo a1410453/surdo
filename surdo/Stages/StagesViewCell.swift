@@ -97,12 +97,12 @@ class StagesViewCell: UICollectionViewCell {
                 make.height.equalTo(70)
             }
         } else if  letter % 8 == 7 {
-                stageButton.snp.remakeConstraints { make in
-                    make.top.equalToSuperview().offset(5)
-                    make.centerX.equalToSuperview().offset(-65)
-                    make.width.equalTo(103)
-                    make.height.equalTo(70)
-                }
+            stageButton.snp.remakeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.centerX.equalToSuperview().offset(-65)
+                make.width.equalTo(103)
+                make.height.equalTo(70)
+            }
         } else {
             stageButton.snp.remakeConstraints { make in
                 make.top.equalToSuperview().offset(5)

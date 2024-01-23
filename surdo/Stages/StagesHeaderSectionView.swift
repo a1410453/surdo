@@ -14,7 +14,7 @@ class StagesHeaderSectionView: UICollectionReusableView {
     
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
-        label.text = "ӘРІПТЕР"
+        label.text = "Буквы"
         label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s24()
         return label
@@ -46,12 +46,12 @@ class StagesHeaderSectionView: UICollectionReusableView {
     // MARK: Actions
     override func prepareForReuse() {
         super.prepareForReuse()
-        levelLabel.text = "ӘРІПТЕР"
+        levelLabel.text = "Буквы"
     }
     
     public func configureLevelLabel(with letter: IndexPath) {
         if letter.section > 0 {
-            levelLabel.text = "САНДАР"
+            levelLabel.text = "Цифры"
         }
     }
 }

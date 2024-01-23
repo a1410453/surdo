@@ -33,7 +33,7 @@ final class LetterController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
-        button.setTitle("Next", for: .normal)
+        button.setTitle("Далее", for: .normal)
         button.titleLabel?.font = AppFont.medium.s24()
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         button.layer.cornerRadius = 12
@@ -89,7 +89,7 @@ final class LetterController: UIViewController {
             make.bottom.equalToSuperview().offset(-100)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
-            make.height.equalTo(80)
+            make.height.equalTo(60)
         }
     }
     
