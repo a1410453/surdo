@@ -21,8 +21,6 @@ class StagesViewCell: UICollectionViewCell {
         return button
     }()
     
-    let levelManager = LevelAccessManager.shared
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -56,11 +54,10 @@ class StagesViewCell: UICollectionViewCell {
         stageButton.imageView?.layer.masksToBounds = true
         stageButton.imageView?.contentMode = .scaleAspectFit
         stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-        if !(levelManager.checkLevelAccess(level: letter)) {
+        if !(LevelAccessManager.shared.checkLevelAccess(level: letter)) {
             stageButton.isEnabled = false
         } else {
             stageButton.isEnabled = true
-            LevelAccessManager.currentLevel = letter
         }
         if letter % 8 == 1 {
             stageButton.snp.remakeConstraints { make in

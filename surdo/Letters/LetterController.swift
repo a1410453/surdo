@@ -23,7 +23,11 @@ final class LetterController: UIViewController {
     
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
-        label.text = "A"
+        let index = LevelAccessManager.alphabet.index(
+            LevelAccessManager.alphabet.startIndex,
+            offsetBy: LevelAccessManager.currentLevel
+        )
+        label.text = String(LevelAccessManager.alphabet[index])
         label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s37()
         return label
@@ -44,7 +48,6 @@ final class LetterController: UIViewController {
     private var player = AVPlayer(url: AppConstants.makeURL(middlePart: LevelAccessManager.currentLevel+1))
     private var playerLayer: AVPlayerLayer!
     
-// swiftlint: disable all
     var counterOfRepetitions = 0
    
     // MARK: Lifecycle
@@ -58,9 +61,7 @@ final class LetterController: UIViewController {
         setupViews()
         setupConstraints()
         setupVideo()
-        
     }
-// swiftlint: enable all
     
     private func setupViews() {
         view.backgroundColor = .clear

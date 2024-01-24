@@ -9,17 +9,17 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     private enum SectionTabs: String {
-        case tweets = "Achivements"
-        case media = "Statistics"
-        case likes = "Social Media"
+        case achivements = "Achivements"
+        case statistics = "Statistics"
+        case settings = "Settings"
         
         var index: Int {
             switch self {
-            case .tweets:
+            case .achivements:
                 return 0
-            case .media:
+            case .statistics:
                 return 1
-            case .likes:
+            case .settings:
                 return 2
             }
         }
@@ -50,10 +50,19 @@ class ProfileTableViewHeader: UIView {
             }
         }
     }
-    private var tabs: [UIButton] = [ "Achievements", "Statistics", "Social Media" ]
+    private var tabs: [UIButton] = [ "Achievements", "Statistics", "Settings" ]
         .map { buttonTitle in
             let button = UIButton(type: .system)
-            button.setTitle(buttonTitle, for: .normal)
+            switch buttonTitle {
+            case "Achievements":
+                button.setTitle("Достижение", for: .normal)
+            case "Statistics":
+                button.setTitle("Статистика", for: .normal)
+            case "Settings":
+                button.setTitle("Настройки", for: .normal)
+            default:
+                button.setTitle(" ", for: .normal)
+            }
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
             button.tintColor = .label
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +82,7 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
-        label.text = "Joined 05.12.2023"
+        label.text = "Загрузка"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
@@ -87,20 +96,20 @@ class ProfileTableViewHeader: UIView {
         return imageView
     }()
     
-    private let followersTextLabel: UILabel = {
+    private let levelTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Friends"
+        label.text = "уровня пройдено"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
-    var followersCountLabel: UILabel = {
+    var levelCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
-        label.text = "23"
+        label.text = "0"
         label.font = .systemFont(ofSize: 14, weight: .bold)
         return label
     }()
@@ -110,7 +119,7 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 3
         label.textColor = .label
-        label.text = "I am learning sign language, open to new conversations"
+        label.text = "Загрузка"
         return label
     }()
     
@@ -118,7 +127,7 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
-        label.text = "rickby999"
+        label.text = "Загрузка"
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
@@ -128,7 +137,7 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .label
-        label.text = "Rustem Orazbayev"
+        label.text = "Загрузка"
         return label
     }()
     
@@ -139,7 +148,7 @@ class ProfileTableViewHeader: UIView {
         imageView.layer.cornerRadius = 40
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "gesture")
+        imageView.image = AppImage.profileTab.systemImage
         return imageView
     }()
     
@@ -152,8 +161,8 @@ class ProfileTableViewHeader: UIView {
         addSubview(userBioLabel)
         addSubview(joinDateImageView)
         addSubview(joinDateLabel)
-        addSubview(followersTextLabel)
-        addSubview(followersCountLabel)
+        addSubview(levelTextLabel)
+        addSubview(levelCountLabel)
         addSubview(sectionStack)
         addSubview(indicator)
         configureConstraints()
@@ -175,11 +184,11 @@ class ProfileTableViewHeader: UIView {
     @objc private func didTapTab(_ sender: UIButton) {
         guard let label = sender.titleLabel?.text else { return }
         switch label {
-        case SectionTabs.tweets.rawValue:
+        case "Достижение":
             selectedTab = 0
-        case SectionTabs.media.rawValue:
+        case "Статистика":
             selectedTab = 1
-        case SectionTabs.likes.rawValue:
+        case "Настройки":
             selectedTab = 2
         default:
             selectedTab = 0
@@ -228,19 +237,19 @@ class ProfileTableViewHeader: UIView {
             joinDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
         ]
         let followersCountLabelConstraints = [
-            followersCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            followersCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
+            levelCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            levelCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
         ]
         let followersTextLabelConstraints = [
-            followersTextLabel.leadingAnchor.constraint(equalTo: followersCountLabel.trailingAnchor,
-                                                        constant: 2),
-            followersTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
-                                                    constant: 10)
+            levelTextLabel.leadingAnchor.constraint(equalTo: levelCountLabel.trailingAnchor,
+                                                    constant: 2),
+            levelTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
+                                                constant: 10)
         ]
         let sectionStackConstraints = [
             sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            sectionStack.topAnchor.constraint(equalTo: followersTextLabel.bottomAnchor, constant: 5),
+            sectionStack.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor, constant: 5),
             sectionStack.heightAnchor.constraint(equalToConstant: 35)
         ]
         let indicatorConstraints = [

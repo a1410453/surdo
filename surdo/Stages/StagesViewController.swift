@@ -59,6 +59,7 @@ class StagesViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
         handleAuthentication()
         viewModel.retrieveUser()
         completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
@@ -73,7 +74,6 @@ class StagesViewController: UIViewController,
         setupConstraints()
         bindViews()
         completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
-        print(LevelAccessManager.currentLevel)
     }
 
     // MARK: Constraints
@@ -87,7 +87,7 @@ class StagesViewController: UIViewController,
     private func setupConstraints() {
         completionProgressView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(40)
             make.trailing.equalTo(signOutButton.snp.leading).offset(-20)
             make.height.equalTo(40)
         }
@@ -142,6 +142,7 @@ class StagesViewController: UIViewController,
     
     func reloadCells() {
         collectionView.reloadData()
+        completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
     }
     
     // MARK: Collection View

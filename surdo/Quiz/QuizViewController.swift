@@ -23,8 +23,8 @@ final class QuizViewController: UIViewController {
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.red.uiColor
-        label.text = "Сұрақ:"
-        label.font = AppFont.bold.s24()
+        label.text = "Выберите правильный ответ:"
+        label.font = AppFont.bold.s18()
        
         return label
     }()
@@ -33,7 +33,7 @@ final class QuizViewController: UIViewController {
         let label = UILabel()
         label.textColor = AppColor.red.uiColor
         label.text = "\(currentQuestion)/5"
-        label.font = AppFont.bold.s24()
+        label.font = AppFont.bold.s18()
         return label
     }()
     
@@ -58,7 +58,7 @@ final class QuizViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
-        button.setTitle("Next", for: .normal)
+        button.setTitle("Далее", for: .normal)
         button.titleLabel?.font = AppFont.medium.s24()
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         button.layer.cornerRadius = 12
@@ -83,7 +83,7 @@ final class QuizViewController: UIViewController {
         view.addSubview(nextButton)
         nextButton.isHidden = true
         nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     private func setupLayout() {

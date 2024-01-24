@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     
     private let statusBar: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = AppColor.beige.uiColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.opacity = 0
         return view
@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     
     private let profileTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.identifier)
+        tableView.register(AchievementsViewCell.self, forCellReuseIdentifier: AchievementsViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -61,11 +61,12 @@ class ProfileViewController: UIViewController {
             guard let user = user else { return }
             self?.headerView.displayNameLabel.text = user.fullName
             self?.headerView.usernameLabel.text = "@\(user.username)"
-            self?.headerView.userBioLabel.text = user.learningScore
+            self?.headerView.userBioLabel.text = "Набрано \(user.learningScore) очков"
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
             self?.headerView.joinDateLabel.text = """
                                 Начал изучение \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "")
                                 """
+            self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
             
         }
         .store(in: &subscriptions)
@@ -93,12 +94,12 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, 
-                                                       for: indexPath) as? TweetTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsViewCell.identifier, 
+                                                       for: indexPath) as? AchievementsViewCell else {
             return UITableViewCell()
         }
         return cell

@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class TweetTableViewCell: UITableViewCell {
+class AchievementsViewCell: UITableViewCell {
 
-    static let identifier = "TweetTableViewCell"
+    static let identifier = "AchievementsViewCell"
     
     private let actionSpacing: CGFloat = 400
     
