@@ -69,7 +69,11 @@ class ProfileViewController: UIViewController {
                                 ?? "")
                                 """
             self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
-            
+            if Int(user.learningProgress) ?? 0 < 5 {
+                self?.headerView.levelTextLabel.text = "урока пройдено" 
+            } else if Int(user.learningProgress) ?? 0 == 0 {
+                self?.headerView.levelTextLabel.text = "урок пройдено"
+            }
         }
         .store(in: &subscriptions)
     }

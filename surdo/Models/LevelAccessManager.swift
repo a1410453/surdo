@@ -10,6 +10,7 @@ final class LevelAccessManager {
     static let shared = LevelAccessManager()
     static let alphabet = "AӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ"
     static var currentLevel: Int = 0
+    static var learningScore: Int = 0
     static private var levelAccessArray = [Bool](repeating: false, count: 42)
     private init() {
         LevelAccessManager.levelAccessArray[0] = true

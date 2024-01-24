@@ -132,7 +132,7 @@ class StagesViewController: UIViewController,
             if !user.isUserOnboarded {
                 self?.completeUserOnboarding()
             }
-            CurrentScore.learningScore = Int(user.learningScore) ?? 0
+            LevelAccessManager.learningScore = Int(user.learningScore) ?? 0
             LevelAccessManager.currentLevel = Int(user.learningProgress) ?? 0
             LevelAccessManager.shared.unlockLevelAccess()
             self?.reloadCells()

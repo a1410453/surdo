@@ -188,7 +188,7 @@ extension QuizViewController: UICollectionViewDataSource,
         }
         if indexPath.item == rightAnswer {
             cell.didPressedRightAnswer()
-            CurrentScore.learningScore += 10
+            LevelAccessManager.learningScore += 10
             nextButton.isHidden = false
         } else {
             cell.didPressedWrongAnswer()

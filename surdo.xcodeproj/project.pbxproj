@@ -38,7 +38,6 @@
 		546199C62B2B42A000560D28 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */; };
 		546199C82B2B42FA00560D28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C72B2B42FA00560D28 /* LoginViewController.swift */; };
 		546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C92B2B455400560D28 /* HomeViewViewModel.swift */; };
-		54872BF12B56D66600DA7A5D /* CurrentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54872BF02B56D66600DA7A5D /* CurrentScore.swift */; };
 		5498992B2B5E856100AFB140 /* LeaderboardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992A2B5E856100AFB140 /* LeaderboardViewViewModel.swift */; };
 		5498992E2B5E871B00AFB140 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992D2B5E871B00AFB140 /* LeaderboardViewController.swift */; };
 		549899302B5EB7C800AFB140 /* LeaderboardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992F2B5EB7C800AFB140 /* LeaderboardViewCell.swift */; };
@@ -91,7 +90,6 @@
 		546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
 		546199C72B2B42FA00560D28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		546199C92B2B455400560D28 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
-		54872BF02B56D66600DA7A5D /* CurrentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScore.swift; sourceTree = "<group>"; };
 		5498992A2B5E856100AFB140 /* LeaderboardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewViewModel.swift; sourceTree = "<group>"; };
 		5498992D2B5E871B00AFB140 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		5498992F2B5EB7C800AFB140 /* LeaderboardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewCell.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */,
 				544D46502B05278600EB49E0 /* SurdoUser.swift */,
 				54B7ED3A2B29E9F20064D80C /* AppConstants.swift */,
-				54872BF02B56D66600DA7A5D /* CurrentScore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,7 +461,6 @@
 				541D31322B21C71C009D7E85 /* QuizViewController.swift in Sources */,
 				54B7ED3B2B29E9F20064D80C /* AppConstants.swift in Sources */,
 				544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */,
-				54872BF12B56D66600DA7A5D /* CurrentScore.swift in Sources */,
 				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

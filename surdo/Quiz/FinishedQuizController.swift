@@ -120,7 +120,7 @@ final class FinishedViewController: UIViewController {
         guard let id = Auth.auth().currentUser?.uid else { return }
         
         let updatedFields: [String: Any] = [
-            "learningScore": "\(CurrentScore.learningScore)",
+            "learningScore": "\(LevelAccessManager.learningScore)",
             "learningProgress": "\(LevelAccessManager.currentLevel)"
         ]
         

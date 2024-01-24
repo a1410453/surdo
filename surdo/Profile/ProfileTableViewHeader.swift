@@ -91,10 +91,10 @@ class ProfileTableViewHeader: UIView {
         return imageView
     }()
     
-    private let levelTextLabel: UILabel = {
+    lazy var levelTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "уровня пройдено"
+        label.text = "уроков пройдено"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
