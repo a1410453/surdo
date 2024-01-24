@@ -42,6 +42,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileTableView)
         view.addSubview(statusBar)
         
+        profileTableView.backgroundColor = AppColor.beige.uiColor
         profileTableView.dataSource = self
         profileTableView.delegate = self
         profileTableView.tableHeaderView = headerView
@@ -64,7 +65,8 @@ class ProfileViewController: UIViewController {
             self?.headerView.userBioLabel.text = "Набрано \(user.learningScore) очков"
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
             self?.headerView.joinDateLabel.text = """
-                                Начал изучение \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "")
+                                 Начал(а) изучение \(self?.viewModel.getFormattedDate(with: user.createdOn)
+                                ?? "")
                                 """
             self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
             
@@ -103,7 +105,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         return cell
-                
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 200
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

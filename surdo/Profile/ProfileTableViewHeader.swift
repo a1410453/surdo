@@ -10,17 +10,14 @@ import UIKit
 class ProfileTableViewHeader: UIView {
     private enum SectionTabs: String {
         case achivements = "Achivements"
-        case statistics = "Statistics"
         case settings = "Settings"
         
         var index: Int {
             switch self {
             case .achivements:
                 return 0
-            case .statistics:
-                return 1
             case .settings:
-                return 2
+                return 1
             }
         }
         
@@ -50,14 +47,12 @@ class ProfileTableViewHeader: UIView {
             }
         }
     }
-    private var tabs: [UIButton] = [ "Achievements", "Statistics", "Settings" ]
+    private var tabs: [UIButton] = [ "Achievements", "Settings" ]
         .map { buttonTitle in
             let button = UIButton(type: .system)
             switch buttonTitle {
             case "Achievements":
                 button.setTitle("Достижение", for: .normal)
-            case "Statistics":
-                button.setTitle("Статистика", for: .normal)
             case "Settings":
                 button.setTitle("Настройки", for: .normal)
             default:
@@ -72,7 +67,7 @@ class ProfileTableViewHeader: UIView {
     private lazy var sectionStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: tabs)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillEqually
         stackView.axis = .horizontal
         stackView.alignment = .center
         return stackView
@@ -117,8 +112,8 @@ class ProfileTableViewHeader: UIView {
     var userBioLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 3
         label.textColor = .label
+        label.font = .systemFont(ofSize: 14, weight: .bold)
         label.text = "Загрузка"
         return label
     }()
@@ -186,10 +181,8 @@ class ProfileTableViewHeader: UIView {
         switch label {
         case "Достижение":
             selectedTab = 0
-        case "Статистика":
-            selectedTab = 1
         case "Настройки":
-            selectedTab = 2
+            selectedTab = 1
         default:
             selectedTab = 0
         }
@@ -225,7 +218,6 @@ class ProfileTableViewHeader: UIView {
         ]
         let userBioLabelConstraints = [
             userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            userBioLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
         ]
         let joinDateImageViewConstraints = [
@@ -247,11 +239,12 @@ class ProfileTableViewHeader: UIView {
                                                 constant: 10)
         ]
         let sectionStackConstraints = [
-            sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             sectionStack.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor, constant: 5),
             sectionStack.heightAnchor.constraint(equalToConstant: 35)
         ]
+        
         let indicatorConstraints = [
             leadingAnchors[0],
             trailingAnchors[0],

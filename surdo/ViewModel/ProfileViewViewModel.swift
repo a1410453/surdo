@@ -30,7 +30,6 @@ final class ProfileViewViewModel: ObservableObject {
     }
     
     func getFormattedDate(with date: Date) -> String {
-        let calendar = Calendar.current
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM YYYY"
         
