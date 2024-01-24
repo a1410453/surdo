@@ -106,10 +106,11 @@ final class LetterController: UIViewController {
     
     // MARK: Action
     @objc func tappedNextButton() {
-        self.tabBarController?.tabBar.isHidden = false
+        // self.tabBarController?.tabBar.isHidden = false
         let viewController = QuizViewController()
         navigationController?.pushViewController(viewController, animated: true)
         viewController.onDismiss = { [weak self] in
+            self?.tabBarController?.tabBar.isHidden = false
             self?.navigationController?.popViewController(animated: true)
             self?.onDismiss?()
         }

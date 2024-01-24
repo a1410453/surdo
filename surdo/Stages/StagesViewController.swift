@@ -61,6 +61,7 @@ class StagesViewController: UIViewController,
         navigationController?.navigationBar.isHidden = false
         handleAuthentication()
         viewModel.retrieveUser()
+        completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
     }
     
     override func viewDidLoad() {
@@ -191,7 +192,6 @@ class StagesViewController: UIViewController,
             self?.navigationController?.pushViewController(viewController, animated: false)
             viewController.onDismiss = { [weak self] in
                 self?.reloadCells()
-                self?.navigationController?.pushViewController(MainTabBarViewController(), animated: false)
             }
         }
         return cell

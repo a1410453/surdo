@@ -60,6 +60,7 @@ class StagesViewCell: UICollectionViewCell {
             stageButton.isEnabled = false
         } else {
             stageButton.isEnabled = true
+            LevelAccessManager.currentLevel = letter
         }
         if letter % 8 == 1 {
             stageButton.snp.remakeConstraints { make in

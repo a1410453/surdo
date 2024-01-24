@@ -46,7 +46,6 @@ class LeaderboardViewController: UIViewController {
     
     private func fetchUsers() {
         DatabaseManager.shared.collectionUsers { user in
-            print("All users: \(user)")
             self.users = user.sorted(by: { (user1, user2) -> Bool in
                 if let score1 = Int(user1.learningScore), let score2 = Int(user2.learningScore) {
                     return score1 > score2
@@ -78,7 +77,6 @@ extension LeaderboardViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(users.count)
         return users.count
     }
     
@@ -89,8 +87,9 @@ extension LeaderboardViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         let user = users[indexPath.row]
-        cell.configure(place: indexPath.row, username: user.username, learningScore: user.learningScore)
-        
+        cell.configure(place: indexPath.row, 
+                       username: user.username,
+                       learningScore: user.learningScore)
         return cell
     }
 }
