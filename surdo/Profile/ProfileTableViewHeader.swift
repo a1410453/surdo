@@ -116,7 +116,6 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = AppColor.beige.uiColor
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
         addSubview(usernameLabel)

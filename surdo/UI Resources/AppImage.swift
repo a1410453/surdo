@@ -41,4 +41,16 @@ enum AppImage: String, AppImageProtocol {
     case achieviment = "achievement"
     case pedestal = "pedestal"
     case errorIcon = "database"
+    
+    case achievement0 = "achievement0"
+    case achievement1 = "achievement1"
+    case achievement2 = "achievement2"
+    case achievement3 = "achievement3"
+    case achievement4 = "achievement4"
+    case achievement5 = "achievement5"
+    case achievement6 = "achievement6"
+    case achievement7 = "achievement7"
+    case achievement8 = "achievement8"
+    case achievement9 = "achievement9"
+    
 }

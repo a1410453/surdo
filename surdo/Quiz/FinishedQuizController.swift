@@ -136,6 +136,12 @@ final class FinishedViewController: UIViewController {
     }
     
     private func unlockNextLevel() {
+        if LevelAccessManager.currentLevel == 0 {
+            AchievementsManager.achievements.append(1)
+        }
+        if LevelAccessManager.currentLevel == 42 {
+            AchievementsManager.achievements.append(2)
+        }
         LevelAccessManager.currentLevel += 1
         LevelAccessManager.shared.unlockLevelAccess()
     }

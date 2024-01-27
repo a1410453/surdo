@@ -55,6 +55,7 @@ class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.retrieveUser()
+        profileTableView.reloadData()
     }
     
     private func bindViews() {
@@ -105,13 +106,18 @@ class ProfileViewController: UIViewController, TableViewHeaderDelegate {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        return AchievementsManager.achievements.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsViewCell.identifier,
                                                        for: indexPath) as? AchievementsViewCell else {
             return UITableViewCell()
+        }
+        if indexPath.row == AchievementsManager.achievements.count {
+            return cell
+        } else {
+            cell.configureTweet(with: indexPath.row)
         }
         return cell
     }
