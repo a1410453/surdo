@@ -9,8 +9,7 @@ import UIKit
 import Combine
 import SDWebImage
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private var isStatusBarHidden: Bool = true
     private var viewModel = ProfileViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
@@ -46,6 +45,7 @@ class ProfileViewController: UIViewController {
         profileTableView.dataSource = self
         profileTableView.delegate = self
         profileTableView.tableHeaderView = headerView
+        headerView.delegate = self
         profileTableView.contentInsetAdjustmentBehavior = .never
         navigationController?.navigationBar.isHidden = true
         configureConstraints()
@@ -70,7 +70,7 @@ class ProfileViewController: UIViewController {
                                 """
             self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
             if Int(user.learningProgress) ?? 0 < 5 {
-                self?.headerView.levelTextLabel.text = "урока пройдено" 
+                self?.headerView.levelTextLabel.text = "урока пройдено"
             } else if Int(user.learningProgress) ?? 0 == 0 {
                 self?.headerView.levelTextLabel.text = "урок пройдено"
             }
@@ -84,17 +84,22 @@ class ProfileViewController: UIViewController {
             profileTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             profileTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             profileTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ]
+        ]
         
         let statusBarConstraints = [
             statusBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             statusBar.topAnchor.constraint(equalTo: view.topAnchor),
             statusBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             statusBar.heightAnchor.constraint(equalToConstant: view.bounds.height > 800 ? 40 : 20)
-        
+            
         ]
         NSLayoutConstraint.activate(profileTableViewConstraints)
         NSLayoutConstraint.activate(statusBarConstraints)
+    }
+    
+    func didTapPrivacyPolicyButton() {
+        let controller = PrivacyPolicyViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -104,7 +109,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsViewCell.identifier, 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsViewCell.identifier,
                                                        for: indexPath) as? AchievementsViewCell else {
             return UITableViewCell()
         }

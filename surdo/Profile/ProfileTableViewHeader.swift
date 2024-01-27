@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ProfileTableViewHeader: UIView {
+class ProfileTableViewHeader: UITableViewHeaderFooterView {
+    weak var delegate: TableViewHeaderDelegate?
+    static let identifier = "ProfileTableViewHeader"
+    
     private enum SectionTabs: String {
         case achivements = "Achivements"
         case settings = "Settings"
@@ -147,8 +150,18 @@ class ProfileTableViewHeader: UIView {
         return imageView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    lazy var privacyPolicyButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Политика конфидециальности", for: .normal)
+        button.titleLabel?.font = AppFont.regular.s14()
+        button.tintColor = AppColor.red.uiColor
+        button.addTarget(self, action: #selector(didTapPrivacyPolicyButton), for: .touchUpInside)
+        return button
+    }()
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         self.backgroundColor = AppColor.beige.uiColor
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
@@ -158,6 +171,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(joinDateLabel)
         addSubview(levelTextLabel)
         addSubview(levelCountLabel)
+        addSubview(privacyPolicyButton)
         addSubview(sectionStack)
         addSubview(indicator)
         configureConstraints()
@@ -186,6 +200,10 @@ class ProfileTableViewHeader: UIView {
         default:
             selectedTab = 0
         }
+    }
+    
+    @objc private func didTapPrivacyPolicyButton() {
+        delegate?.didTapPrivacyPolicyButton()
     }
     
     // swiftlint: disable all
@@ -238,10 +256,17 @@ class ProfileTableViewHeader: UIView {
             levelTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
                                                 constant: 10)
         ]
+        
+        let privacyPolicyButtonConstraints = [
+            privacyPolicyButton.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            privacyPolicyButton.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor,
+                                                     constant: 10)
+        ]
+        
         let sectionStackConstraints = [
             sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            sectionStack.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor, constant: 5),
+            sectionStack.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 5),
             sectionStack.heightAnchor.constraint(equalToConstant: 35)
         ]
         
@@ -260,6 +285,7 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(joinDateLabelConstraints)
         NSLayoutConstraint.activate(followersTextLabelConstraints)
         NSLayoutConstraint.activate(followersCountLabelConstraints)
+        NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
         NSLayoutConstraint.activate(sectionStackConstraints)
         NSLayoutConstraint.activate(indicatorConstraints)
     }
@@ -268,4 +294,8 @@ class ProfileTableViewHeader: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+}
+
+protocol TableViewHeaderDelegate: AnyObject {
+    func didTapPrivacyPolicyButton()
 }

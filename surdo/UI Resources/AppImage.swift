@@ -40,4 +40,5 @@ enum AppImage: String, AppImageProtocol {
     case signOut = "rectangle.portrait.and.arrow.right"
     case achieviment = "achievement"
     case pedestal = "pedestal"
+    case errorIcon = "database"
 }
