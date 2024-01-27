@@ -19,7 +19,7 @@ final class DownloadErrorView: UIView {
     private lazy var title: UILabel = {
         let title = UILabel()
         title.font = AppFont.bold.s18()
-        title.textColor = AppColor.gray.uiColor
+        title.textColor = .black
         title.text = "Ошибка загрузки"
         title.textAlignment = .center
         return title
@@ -28,7 +28,7 @@ final class DownloadErrorView: UIView {
     private lazy var subtitle: UILabel = {
         let subtitle = UILabel()
         subtitle.font = AppFont.regular.s14()
-        subtitle.textColor = AppColor.gray.uiColor
+        subtitle.textColor = .black
         subtitle.text = """
        Сообщение не загрузилось. Это может произойти из за плохой связи или
        из за отсутствия интернет подключения.

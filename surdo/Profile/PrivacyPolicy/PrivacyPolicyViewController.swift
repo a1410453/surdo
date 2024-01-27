@@ -41,7 +41,7 @@ final class PrivacyPolicyViewController: UIViewController, WKUIDelegate, WKNavig
     private func fetchWeb() {
         let networkReachability = NetworkReachability()
         if networkReachability.checkNetworkConnection() {
-            if let url = URL(string: "https://startios.kz/privacy") {
+            if let url = URL(string: "https://a1410453.github.io/surdo/privacy_policy.html") {
                 let request = URLRequest(url: url)
                 webView.load(request)
             } else {
