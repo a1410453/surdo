@@ -11,23 +11,9 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     weak var delegate: TableViewHeaderDelegate?
     static let identifier = "ProfileTableViewHeader"
     
-    private enum SectionTabs: String {
-        case achivements = "Achivements"
-        case settings = "Settings"
-        
-        var index: Int {
-            switch self {
-            case .achivements:
-                return 0
-            case .settings:
-                return 1
-            }
-        }
-        
-    }
-    
     private var leadingAnchors: [NSLayoutConstraint] = []
     private var trailingAnchors: [NSLayoutConstraint] = []
+    
     private let indicator: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,45 +21,13 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return view
     }()
     
-    private var selectedTab: Int = 0 {
-        didSet {
-            for index in 0..<tabs.count {
-                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) { [weak self] in
-                    self?.sectionStack.arrangedSubviews[index].tintColor = index ==
-                    self?.selectedTab ? .label : .secondaryLabel
-                    self?.leadingAnchors[index].isActive = index == self?.selectedTab ? true : false
-                    self?.trailingAnchors[index].isActive = index == self?.selectedTab ? true : false
-                    self?.layoutIfNeeded()
-                } completion: { _ in
-                    
-                }
-            }
-        }
-    }
-    private var tabs: [UIButton] = [ "Achievements", "Settings" ]
-        .map { buttonTitle in
-            let button = UIButton(type: .system)
-            switch buttonTitle {
-            case "Achievements":
-                button.setTitle("Достижение", for: .normal)
-            case "Settings":
-                button.setTitle("Настройки", for: .normal)
-            default:
-                button.setTitle(" ", for: .normal)
-            }
-            button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-            button.tintColor = .label
-            button.translatesAutoresizingMaskIntoConstraints = false
-            return button
-        }
-    
-    private lazy var sectionStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: tabs)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillEqually
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        return stackView
+    var achievementsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .label
+        label.text = "Достижения"
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        return label
     }()
     
     var joinDateLabel: UILabel = {
@@ -116,7 +70,7 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
-        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.text = "Загрузка"
         return label
     }()
@@ -172,34 +126,9 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
         addSubview(levelTextLabel)
         addSubview(levelCountLabel)
         addSubview(privacyPolicyButton)
-        addSubview(sectionStack)
         addSubview(indicator)
+        addSubview(achievementsLabel)
         configureConstraints()
-        configureStackButton()
-    }
-    
-    private func configureStackButton() {
-        for (i, button) in sectionStack.arrangedSubviews.enumerated() {
-            guard let button = button as? UIButton else { return }
-            if i == selectedTab {
-                button.tintColor = .label
-            } else {
-                button.tintColor = .secondaryLabel
-            }
-            button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
-        }
-    }
-    
-    @objc private func didTapTab(_ sender: UIButton) {
-        guard let label = sender.titleLabel?.text else { return }
-        switch label {
-        case "Достижение":
-            selectedTab = 0
-        case "Настройки":
-            selectedTab = 1
-        default:
-            selectedTab = 0
-        }
     }
     
     @objc private func didTapPrivacyPolicyButton() {
@@ -208,15 +137,6 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     // swiftlint: disable all
     private func configureConstraints() {
-        for i in 0..<tabs.count {
-            let leadingAnchor = indicator.leadingAnchor.constraint(
-                equalTo: sectionStack.arrangedSubviews[i].leadingAnchor)
-            leadingAnchors.append(leadingAnchor)
-            let trailingAnchor = indicator.trailingAnchor.constraint(
-                equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
-            trailingAnchors.append(trailingAnchor)
-        }
-        
         let profileAvatarImageViewConstraints = [
             profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             profileAvatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -263,18 +183,9 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
                                                      constant: 10)
         ]
         
-        let sectionStackConstraints = [
-            sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            sectionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            sectionStack.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 5),
-            sectionStack.heightAnchor.constraint(equalToConstant: 35)
-        ]
-        
-        let indicatorConstraints = [
-            leadingAnchors[0],
-            trailingAnchors[0],
-            indicator.topAnchor.constraint(equalTo: sectionStack.arrangedSubviews[0].bottomAnchor),
-            indicator.heightAnchor.constraint(equalToConstant: 4)
+        let achievementsLabelConstraints = [
+            achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            achievementsLabel.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 60)
         ]
         
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
@@ -286,8 +197,7 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate(followersTextLabelConstraints)
         NSLayoutConstraint.activate(followersCountLabelConstraints)
         NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
-        NSLayoutConstraint.activate(sectionStackConstraints)
-        NSLayoutConstraint.activate(indicatorConstraints)
+        NSLayoutConstraint.activate(achievementsLabelConstraints)
     }
     // swiftlint: enable all
     

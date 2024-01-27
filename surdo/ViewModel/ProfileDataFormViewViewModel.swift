@@ -70,13 +70,12 @@ final class ProfileDataFormViewViewModel: ObservableObject {
         guard let fullName,
               let username,
               let avatarPath,
-              let learningProgress,
               let id = Auth.auth().currentUser?.uid else { return }
         
         let updatedFields: [String: Any] = [
             "fullName": fullName,
             "username": username,
-            "learningProgress": learningProgress,
+            "learningProgress": "0",
             "avatarPath": avatarPath,
             "isUserOnboarded": true
         ]

@@ -77,19 +77,6 @@ class ProfileDataFormViewController: UIViewController {
         return label
     }()
     
-    private let bioTextView: UITextView = {
-        let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.layer.masksToBounds = true
-        textView.backgroundColor = .secondarySystemFill
-        textView.layer.cornerRadius = 8
-        textView.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
-        textView.font = .systemFont(ofSize: 16)
-        textView.text = "О себе"
-        textView.textColor = .gray
-        return textView
-    }()
-    
     private let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Отправить", for: .normal)
@@ -111,10 +98,8 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.addSubview(avatarPlaceholderImageView)
         scrollView.addSubview(displayNameTextField)
         scrollView.addSubview(usernameTextField)
-        scrollView.addSubview(bioTextView)
         scrollView.addSubview(submitButton)
         isModalInPresentation = true
-        bioTextView.delegate = self
         displayNameTextField.delegate = self
         usernameTextField.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, 
@@ -209,14 +194,6 @@ class ProfileDataFormViewController: UIViewController {
             usernameTextField.heightAnchor.constraint(equalToConstant: 50)
         ]
         
-        let bioTextViewConstraints = [
-            bioTextView.leadingAnchor.constraint(equalTo: displayNameTextField.leadingAnchor),
-            bioTextView.trailingAnchor.constraint(equalTo: displayNameTextField.trailingAnchor),
-            bioTextView.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
-            bioTextView.heightAnchor.constraint(equalToConstant: 150)
-            
-        ]
-        
         let submitButtonConstraints = [
             submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -229,7 +206,6 @@ class ProfileDataFormViewController: UIViewController {
         NSLayoutConstraint.activate(avatarPlaceholderImageViewConstraints)
         NSLayoutConstraint.activate(displayNameTextFieldConstraints)
         NSLayoutConstraint.activate(usernameTextFieldConstraints)
-        NSLayoutConstraint.activate(bioTextViewConstraints)
         NSLayoutConstraint.activate(submitButtonConstraints)
     }
 }
@@ -242,20 +218,6 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
         if textView.textColor == .gray {
             textView.textColor = .label
             textView.text = ""
-        }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        viewModel.learningProgress = textView.text
-        viewModel.validateUserProfileForm()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        
-        if textView.text.isEmpty {
-            textView.text = "О себе"
-            textView.textColor = .gray
         }
     }
     

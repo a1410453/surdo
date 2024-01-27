@@ -117,6 +117,8 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func didTapRegister() {
+        LevelAccessManager.currentLevel = 0
+        LevelAccessManager.learningScore = 0
         viewModel.createUser()
     }
 
