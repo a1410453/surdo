@@ -130,6 +130,7 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureProfileAvatarImageViewConstraints()
         configureDisplayNameLabelConstraints()
         configureUsernameLabelConstraints()
+        configureUserBioLabelConstraints()
         configureJoinDateImageViewConstraints()
         configureJoinDateLabelConstraints()
         configureFollowersTextLabelConstraints()
@@ -231,7 +232,6 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     @objc private func didTapPrivacyPolicyButton() {
         delegate?.didTapPrivacyPolicyButton()
     }
-    
 }
 
 protocol TableViewHeaderDelegate: AnyObject {
