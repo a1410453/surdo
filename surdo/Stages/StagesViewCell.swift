@@ -47,7 +47,6 @@ class StagesViewCell: UICollectionViewCell {
     }
     
     // MARK: Actions
-    // swiftlint: disable all
     public func configureButton(with letter: Int) {
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
         stageButton.setImage(UIImage(named: "disabled"), for: .disabled)
@@ -59,58 +58,23 @@ class StagesViewCell: UICollectionViewCell {
         } else {
             stageButton.isEnabled = true
         }
-        if letter % 8 == 1 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(65)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
+        
+        stageButton.snp.remakeConstraints { [letter] make in
+            make.top.equalToSuperview().offset(5)
+            make.width.equalTo(103)
+            make.height.equalTo(70)
+            var offset: CGFloat {
+                switch letter % 8 {
+                case 1, 3: return 65
+                case 2: return 85
+                case 5, 7: return -65
+                case 6: return -85
+                default: return 0
+                }
             }
-        } else if  letter % 8 == 2 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(85)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
-        } else if  letter % 8 == 3 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(65)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
-        } else if  letter % 8 == 5 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(-65)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
-        } else if  letter % 8 == 6 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(-85)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
-        } else if  letter % 8 == 7 {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview().offset(-65)
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
-        } else {
-            stageButton.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.centerX.equalToSuperview()
-                make.width.equalTo(103)
-                make.height.equalTo(70)
-            }
+            make.centerX.equalToSuperview().offset(offset)
         }
     }
-    // swiftlint: enable all
     
     @objc func tappedButton() {
         self.onStageButtonTap?()
