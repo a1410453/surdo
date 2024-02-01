@@ -37,11 +37,15 @@ class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
         navigationController?.navigationBar.isHidden = true
-        fetchUsers()
         view.addSubview(pedestalImageView)
         view.addSubview(tableView)
-        tableView.reloadData()
         configureConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchUsers()
+        tableView.reloadData()
     }
     
     private func fetchUsers() {
