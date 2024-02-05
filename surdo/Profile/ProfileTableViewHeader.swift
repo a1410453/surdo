@@ -12,7 +12,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     static let identifier = "ProfileTableViewHeader"
 
     // MARK: UI
-    var achievementsLabel: UILabel = {
+    private lazy var achievementsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -21,7 +21,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var joinDateLabel: UILabel = {
+    private lazy var joinDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
@@ -30,7 +30,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private let joinDateImageView: UIImageView = {
+    private lazy var joinDateImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "calendar",
                                   withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
@@ -39,7 +39,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return imageView
     }()
     
-    lazy var levelTextLabel: UILabel = {
+    private lazy var levelTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "уроков пройдено"
@@ -48,7 +48,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var levelCountLabel: UILabel = {
+    private lazy var levelCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -57,7 +57,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var userBioLabel: UILabel = {
+    private lazy var userBioLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -66,7 +66,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var usernameLabel: UILabel = {
+    private lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
@@ -75,7 +75,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var displayNameLabel: UILabel = {
+    private lazy var displayNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
@@ -84,7 +84,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    var profileAvatarImageView: UIImageView = {
+    private lazy var profileAvatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
@@ -95,7 +95,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return imageView
     }()
     
-    lazy var privacyPolicyButton: UIButton = {
+    private lazy var privacyPolicyButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Политика конфидециальности", for: .normal)

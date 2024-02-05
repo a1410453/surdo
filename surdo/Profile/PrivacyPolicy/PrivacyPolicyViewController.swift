@@ -13,8 +13,8 @@ import SystemConfiguration
 final class PrivacyPolicyViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     // MARK: - UI
-    private var webView = WKWebView()
-    private var errorView = DownloadErrorView()
+    private lazy var webView = WKWebView()
+    private lazy var errorView = DownloadErrorView()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
