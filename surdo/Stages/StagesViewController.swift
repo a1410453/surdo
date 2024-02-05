@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Combine
 
-class StagesViewController: UIViewController, 
+final class StagesViewController: UIViewController, 
                                 UICollectionViewDataSource,
                                 UICollectionViewDelegate,
                                 UICollectionViewDelegateFlowLayout {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableViewHeader: UITableViewHeaderFooterView {
+final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     weak var delegate: TableViewHeaderDelegate?
     static let identifier = "ProfileTableViewHeader"
 

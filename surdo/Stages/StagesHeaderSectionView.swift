@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StagesHeaderSectionView: UICollectionReusableView {
+final class StagesHeaderSectionView: UICollectionReusableView {
     
     static let identifier = "StagesHeaderSectionView"
     

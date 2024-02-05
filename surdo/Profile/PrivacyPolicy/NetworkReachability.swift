@@ -8,7 +8,7 @@
 import UIKit
 import SystemConfiguration
 
-public class NetworkReachability: UIViewController {
+public final class NetworkReachability: UIViewController {
     let reachability = SCNetworkReachabilityCreateWithName(nil, "https://startios.kz/privacy")
 
     func checkNetworkConnection() -> Bool {

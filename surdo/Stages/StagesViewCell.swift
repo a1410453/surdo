@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StagesViewCell: UICollectionViewCell {
+final class StagesViewCell: UICollectionViewCell {
     
     static let identifier = "StagesViewCell"
     

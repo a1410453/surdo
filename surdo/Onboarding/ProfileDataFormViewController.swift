@@ -9,7 +9,7 @@ import UIKit
 import PhotosUI
 import Combine
 
-class ProfileDataFormViewController: UIViewController {
+final class ProfileDataFormViewController: UIViewController {
     private let viewModel = ProfileDataFormViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     

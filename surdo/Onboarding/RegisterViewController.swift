@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
     
     private var viewModel = AuthenticationViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []

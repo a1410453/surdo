@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SnapKit
 
-class LeaderboardViewController: UIViewController {
+final class LeaderboardViewController: UIViewController {
     
     private lazy var pedestalImageView: UIImageView = {
         let imageView = UIImageView()

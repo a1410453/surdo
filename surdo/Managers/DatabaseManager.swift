@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 import FirebaseFirestoreCombineSwift
 import Combine
 
-class DatabaseManager {
+final class DatabaseManager {
     
     static let shared = DatabaseManager()
     

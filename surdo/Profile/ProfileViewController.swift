@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SDWebImage
 
-class ProfileViewController: UIViewController, TableViewHeaderDelegate {
+final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private var isStatusBarHidden: Bool = true
     private var viewModel = ProfileViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []

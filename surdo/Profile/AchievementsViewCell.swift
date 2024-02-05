@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AchievementsViewCell: UITableViewCell {
+final class AchievementsViewCell: UITableViewCell {
 
     static let identifier = "AchievementsViewCell"
     
