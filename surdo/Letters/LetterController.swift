@@ -11,6 +11,8 @@ import AVFoundation
 
 final class LetterController: UIViewController {
     
+    var letter = " "
+    var currentLetter = 0
     var onDismiss: (() -> Void)?
     
     // MARK: UI components
@@ -25,7 +27,7 @@ final class LetterController: UIViewController {
         let label = UILabel()
         let index = LevelAccessManager.alphabet.index(
             LevelAccessManager.alphabet.startIndex,
-            offsetBy: LevelAccessManager.currentLevel
+            offsetBy: currentLetter
         )
         label.text = String(LevelAccessManager.alphabet[index])
         label.textColor = AppColor.red.uiColor
@@ -45,11 +47,15 @@ final class LetterController: UIViewController {
     }()
     
     private let containerView = UIView()
-    private var player = AVPlayer(url: AppConstants.makeURL(middlePart: LevelAccessManager.currentLevel+1))
+    private lazy var player: AVPlayer = {
+        AppConstants.middle = currentLetter + 1
+        let player = AVPlayer(url: AppConstants.makeURL())
+        return player
+    }()
     private var playerLayer: AVPlayerLayer!
     
     var counterOfRepetitions = 0
-   
+    
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -109,10 +115,11 @@ final class LetterController: UIViewController {
     @objc func tappedNextButton() {
         // self.tabBarController?.tabBar.isHidden = false
         let viewController = QuizViewController()
+        viewController.passCurrentLetter(currentLetter)
         navigationController?.pushViewController(viewController, animated: true)
         viewController.onDismiss = { [weak self] in
             self?.tabBarController?.tabBar.isHidden = false
-            self?.navigationController?.popViewController(animated: true)
+            self?.navigationController?.popViewController(animated: false)
             self?.onDismiss?()
         }
     }

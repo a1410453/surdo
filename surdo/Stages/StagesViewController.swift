@@ -190,6 +190,7 @@ class StagesViewController: UIViewController,
         cell.configureButton(with: letterQueue)
         cell.onStageButtonTap = { [weak self] in
             let viewController = LetterController()
+            viewController.currentLetter = letterQueue
             self?.navigationController?.pushViewController(viewController, animated: false)
             viewController.onDismiss = { [weak self] in
                 self?.reloadCells()

@@ -111,7 +111,7 @@ final class FinishedViewController: UIViewController {
     // MARK: - Actions
     @objc private func didPressedConfirmButton() {
         updateUserScore()
-        self.dismiss(animated: true) {
+        self.dismiss(animated: false) {
             self.onDismiss?()
         }
     }

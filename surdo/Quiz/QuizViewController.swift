@@ -124,7 +124,7 @@ final class QuizViewController: UIViewController {
             let controller = FinishedViewController()
             self.presentPanModal(controller)
             controller.onDismiss = { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
+                self?.navigationController?.popViewController(animated: false)
                 self?.onDismiss?()
             }
         }
@@ -132,6 +132,10 @@ final class QuizViewController: UIViewController {
     
     func refreshQuestions() {
         collectionView.reloadData()
+    }
+    
+    func passCurrentLetter(_ letter: Int) {
+        currentLetter = letter + 1
     }
     
     func generateUniqueRandomNumbers() -> Set<Int> {

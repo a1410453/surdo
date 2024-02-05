@@ -12,6 +12,15 @@ struct AppConstants {
     static let baseURL = 
     "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/alphabet_videos%2F"
     static let tokenURL = ".mp4?alt=media"
+    static var middle = 0
+    static func makeURL() -> URL {
+        let urlString = "\(baseURL)\(middle)\(tokenURL)"
+        guard let url = URL(string: urlString) else {
+            fatalError("Invalid URL")
+        }
+        return url
+    }
+    
     static func makeURL(middlePart: Int) -> URL {
         let urlString = "\(baseURL)\(middlePart)\(tokenURL)"
         guard let url = URL(string: urlString) else {
