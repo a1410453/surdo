@@ -13,7 +13,7 @@ final class LoginViewController: UIViewController {
     private var viewModel = AuthenticationViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Войти", for: .normal)
         button.backgroundColor = AppColor.red.uiColor
@@ -26,7 +26,7 @@ final class LoginViewController: UIViewController {
         return button
     }()
 
-    private let loginTitleLabel: UILabel = {
+    private lazy var loginTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Войти в ваш аккаунт"
@@ -34,7 +34,7 @@ final class LoginViewController: UIViewController {
         return label
     }()
     
-    private let emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
@@ -46,7 +46,7 @@ final class LoginViewController: UIViewController {
         
     }()
     
-    private let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(

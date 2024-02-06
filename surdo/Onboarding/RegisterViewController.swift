@@ -13,7 +13,7 @@ final class RegisterViewController: UIViewController {
     private var viewModel = AuthenticationViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
-    private let registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Создать Аккаунт", for: .normal)
         button.backgroundColor = AppColor.red.uiColor
@@ -26,7 +26,7 @@ final class RegisterViewController: UIViewController {
         return button
     }()
 
-    private let registerTitleLabel: UILabel = {
+    private lazy var registerTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Создать ваш аккаунт"
@@ -34,7 +34,7 @@ final class RegisterViewController: UIViewController {
         return label
     }()
     
-    private let emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
@@ -46,7 +46,7 @@ final class RegisterViewController: UIViewController {
         
     }()
     
-    private let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(

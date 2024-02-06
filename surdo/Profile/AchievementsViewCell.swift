@@ -14,7 +14,7 @@ final class AchievementsViewCell: UITableViewCell {
     
     private let actionSpacing: CGFloat = 400
     
-    private let achievementTitleLabel: UILabel = {
+    private lazy var achievementTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         label.text = " "
@@ -23,7 +23,7 @@ final class AchievementsViewCell: UITableViewCell {
         return label
     }()
     
-    private let avatarImageView: UIImageView = {
+    private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -34,7 +34,7 @@ final class AchievementsViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let achievementDescriptionLabel: UILabel = {
+    private lazy var achievementDescriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         label.text = " "
@@ -45,7 +45,7 @@ final class AchievementsViewCell: UITableViewCell {
         return label
     }()
     
-    let lineView: UIView = {
+    private lazy var lineView: UIView = {
         let line = UIView()
         line.backgroundColor = AppColor.red.uiColor
         line.translatesAutoresizingMaskIntoConstraints = false

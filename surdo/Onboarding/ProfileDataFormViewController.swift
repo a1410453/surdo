@@ -14,7 +14,7 @@ final class ProfileDataFormViewController: UIViewController {
     private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: UI
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.alwaysBounceVertical = true
@@ -22,7 +22,7 @@ final class ProfileDataFormViewController: UIViewController {
         return scrollView
     }()
     
-    private let displayNameTextField: UITextField = {
+    private lazy var displayNameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .default
@@ -38,7 +38,7 @@ final class ProfileDataFormViewController: UIViewController {
         return textField
     }()
     
-    private let usernameTextField: UITextField = {
+    private lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .default
@@ -54,7 +54,7 @@ final class ProfileDataFormViewController: UIViewController {
         return textField
     }()
     
-    private let avatarPlaceholderImageView: UIImageView = {
+    private lazy var avatarPlaceholderImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -68,7 +68,7 @@ final class ProfileDataFormViewController: UIViewController {
         return imageView
     }()
     
-    private let hintLabel: UILabel = {
+    private lazy var hintLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Заполните ваши данные"
@@ -77,7 +77,7 @@ final class ProfileDataFormViewController: UIViewController {
         return label
     }()
     
-    private let submitButton: UIButton = {
+    private lazy var submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Отправить", for: .normal)
         button.backgroundColor = AppColor.red.uiColor

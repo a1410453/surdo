@@ -14,7 +14,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private var viewModel = ProfileViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
-    private let statusBar: UIView = {
+    private lazy var statusBar: UIView = {
         let view = UIView()
         view.backgroundColor = AppColor.beige.uiColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
                                                                        width: profileTableView.frame.width,
                                                                        height: 415))
     
-    private let profileTableView: UITableView = {
+    private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(AchievementsViewCell.self, forCellReuseIdentifier: AchievementsViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false

@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
-    private let welcomeLabel: UILabel = {
+    private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = """
@@ -24,7 +24,7 @@ final class OnboardingViewController: UIViewController {
         return label
     }()
     
-    private let createAccountButton: UIButton = {
+    private lazy var createAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Создать аккаунт", for: .normal)
@@ -36,7 +36,7 @@ final class OnboardingViewController: UIViewController {
         return button
     }()
     
-    private let promptLabel: UILabel = {
+    private lazy var promptLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Есть аккаунт?"
@@ -45,7 +45,7 @@ final class OnboardingViewController: UIViewController {
         return label
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Войти", for: .normal)

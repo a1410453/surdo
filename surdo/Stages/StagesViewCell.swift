@@ -14,7 +14,7 @@ final class StagesViewCell: UICollectionViewCell {
     
     var onStageButtonTap: (() -> Void)?
     
-    private let stageButton: UIButton = {
+    private lazy var stageButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "A"), for: .disabled)
         button.backgroundColor = .clear

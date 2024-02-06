@@ -46,7 +46,7 @@ final class LetterController: UIViewController {
         return button
     }()
     
-    private let containerView = UIView()
+    private lazy var containerView = UIView()
     private lazy var player: AVPlayer = {
         AppConstants.middle = currentLetter + 1
         let player = AVPlayer(url: AppConstants.makeURL())
