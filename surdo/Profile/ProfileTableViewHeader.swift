@@ -21,7 +21,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var joinDateLabel: UILabel = {
+    lazy var joinDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
@@ -39,7 +39,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return imageView
     }()
     
-    private lazy var levelTextLabel: UILabel = {
+    lazy var levelTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "уроков пройдено"
@@ -48,7 +48,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var levelCountLabel: UILabel = {
+    lazy var levelCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -57,7 +57,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var userBioLabel: UILabel = {
+    lazy var userBioLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -66,7 +66,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var usernameLabel: UILabel = {
+    lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
@@ -75,7 +75,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var displayNameLabel: UILabel = {
+    lazy var displayNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
@@ -84,7 +84,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    private lazy var profileAvatarImageView: UIImageView = {
+    lazy var profileAvatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true

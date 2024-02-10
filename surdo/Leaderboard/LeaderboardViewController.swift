@@ -23,14 +23,14 @@ final class LeaderboardViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = UIColor.black  // Change the color to your preference
+        tableView.separatorColor = UIColor.black
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         tableView.register(LeaderboardViewCell.self,
                            forCellReuseIdentifier: LeaderboardViewCell.cellID)
         tableView.backgroundColor = AppColor.beige.uiColor
         return tableView
     }()
-    
+
     var users: [(username: String, learningScore: String)] = []
     
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ final class LeaderboardViewController: UIViewController {
         super.viewWillAppear(animated)
         fetchUsers()
         tableView.reloadData()
+        createParticles()
     }
     
     private func fetchUsers() {
@@ -72,6 +73,43 @@ final class LeaderboardViewController: UIViewController {
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }
+    }
+    
+    func createParticles() {
+        let particleEmitter = CAEmitterLayer()
+
+        particleEmitter.emitterPosition = CGPoint(x: view.center.x, y: -20)
+        particleEmitter.emitterShape = .line
+        particleEmitter.emitterSize = CGSize(width: view.frame.size.width/2, height: 1)
+
+        let red = makeEmitterCell(color: UIColor.red)
+        let green = makeEmitterCell(color: AppColor.red.uiColor)
+
+        particleEmitter.emitterCells = [red, green, red]
+
+        pedestalImageView.layer.addSublayer(particleEmitter)
+    }
+
+    func makeEmitterCell(color: UIColor) -> CAEmitterCell {
+        let cell = CAEmitterCell()
+        cell.birthRate = 3
+        cell.lifetime = 7.0
+        cell.lifetimeRange = 0
+        cell.color = color.cgColor
+        cell.velocity = 100
+        cell.velocityRange = 50
+        cell.emissionLongitude = CGFloat.pi
+        cell.emissionRange = CGFloat.pi / 4
+        cell.scale = 0.4
+        cell.spin = 2
+        cell.spinRange = 3
+        cell.scaleRange = 0.2
+        cell.scaleSpeed = -0.05
+
+        cell.contents = UIImage(named: "confetti")?.cgImage
+        cell.color = color.cgColor
+        
+        return cell
     }
 }
 

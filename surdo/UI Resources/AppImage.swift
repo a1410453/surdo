@@ -53,4 +53,5 @@ enum AppImage: String, AppImageProtocol {
     case achievement8 = "achievement8"
     case achievement9 = "achievement9"
     
+    case confetti = "confetti"
 }
