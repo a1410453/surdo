@@ -9,53 +9,6 @@ import Combine
 @testable import surdo
 import FirebaseAuth
 
-struct MockStorageMetadata {
-    var contentType: String?
-    var path: String?
-}
-
-class MockStorageManager {
-    var uploadProfilePhotoResult: AnyPublisher<MockStorageMetadata, Error>?
-    var getDownloadURLResult: AnyPublisher<URL, Error>?
-    
-    func uploadProfilePhoto(with id: String,
-                            image: Data,
-                            metaData:  MockStorageMetadata) -> AnyPublisher<MockStorageMetadata, Error> {
-        if let result = uploadProfilePhotoResult {
-            return result
-        } else {
-            return Fail(error: NSError(domain: "MockStorageManager",
-                                       code: 0,
-                                       userInfo: nil)).eraseToAnyPublisher()
-        }
-    }
-    
-    func getDownloadURL(for path: String) -> AnyPublisher<URL, Error> {
-        if let result = getDownloadURLResult {
-            return result
-        } else {
-            return Fail(error: NSError(domain: "MockStorageManager",
-                                       code: 0,
-                                       userInfo: nil)).eraseToAnyPublisher()
-        }
-    }
-}
-
-class MockDatabaseManager {
-    
-    var collectionUsersUpdateFieldsResult: AnyPublisher<Bool, Error>?
-    
-    func collectionUsers(updateFields fields: [String: Any], for id: String) -> AnyPublisher<Bool, Error> {
-        if let result = collectionUsersUpdateFieldsResult {
-            return result
-        } else {
-            return Fail(error: NSError(domain: "MockDatabaseManager",
-                                       code: 0,
-                                       userInfo: nil)).eraseToAnyPublisher()
-        }
-    }
-}
-
 class AuthenticationViewViewModelTests: XCTestCase {
     
     var viewModel: AuthenticationViewViewModel!
