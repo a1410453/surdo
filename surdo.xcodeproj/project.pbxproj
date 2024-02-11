@@ -42,7 +42,7 @@
 		546199C62B2B42A000560D28 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */; };
 		546199C82B2B42FA00560D28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C72B2B42FA00560D28 /* LoginViewController.swift */; };
 		546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C92B2B455400560D28 /* HomeViewViewModel.swift */; };
-		5498992B2B5E856100AFB140 /* LeaderboardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992A2B5E856100AFB140 /* LeaderboardViewViewModel.swift */; };
+		547FFED02B78BBFA00A65446 /* surdoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547FFECF2B78BBFA00A65446 /* surdoTests.swift */; };
 		5498992E2B5E871B00AFB140 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992D2B5E871B00AFB140 /* LeaderboardViewController.swift */; };
 		549899302B5EB7C800AFB140 /* LeaderboardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992F2B5EB7C800AFB140 /* LeaderboardViewCell.swift */; };
 		549BC4752AFA96220058FA68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 549BC4742AFA96220058FA68 /* SnapKit */; };
@@ -68,6 +68,16 @@
 		54C7A8E92B1F59EE00B925A9 /* AchievementsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8E82B1F59EE00B925A9 /* AchievementsViewCell.swift */; };
 		54CFA8A52B3AE32A005C4C98 /* CompletionProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFA8A42B3AE32A005C4C98 /* CompletionProgressView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		547FFED12B78BBFA00A65446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5443A93D2AF50ED900176F6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5443A9442AF50ED900176F6C;
+			remoteInfo = surdo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		540C7EDE2B2CC606009A1DB5 /* ProfileDataFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +108,8 @@
 		546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
 		546199C72B2B42FA00560D28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		546199C92B2B455400560D28 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
-		5498992A2B5E856100AFB140 /* LeaderboardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewViewModel.swift; sourceTree = "<group>"; };
+		547FFECD2B78BBFA00A65446 /* surdoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = surdoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		547FFECF2B78BBFA00A65446 /* surdoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surdoTests.swift; sourceTree = "<group>"; };
 		5498992D2B5E871B00AFB140 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		5498992F2B5EB7C800AFB140 /* LeaderboardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewCell.swift; sourceTree = "<group>"; };
 		549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAccessManager.swift; sourceTree = "<group>"; };
@@ -142,6 +153,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		547FFECA2B78BBFA00A65446 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5443A9472AF50ED900176F6C /* surdo */,
+				547FFECE2B78BBFA00A65446 /* surdoTests */,
 				5443A9462AF50ED900176F6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				5443A9452AF50ED900176F6C /* surdo.app */,
+				547FFECD2B78BBFA00A65446 /* surdoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,9 +294,16 @@
 				544D465C2B06707E00EB49E0 /* ProfileViewViewModel.swift */,
 				546199C92B2B455400560D28 /* HomeViewViewModel.swift */,
 				544D465A2B066C3100EB49E0 /* ProfileDataFormViewViewModel.swift */,
-				5498992A2B5E856100AFB140 /* LeaderboardViewViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		547FFECE2B78BBFA00A65446 /* surdoTests */ = {
+			isa = PBXGroup;
+			children = (
+				547FFECF2B78BBFA00A65446 /* surdoTests.swift */,
+			);
+			path = surdoTests;
 			sourceTree = "<group>";
 		};
 		5498992C2B5E86F600AFB140 /* Leaderboard */ = {
@@ -364,6 +391,24 @@
 			productReference = 5443A9452AF50ED900176F6C /* surdo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		547FFECC2B78BBFA00A65446 /* surdoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547FFED32B78BBFA00A65446 /* Build configuration list for PBXNativeTarget "surdoTests" */;
+			buildPhases = (
+				547FFEC92B78BBFA00A65446 /* Sources */,
+				547FFECA2B78BBFA00A65446 /* Frameworks */,
+				547FFECB2B78BBFA00A65446 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				547FFED22B78BBFA00A65446 /* PBXTargetDependency */,
+			);
+			name = surdoTests;
+			productName = surdoTests;
+			productReference = 547FFECD2B78BBFA00A65446 /* surdoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -371,11 +416,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					5443A9442AF50ED900176F6C = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					547FFECC2B78BBFA00A65446 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5443A9442AF50ED900176F6C;
 					};
 				};
 			};
@@ -399,6 +448,7 @@
 			projectRoot = "";
 			targets = (
 				5443A9442AF50ED900176F6C /* surdo */,
+				547FFECC2B78BBFA00A65446 /* surdoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -415,6 +465,13 @@
 				549BC4A22AFD43730058FA68 /* Inter-Medium.ttf in Resources */,
 				5443A9522AF50EDA00176F6C /* Assets.xcassets in Resources */,
 				544D464E2B04F5A100EB49E0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547FFECB2B78BBFA00A65446 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +535,6 @@
 				5443A9492AF50ED900176F6C /* AppDelegate.swift in Sources */,
 				5443A94B2AF50ED900176F6C /* SceneDelegate.swift in Sources */,
 				54584AC62B64EC9100E57219 /* PrivacyPolicyViewController.swift in Sources */,
-				5498992B2B5E856100AFB140 /* LeaderboardViewViewModel.swift in Sources */,
 				544D465D2B06707E00EB49E0 /* ProfileViewViewModel.swift in Sources */,
 				54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */,
 				541D31322B21C71C009D7E85 /* QuizViewController.swift in Sources */,
@@ -489,7 +545,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		547FFEC92B78BBFA00A65446 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547FFED02B78BBFA00A65446 /* surdoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		547FFED22B78BBFA00A65446 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5443A9442AF50ED900176F6C /* surdo */;
+			targetProxy = 547FFED12B78BBFA00A65446 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5443A9532AF50EDA00176F6C /* LaunchScreen.storyboard */ = {
@@ -679,6 +751,61 @@
 			};
 			name = Release;
 		};
+		547FFED42B78BBFA00A65446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3GHD95S4N;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rustem.surdoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/surdo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/surdo";
+			};
+			name = Debug;
+		};
+		547FFED52B78BBFA00A65446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3GHD95S4N;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rustem.surdoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/surdo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/surdo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -696,6 +823,15 @@
 			buildConfigurations = (
 				5443A95A2AF50EDA00176F6C /* Debug */,
 				5443A95B2AF50EDA00176F6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547FFED32B78BBFA00A65446 /* Build configuration list for PBXNativeTarget "surdoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547FFED42B78BBFA00A65446 /* Debug */,
+				547FFED52B78BBFA00A65446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

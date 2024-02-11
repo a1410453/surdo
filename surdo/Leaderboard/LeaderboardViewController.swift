@@ -49,7 +49,7 @@ final class LeaderboardViewController: UIViewController {
         createParticles()
     }
     
-    private func fetchUsers() {
+    func fetchUsers() {
         DatabaseManager.shared.collectionUsers { user in
             self.users = user.sorted(by: { (user1, user2) -> Bool in
                 if let score1 = Int(user1.learningScore), let score2 = Int(user2.learningScore) {

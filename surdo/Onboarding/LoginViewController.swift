@@ -94,7 +94,8 @@ final class LoginViewController: UIViewController {
         
     }
     
-    private func presentAlert(with error: String) {
+    // private
+    func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
         let okayButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okayButton)

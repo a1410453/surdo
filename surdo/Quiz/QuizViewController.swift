@@ -12,10 +12,10 @@ import SDWebImage
 
 final class QuizViewController: UIViewController {
     // MARK: - Variables
-    private var currentQuestion: Int = 1
-    private var currentLetter: Int = LevelAccessManager.currentLevel + 1
-    private var rightAnswer: Int = Int.random(in: 0..<4)
-    private var falseAnswers = Set<Int>()
+    var currentQuestion: Int = 1
+    var currentLetter: Int = LevelAccessManager.currentLevel + 1
+    var rightAnswer: Int = Int.random(in: 0..<4)
+    var falseAnswers = Set<Int>()
     
     var onDismiss: (() -> Void)?
     
@@ -29,7 +29,7 @@ final class QuizViewController: UIViewController {
         return label
     }()
     
-    private lazy var questionIndicatorLabel: UILabel = {
+    lazy var questionIndicatorLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.red.uiColor
         label.text = "\(currentQuestion)/5"
@@ -54,7 +54,7 @@ final class QuizViewController: UIViewController {
         return collectionView
     }()
     
-    private lazy var nextButton: UIButton = {
+    lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
