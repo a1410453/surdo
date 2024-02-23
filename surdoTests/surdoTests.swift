@@ -10,7 +10,6 @@ import Combine
 import FirebaseAuth
 
 class AuthenticationViewViewModelTests: XCTestCase {
-    
     var viewModel: AuthenticationViewViewModel!
     var cancellables: Set<AnyCancellable> = []
     
@@ -86,7 +85,7 @@ class QuizViewControllerTests: XCTestCase {
                       "Generated set should only contain numbers in range 0...42")
     }
     
-    func testNextQuestion() {
+    func testPressNextQuestion() {
         // Given
         let quizViewController = QuizViewController()
         quizViewController.currentLetter = 5
@@ -102,7 +101,7 @@ class QuizViewControllerTests: XCTestCase {
         XCTAssertLessThan(quizViewController.rightAnswer, 4)
     }
     
-    func testNextLastQuestion() {
+    func testPressNextLastQuestion() {
         // Given
         let quizViewController = QuizViewController()
         quizViewController.currentLetter = 5

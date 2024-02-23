@@ -27,7 +27,7 @@ final class LetterController: UIViewController {
         let label = UILabel()
         let index = LevelAccessManager.alphabet.index(
             LevelAccessManager.alphabet.startIndex,
-            offsetBy: currentLetter
+            offsetBy: currentLetter - 1
         )
         label.text = String(LevelAccessManager.alphabet[index])
         label.textColor = AppColor.red.uiColor
