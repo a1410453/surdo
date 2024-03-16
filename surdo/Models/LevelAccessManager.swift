@@ -11,21 +11,16 @@ final class LevelAccessManager {
     static let alphabet = "AӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ"
     static var currentLevel: Int = 0
     static var learningScore: Int = 0
-    static private var levelAccessArray = [Bool](repeating: false, count: 42)
-    private init() {
-        LevelAccessManager.levelAccessArray[0] = true
-    }
+    static private var levelAccess: Int = 0
     
     func checkLevelAccess(level: Int) -> Bool {
-        guard level >= 0 && level <= LevelAccessManager.levelAccessArray.count - 1 else {
+        guard level >= 0 && level <= LevelAccessManager.levelAccess else {
             return false
         }
-        return LevelAccessManager.levelAccessArray[level]
+        return true
     }
     
     func unlockLevelAccess() {
-        for i in 0...LevelAccessManager.currentLevel {
-            LevelAccessManager.levelAccessArray[i] = true
-        }
+        LevelAccessManager.levelAccess = LevelAccessManager.currentLevel
     }
 }

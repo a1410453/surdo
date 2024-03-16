@@ -16,8 +16,10 @@ final class StagesViewCell: UICollectionViewCell {
     
     private lazy var stageButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "A"), for: .disabled)
         button.backgroundColor = .clear
+        button.setImage(UIImage(named: "disabled"), for: .disabled)
+        button.imageView?.layer.masksToBounds = true
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -49,9 +51,6 @@ final class StagesViewCell: UICollectionViewCell {
     // MARK: Actions
     public func configureButton(with letter: Int) {
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
-        stageButton.setImage(UIImage(named: "disabled"), for: .disabled)
-        stageButton.imageView?.layer.masksToBounds = true
-        stageButton.imageView?.contentMode = .scaleAspectFit
         stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         if !(LevelAccessManager.shared.checkLevelAccess(level: letter)) {
             stageButton.isEnabled = false

@@ -46,12 +46,19 @@ final class StagesHeaderSectionView: UICollectionReusableView {
     // MARK: Actions
     override func prepareForReuse() {
         super.prepareForReuse()
-        levelLabel.text = "Буквы"
+        levelLabel.text = ""
     }
     
     public func configureLevelLabel(with letter: IndexPath) {
-        if letter.section > 0 {
+        switch letter.section {
+        case 0:
+            levelLabel.text = "Буквы"
+        case 1:
             levelLabel.text = "Цифры"
+        case 2:
+            levelLabel.text = "Я и ты"
+        default:
+            levelLabel.text = "s"
         }
     }
 }

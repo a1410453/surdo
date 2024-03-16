@@ -18,7 +18,7 @@ final class StagesViewController: UIViewController,
     private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: UI
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
@@ -147,11 +147,20 @@ final class StagesViewController: UIViewController,
     
     // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 46
+        switch section {
+        case 0:
+            return 42
+        case 1:
+            return 42
+        case 2:
+            return 3
+        default:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, 
@@ -178,25 +187,71 @@ final class StagesViewController: UIViewController,
         return CGSize(width: collectionView.bounds.size.width, height: 50)
     }
     
-    func collectionView(_ collectionView: UICollectionView, 
+    // swiftlint: disable all
+    func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let letterQueue = indexPath.row
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
-                                                      for: indexPath) as? StagesViewCell
-            else {
-            print("Unable to cast the dequeued cell to StagesViewCell")
-            return UICollectionViewCell()
-        }
-        cell.configureButton(with: letterQueue)
-        cell.onStageButtonTap = { [weak self] in
-            let viewController = LetterController()
-            viewController.currentLetter = letterQueue
-            self?.navigationController?.pushViewController(viewController, animated: false)
-            viewController.onDismiss = { [weak self] in
-                self?.reloadCells()
-            }
-        }
-        return cell
         
+        switch indexPath.section {
+            
+        // Letters
+        case 0:
+            let letterQueue = indexPath.row
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
+                                                          for: indexPath) as? StagesViewCell
+                else {
+                print("Unable to cast the dequeued cell to StagesViewCell")
+                return UICollectionViewCell()
+            }
+            cell.configureButton(with: letterQueue)
+            cell.onStageButtonTap = { [weak self] in
+                let viewController = LetterController()
+                viewController.currentLetter = letterQueue
+                self?.navigationController?.pushViewController(viewController, animated: false)
+                viewController.onDismiss = { [weak self] in
+                    self?.reloadCells()
+                }
+            }
+            return cell
+            
+        // Numbers
+        case 1:
+            let letterQueue = indexPath.row
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
+                                                          for: indexPath) as? StagesViewCell
+                else {
+                print("Unable to cast the dequeued cell to StagesViewCell")
+                return UICollectionViewCell()
+            }
+            cell.configureButton(with: 42 + letterQueue)
+            cell.onStageButtonTap = { [weak self] in
+                let viewController = LetterController()
+                viewController.currentLetter = letterQueue
+                self?.navigationController?.pushViewController(viewController, animated: false)
+                viewController.onDismiss = { [weak self] in
+                    self?.reloadCells()
+                }
+            }
+            return cell
+        default:
+            let letterQueue = indexPath.row
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
+                                                          for: indexPath) as? StagesViewCell
+                else {
+                print("Unable to cast the dequeued cell to StagesViewCell")
+                return UICollectionViewCell()
+            }
+            cell.configureButton(with: letterQueue)
+            cell.onStageButtonTap = { [weak self] in
+                let viewController = LetterController()
+                viewController.currentLetter = letterQueue
+                self?.navigationController?.pushViewController(viewController, animated: false)
+                viewController.onDismiss = { [weak self] in
+                    self?.reloadCells()
+                }
+            }
+            return cell
+        }
     }
+    
+    // swiftlint: enable all
 }
