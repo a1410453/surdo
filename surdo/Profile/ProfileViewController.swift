@@ -119,6 +119,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.configureTweet(with: indexPath.row)
         }
+        cell.isUserInteractionEnabled = false
         return cell
     }
     

@@ -15,9 +15,9 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private lazy var achievementsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .label
+        label.textColor = AppColor.red.uiColor
         label.text = "Достижения"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
@@ -99,9 +99,27 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Политика конфидециальности", for: .normal)
+        button.setImage(AppImage.privacy.systemImage, for: .normal)
         button.titleLabel?.font = AppFont.regular.s14()
         button.tintColor = AppColor.red.uiColor
+        button.setTitleColor( .label, for: .normal)
+        button.backgroundColor = AppColor.tabbar.uiColor
+        button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapPrivacyPolicyButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var supportButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Сообщить о проблеме", for: .normal)
+        button.setImage(AppImage.support.systemImage, for: .normal)
+        button.titleLabel?.font = AppFont.regular.s14()
+        button.tintColor = AppColor.red.uiColor
+        button.setTitleColor( .label, for: .normal)
+        button.backgroundColor = AppColor.tabbar.uiColor
+        button.layer.cornerRadius = 16
+        button.addTarget(self, action: #selector(didTapSupportButton), for: .touchUpInside)
         return button
     }()
     
@@ -117,6 +135,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         addSubview(levelTextLabel)
         addSubview(levelCountLabel)
         addSubview(privacyPolicyButton)
+        addSubview(supportButton)
         addSubview(achievementsLabel)
         configureConstraints()
     }
@@ -136,6 +155,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureFollowersTextLabelConstraints()
         configureFollowersCountLabelConstraints()
         configurePrivacyPolicyButtonConstraints()
+        configureSupportButtonConstraints()
         configureAchievementsLabelConstraints()
     }
     
@@ -213,23 +233,43 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     private func configurePrivacyPolicyButtonConstraints() {
         let privacyPolicyButtonConstraints = [
-            privacyPolicyButton.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            privacyPolicyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             privacyPolicyButton.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor,
-                                                     constant: 10)
+                                                     constant: 10),
+            privacyPolicyButton.heightAnchor.constraint(equalToConstant: 40)
+            
         ]
         NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
+    }
+    
+    private func configureSupportButtonConstraints() {
+        let supportButtonConstraints = [
+            supportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            supportButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            supportButton.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor,
+                                                     constant: 10),
+            supportButton.heightAnchor.constraint(equalToConstant: 40)
+            
+        ]
+        NSLayoutConstraint.activate(supportButtonConstraints)
     }
     
     private func configureAchievementsLabelConstraints() {
         let achievementsLabelConstraints = [
             achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            achievementsLabel.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 60)
+            achievementsLabel.topAnchor.constraint(equalTo: supportButton.bottomAnchor, constant: 60)
         ]
         NSLayoutConstraint.activate(achievementsLabelConstraints)
     }
     
     // MARK: Actions
     @objc private func didTapPrivacyPolicyButton() {
+        delegate?.didTapPrivacyPolicyButton()
+    }
+    
+    @objc private func didTapSupportButton() {
         delegate?.didTapPrivacyPolicyButton()
     }
 }
