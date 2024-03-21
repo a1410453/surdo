@@ -13,7 +13,7 @@ import SDWebImage
 final class QuizViewController: UIViewController {
     // MARK: - Variables
     var currentQuestion: Int = 1
-    var currentLetter: Int = LevelAccessManager.currentLevel + 1
+    var currentLetter: Int = 0
     var rightAnswer: Int = Int.random(in: 0..<4)
     var falseAnswers = Set<Int>()
     

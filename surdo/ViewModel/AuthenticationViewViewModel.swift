@@ -22,7 +22,8 @@ final class AuthenticationViewViewModel: ObservableObject {
     func validateAuthenticationForm() {
         guard let email = email, let password = password else {
             isAuthenticationFormValid = false
-            return }
+            return
+        }
         isAuthenticationFormValid = isValidEmail(email) && password.count >= 8
     }
     
@@ -80,5 +81,4 @@ final class AuthenticationViewViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
     }
- 
 }

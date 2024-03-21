@@ -27,7 +27,7 @@ final class LetterController: UIViewController {
         let label = UILabel()
         let index = LevelAccessManager.alphabet.index(
             LevelAccessManager.alphabet.startIndex,
-            offsetBy: currentLetter - 1
+            offsetBy: currentLetter
         )
         label.text = String(LevelAccessManager.alphabet[index])
         label.textColor = AppColor.red.uiColor
@@ -93,7 +93,7 @@ final class LetterController: UIViewController {
         }
         
         nextButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-100)
+            make.bottom.equalToSuperview().offset(-80)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
             make.height.equalTo(60)
