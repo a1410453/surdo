@@ -37,7 +37,6 @@ final class DatabaseManager {
         db.collection(usersPath).document(id).updateData(updateFields)
             .map { _ in true }
             .eraseToAnyPublisher()
-        
     }
     
     func collectionUsers(completion: @escaping ([(username: String,

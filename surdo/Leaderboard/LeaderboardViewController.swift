@@ -18,7 +18,7 @@ final class LeaderboardViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var tableView: UITableView = {
+    private lazy var leaderboardTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,14 +38,14 @@ final class LeaderboardViewController: UIViewController {
         view.backgroundColor = AppColor.beige.uiColor
         navigationController?.navigationBar.isHidden = true
         view.addSubview(pedestalImageView)
-        view.addSubview(tableView)
+        view.addSubview(leaderboardTableView)
         configureConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchUsers()
-        tableView.reloadData()
+        leaderboardTableView.reloadData()
         createParticles()
     }
     
@@ -57,7 +57,7 @@ final class LeaderboardViewController: UIViewController {
                 }
                 return false
             })
-            self.tableView.reloadData()
+            self.leaderboardTableView.reloadData()
         }
     }
     
@@ -68,7 +68,7 @@ final class LeaderboardViewController: UIViewController {
             make.width.equalToSuperview()
         }
         
-        tableView.snp.makeConstraints { make in
+        leaderboardTableView.snp.makeConstraints { make in
             make.top.equalTo(pedestalImageView.snp.bottom).offset(10)
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
