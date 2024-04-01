@@ -270,7 +270,9 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     }
     
     @objc private func didTapSupportButton() {
-        delegate?.didTapPrivacyPolicyButton()
+        if let url = URL(string: "https://t.me/rickby999") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 
