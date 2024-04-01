@@ -26,7 +26,7 @@ class AVCaptureManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, 
     let videoDevice = AVCaptureDevice.DiscoverySession(
         deviceTypes: [.builtInWideAngleCamera],
         mediaType: .video,
-        position: .back
+        position: .front
     ).devices.first
     var captureOutputHandler: ((CMSampleBuffer) -> Void)?
     

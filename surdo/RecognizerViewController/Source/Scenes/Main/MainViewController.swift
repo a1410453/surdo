@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupNavigationController()
+        self.tabBarController?.tabBar.isHidden = true
         guard firstCameraInit else {
             rootView.setupCamera(cameraAuthorizationNeeded: false)
             return

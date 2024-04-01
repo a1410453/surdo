@@ -3,6 +3,14 @@ import AVFoundation
 
 extension MainViews {
     class ResultView: UIView {
+        // MARK: - values
+        let mapping: [Int: String] = [0: "А", 1: "Б", 2: "В", 3: "Г", 4: "Д", 
+                                      5: "Е", 6: "Ж", 7: "З", 8: "И", 9: "К",
+                                      10: "Л", 11: "М", 12: "Н", 13: "О", 14: "П", 
+                                      15: "Р", 16: "С", 17: "Т", 18: "У", 19: "Ф",
+                                      20: "Х", 21: "Ц", 22: "Ч", 23: "Ш", 24: "Ы", 
+                                      25: "Ь", 26: "Э", 27: "Ю", 28: "Я"]
+
         // MARK: - Views
         private lazy var backgroundView: UIView = {
             let view = UIView()
@@ -150,7 +158,14 @@ extension MainViews {
         }
         
         func updateResult(resultValue: String, confidence: Float) {
-            resultLabel.text?.append(resultValue)
+
+            let number = 3
+            if let letter = mapping[number] {
+                print(letter)
+            }
+            // swiftlint: disable all
+            resultLabel.text?.append(self.mapping[Int(resultValue)!]!)
+            // swiftlint: enable all
         }
     }
 }
