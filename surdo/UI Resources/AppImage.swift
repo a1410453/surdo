@@ -31,9 +31,11 @@ extension AppImageProtocol {
 enum AppImage: String, AppImageProtocol {
     case gesture = "gesture"
     case mainTab = "house"
+    case recognizerTab = "hand.app"
     case pedestalTab = "person.3.sequence"
     case profileTab = "person.crop.circle"
     case mainTabSelected = "house.fill"
+    case recognizerTabSelected = "hand.app.fill"
     case pedestalTabSelected = "person.3.sequence.fill"
     case profileTabSelected = "person.crop.circle.fill"
     case next = "arrow.forward.circle.fill"

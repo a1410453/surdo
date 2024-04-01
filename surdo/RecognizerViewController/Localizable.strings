@@ -1,0 +1,42 @@
+"Common.Button.continue" = "Продолжить";
+"Common.Button.start" = "Начать";
+"Common.Button.back" = "Назад";
+"Common.Button.okay" = "Хорошо";
+"Common.Button.cancel" = "Отменить";
+"Common.Button.close" = "Закрыть";
+"Common.Button.reset" = "Сброс";
+"Common.Button.help" = "Помощь";
+"Common.Button.next" = "Далее";
+"Common.Button.confirm" = "Потвердить";
+
+"Common.yes" = "Да";
+"Common.no" = "Нет";
+"Common.dash" = "-";
+"Common.notAvailable" = "Недоступно";
+
+"Alert.generic" = "Ошибка";
+"Alert.genericWithError" = "Ошибка с причиной: %@";
+"Alert.noHandPoseDetected" = "Не обнаружено позы руки";
+"Alert.failedToPredictHandPose" = "Не удалось обработать позу руки";
+"Alert.thermalCanNotContinue" = "Устройство перегрелось.\nПожалуйста, закройте приложение или перезагрузите устройство и попробуйте снова позже.";
+
+"Main.Status.CameraStatus.checking" = "Проверка статуса камеры...";
+"Main.Status.CameraStatus.shouldRequest" = "Пожалуйста, разрешите доступ к камере для распознавания жестов русского языка.";
+"Main.Status.CameraStatus.notAllowed" = "Доступ к камере не разрешен. ";
+"Main.Status.CameraStatus.unknownFailure" = "Камера недоступна";
+"Main.Button.Settings.open" = "Открыть Настройки";
+
+"Main.Button.startDetection" = "Опознать";
+"Main.Button.detecting" = "Опознавание...";
+"Main.Button.handPoses" = "Меню";
+
+"Main.info" = "Разработал Rustem Orazbayev\nВ сотрудничестве \nс Anara Sandygulova. \nСейчас доступен только \nРусский Язык Жестов \nВерсия приложения: %@ (%@)";
+
+"AVCaptureFailure.noCameraDeviceFound" = "Камера не найдена.\n\nПожалуйста, убедитесь, что камера устройства работает правильно.";
+"AVCaptureFailure.couldNotCreateVideoDeviceInput" = "Не удалось создать входное видеоустройство.\n\nПожалуйста, перезагрузите ваше устройство.";
+"AVCaptureFailure.couldNotAddVideoDeviceInputToSession" = "Не удалось добавить входное видеоустройство к сеансу захвата.\n\nПожалуйста, перезагрузите ваше устройство.";
+"AVCaptureFailure.couldNotAddVideoDataOutputToSession" = "Не удалось добавить вывод видеоданных к сеансу захвата.\n\nПожалуйста, перезагрузите ваше устройство.";
+"AVCaptureFailure.failedVideoCaptureLockForConfiguration" = "Не удалось захватить видео для конфигурации.\n\nПожалуйста, перезагрузите ваше устройство.";
+"AVCaptureFailure.noPreviewLayerAvailable" = "Доступного слоя предпросмотра камеры нет.\n\nПожалуйста, перезагрузите ваше устройство.";
+
+"ThermalState.warning" = "Тепловое состояние устройства серьезное.\nКамера отключена до остывания устройства.";
