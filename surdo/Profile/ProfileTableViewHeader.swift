@@ -10,7 +10,7 @@ import UIKit
 final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     weak var delegate: TableViewHeaderDelegate?
     static let identifier = "ProfileTableViewHeader"
-
+    
     // MARK: UI
     private lazy var achievementsLabel: UILabel = {
         let label = UILabel()
@@ -123,6 +123,18 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return button
     }()
     
+    private lazy var signOutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = AppColor.red.uiColor
+        button.tintColor = .white
+        button.setImage(AppImage.signOut.systemImage, for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: Setup Views
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -136,6 +148,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         addSubview(levelCountLabel)
         addSubview(privacyPolicyButton)
         addSubview(supportButton)
+        addSubview(signOutButton)
         addSubview(achievementsLabel)
         configureConstraints()
     }
@@ -156,6 +169,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureFollowersCountLabelConstraints()
         configurePrivacyPolicyButtonConstraints()
         configureSupportButtonConstraints()
+        configureSignoutButtonConstraints()
         configureAchievementsLabelConstraints()
     }
     
@@ -228,7 +242,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         ]
         
         NSLayoutConstraint.activate(followersCountLabelConstraints)
-       
+        
     }
     
     private func configurePrivacyPolicyButtonConstraints() {
@@ -249,11 +263,24 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
             supportButton.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                     constant: -30),
             supportButton.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor,
-                                                     constant: 10),
+                                               constant: 10),
             supportButton.heightAnchor.constraint(equalToConstant: 40)
             
         ]
         NSLayoutConstraint.activate(supportButtonConstraints)
+    }
+    
+    private func configureSignoutButtonConstraints() {
+        let signOutButtonConstraints = [
+            signOutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            signOutButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            signOutButton.topAnchor.constraint(equalTo: supportButton.bottomAnchor,
+                                               constant: 10),
+            signOutButton.heightAnchor.constraint(equalToConstant: 40)
+        
+        ]
+        NSLayoutConstraint.activate(signOutButtonConstraints)
     }
     
     private func configureAchievementsLabelConstraints() {
@@ -274,8 +301,13 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    @objc private func didTapSignOut() {
+        delegate?.didTapSignOutButton()
+    }
 }
 
 protocol TableViewHeaderDelegate: AnyObject {
     func didTapPrivacyPolicyButton()
+    func didTapSignOutButton()
 }

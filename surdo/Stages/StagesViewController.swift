@@ -42,18 +42,6 @@ final class StagesViewController: UIViewController,
         view.layer.cornerRadius = 10
         return view
     }()
-    
-    private lazy var signOutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColor.red.uiColor
-        button.tintColor = .white
-        button.setImage(AppImage.signOut.systemImage, for: .normal)
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
-        return button
-    }()
 
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +66,6 @@ final class StagesViewController: UIViewController,
 
     // MARK: Constraints
     private func setupViews() {
-        view.addSubview(signOutButton)
         view.addSubview(completionProgressView)
         view.addSubview(collectionView)
         navigationController?.isNavigationBarHidden = true
@@ -88,18 +75,12 @@ final class StagesViewController: UIViewController,
         completionProgressView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
             make.leading.equalToSuperview().offset(40)
-            make.trailing.equalTo(signOutButton.snp.leading).offset(-20)
+            make.trailing.equalToSuperview().offset(-40)
             make.height.equalTo(40)
         }
         
-        signOutButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(100)
-            make.trailing.equalToSuperview().offset(-40)
-            make.size.equalTo(40)
-        }
-        
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(signOutButton.snp.bottom).offset(10)
+            make.top.equalTo(completionProgressView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-10)
@@ -120,12 +101,7 @@ final class StagesViewController: UIViewController,
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
-    
-    @objc private func didTapSignOut() {
-        try? Auth.auth().signOut()
-        handleAuthentication()
-    }
-    
+
     func bindViews() {
         viewModel.$user.sink { [weak self] user in
             guard let user = user else { return }

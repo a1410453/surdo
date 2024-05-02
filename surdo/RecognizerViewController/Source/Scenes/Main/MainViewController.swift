@@ -130,7 +130,7 @@ class MainViewController: UIViewController {
     // swiftlint:enable all
     
     private func openHandPoses() {
-        rootView.hideCameraView()
+        // rootView.hideCameraView()
         self.tabBarController?.tabBar.isHidden = false
 
     }

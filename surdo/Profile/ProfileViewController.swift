@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import SDWebImage
+import FirebaseAuth
 
 final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private var isStatusBarHidden: Bool = true
@@ -101,6 +102,19 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     func didTapPrivacyPolicyButton() {
         let controller = PrivacyPolicyViewController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func didTapSignOutButton() {
+        try? Auth.auth().signOut()
+        handleAuthentication()
+    }
+    
+    private func handleAuthentication() {
+        if Auth.auth().currentUser == nil {
+            let vc = UINavigationController(rootViewController: OnboardingViewController())
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+        }
     }
 }
 
