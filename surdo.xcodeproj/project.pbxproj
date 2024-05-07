@@ -60,6 +60,7 @@
 		549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A72AFE830A0058FA68 /* TabItem.swift */; };
 		549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */; };
 		54B7ED3B2B29E9F20064D80C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7ED3A2B29E9F20064D80C /* AppConstants.swift */; };
+		54BB14552BE7F85600781B2A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 54BB14542BE7F85600781B2A /* Localizable.xcstrings */; };
 		54BE77A62B3D781300800D43 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 54BE77A52B3D781300800D43 /* PanModal */; };
 		54BE77A82B3D787D00800D43 /* FinishedQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */; };
 		54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */; };
@@ -101,7 +102,6 @@
 		54E4F69D2BB74116002F279E /* MakeDefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4F6762BB74116002F279E /* MakeDefaultLabel.swift */; };
 		54E4F69E2BB74116002F279E /* MakeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4F6772BB74116002F279E /* MakeDefaultView.swift */; };
 		54E4F6A02BB7412A002F279E /* KSLClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 54E4F69F2BB7412A002F279E /* KSLClassifier.mlmodel */; };
-		54E4F6A22BB7413E002F279E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54E4F6A12BB7413E002F279E /* Localizable.strings */; };
 		54E4F6A62BB74152002F279E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4F6A32BB74152002F279E /* Assets.swift */; };
 		54E4F6A72BB74152002F279E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4F6A42BB74152002F279E /* Strings.swift */; };
 /* End PBXBuildFile section */
@@ -163,6 +163,7 @@
 		549BC4A72AFE830A0058FA68 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		54B7ED3A2B29E9F20064D80C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		54BB14542BE7F85600781B2A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedQuizController.swift; sourceTree = "<group>"; };
 		54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		54C7A8E62B1F576F00B925A9 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		54E4F6762BB74116002F279E /* MakeDefaultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeDefaultLabel.swift; sourceTree = "<group>"; };
 		54E4F6772BB74116002F279E /* MakeDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeDefaultView.swift; sourceTree = "<group>"; };
 		54E4F69F2BB7412A002F279E /* KSLClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KSLClassifier.mlmodel; sourceTree = "<group>"; };
-		54E4F6A12BB7413E002F279E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		54E4F6A32BB74152002F279E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		54E4F6A42BB74152002F279E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -434,7 +434,7 @@
 		54E4F6462BB73EA0002F279E /* RecognizerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54E4F6A12BB7413E002F279E /* Localizable.strings */,
+				54BB14542BE7F85600781B2A /* Localizable.xcstrings */,
 				54E4F6A52BB74152002F279E /* Generated */,
 				54E4F69F2BB7412A002F279E /* KSLClassifier.mlmodel */,
 				54E4F6792BB74116002F279E /* Source */,
@@ -629,11 +629,13 @@
 			};
 			buildConfigurationList = 5443A9402AF50ED900176F6C /* Build configuration list for PBXProject "surdo" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "kk-KZ";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"kk-KZ",
+				ru,
 			);
 			mainGroup = 5443A93C2AF50ED900176F6C;
 			packageReferences = (
@@ -662,9 +664,9 @@
 				5443A9552AF50EDA00176F6C /* LaunchScreen.storyboard in Resources */,
 				549BC4A12AFD43700058FA68 /* Inter-Regular.ttf in Resources */,
 				549BC4A22AFD43730058FA68 /* Inter-Medium.ttf in Resources */,
-				54E4F6A22BB7413E002F279E /* Localizable.strings in Resources */,
 				5443A9522AF50EDA00176F6C /* Assets.xcassets in Resources */,
 				544D464E2B04F5A100EB49E0 /* GoogleService-Info.plist in Resources */,
+				54BB14552BE7F85600781B2A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +937,7 @@
 				DEVELOPMENT_TEAM = G3GHD95S4N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "surdo/App Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses Camera to recognize sign language";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -966,6 +969,7 @@
 				DEVELOPMENT_TEAM = G3GHD95S4N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "surdo/App Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses Camera to recognize sign language";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
