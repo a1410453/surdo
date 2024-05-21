@@ -33,7 +33,7 @@ final class ProfileViewViewModel: ObservableObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM YYYY"
         
-        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.locale = .current
         return dateFormatter.string(from: date).capitalized
     }
 }

@@ -64,12 +64,15 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
             guard let user = user else { return }
             self?.headerView.displayNameLabel.text = user.fullName
             self?.headerView.usernameLabel.text = "@\(user.username)"
-            self?.headerView.userBioLabel.text = "Набрано \(user.learningScore) очков"
+            let text = "\(NSLocalizedString("Profile.scored", comment: "")) \(user.learningScore)"
+            self?.headerView.userBioLabel.text = text
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
-            self?.headerView.joinDateLabel.text = """
-                                 Начал(а) изучение \(self?.viewModel.getFormattedDate(with: user.createdOn)
-                                ?? "")
+            self?.headerView.joinDateLabel.text =
                                 """
+                                \(NSLocalizedString("Profile.started", comment: ""))
+                                \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "Today")
+                                """
+            print(user.createdOn)
             self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
             if Int(user.learningProgress) ?? 0 < 5 {
                 self?.headerView.levelTextLabel.text = "урока пройдено"

@@ -102,7 +102,6 @@ class AVCaptureManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, 
     func captureOutput(_ captureOutput: AVCaptureOutput,
                        didDrop didDropSampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-//        print("frame dropped")
     }
 }
 

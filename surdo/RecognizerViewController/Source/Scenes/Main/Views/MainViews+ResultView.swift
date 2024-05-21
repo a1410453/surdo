@@ -158,11 +158,6 @@ extension MainViews {
         }
         
         func updateResult(resultValue: String, confidence: Float) {
-
-            let number = 3
-            if let letter = mapping[number] {
-                print(letter)
-            }
             // swiftlint: disable all
             resultLabel.text?.append(self.mapping[Int(resultValue)!]!)
             // swiftlint: enable all

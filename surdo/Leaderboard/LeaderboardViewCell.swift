@@ -42,6 +42,6 @@ final class LeaderboardViewCell: UITableViewCell {
 
     func configure(place: Int,username: String, learningScore: String) {
         usernameLabel.text = "\(place + 1). " + username
-        scoreLabel.text = "Очки: " + learningScore
+        scoreLabel.text = NSLocalizedString("Leaderboard.points", comment: "") + learningScore
     }
 }

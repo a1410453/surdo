@@ -33,7 +33,7 @@ final class CompletionProgressView: UIView {
     private lazy var progressLabelView: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Ваш прогресс"
+        label.text = NSLocalizedString("Stages.progress", comment: "")
         label.font = AppFont.medium.s18()
         label.textAlignment = .center
         label.textColor = AppColor.tabbar.uiColor

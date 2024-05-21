@@ -14,7 +14,7 @@ final class StagesHeaderSectionView: UICollectionReusableView {
     
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
-        label.text = "Буквы"
+        label.text = NSLocalizedString("Stages.letters", comment: "")
         label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s24()
         return label
@@ -52,11 +52,11 @@ final class StagesHeaderSectionView: UICollectionReusableView {
     public func configureLevelLabel(with letter: IndexPath) {
         switch letter.section {
         case 0:
-            levelLabel.text = "Буквы"
+            levelLabel.text = NSLocalizedString("Stages.letters", comment: "")
         case 1:
-            levelLabel.text = "Цифры"
+            levelLabel.text = NSLocalizedString("Stages.numbers", comment: "")
         case 2:
-            levelLabel.text = "Я и ты"
+            levelLabel.text = NSLocalizedString("Stages.meAndYou", comment: "")
         default:
             levelLabel.text = "s"
         }
