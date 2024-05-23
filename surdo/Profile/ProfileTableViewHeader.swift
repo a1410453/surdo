@@ -16,7 +16,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = AppColor.red.uiColor
-        label.text = "Достижения"
+        label.text = NSLocalizedString("Profile.achievements", comment: "")
         label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
@@ -25,7 +25,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
-        label.text = "Загрузка"
+        label.text = NSLocalizedString("Common.loading", comment: "")
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
@@ -42,7 +42,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     lazy var levelTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "уроков пройдено"
+        label.text = "0"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
@@ -52,7 +52,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
-        label.text = "0"
+        label.text = NSLocalizedString("Common.loading", comment: "")
         label.font = .systemFont(ofSize: 14, weight: .bold)
         return label
     }()
@@ -62,7 +62,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
         label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.text = "Загрузка"
+        label.text = NSLocalizedString("Common.loading", comment: "")
         return label
     }()
     
@@ -70,7 +70,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
-        label.text = "Загрузка"
+        label.text = NSLocalizedString("Common.loading", comment: "")
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
@@ -80,7 +80,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .label
-        label.text = "Загрузка"
+        label.text = NSLocalizedString("Common.loading", comment: "")
         return label
     }()
     
@@ -126,11 +126,14 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private lazy var signOutButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColor.red.uiColor
-        button.tintColor = .white
+        button.setTitle("Выйти из аккаунта", for: .normal)
         button.setImage(AppImage.signOut.systemImage, for: .normal)
         button.clipsToBounds = true
-        button.layer.cornerRadius = 10
+        button.titleLabel?.font = AppFont.regular.s14()
+        button.tintColor = AppColor.red.uiColor
+        button.setTitleColor( .label, for: .normal)
+        button.backgroundColor = AppColor.tabbar.uiColor
+        button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
         return button
     }()
@@ -165,8 +168,8 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureUserBioLabelConstraints()
         configureJoinDateImageViewConstraints()
         configureJoinDateLabelConstraints()
-        configureFollowersTextLabelConstraints()
-        configureFollowersCountLabelConstraints()
+        configureLevelTextLabelConstraints()
+        configureLevelCountLabelConstraints()
         configurePrivacyPolicyButtonConstraints()
         configureSupportButtonConstraints()
         configureSignoutButtonConstraints()
@@ -196,7 +199,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private func configureUsernameLabelConstraints() {
         let usernameLabelConstraints = [
             usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5)
+            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10)
         ]
         NSLayoutConstraint.activate(usernameLabelConstraints)
     }
@@ -204,7 +207,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private func configureUserBioLabelConstraints() {
         let userBioLabelConstraints = [
             userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
+            userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 10)
         ]
         NSLayoutConstraint.activate(userBioLabelConstraints)
     }
@@ -212,7 +215,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private func configureJoinDateImageViewConstraints() {
         let joinDateImageViewConstraints = [
             joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 5)
+            joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 10)
         ]
         NSLayoutConstraint.activate(joinDateImageViewConstraints)
     }
@@ -225,24 +228,22 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate(joinDateLabelConstraints)
     }
     
-    private func configureFollowersTextLabelConstraints() {
-        let followersTextLabelConstraints = [
+    private func configureLevelTextLabelConstraints() {
+        let levelTextLabelConstraints = [
             levelTextLabel.leadingAnchor.constraint(equalTo: levelCountLabel.trailingAnchor,
                                                     constant: 2),
             levelTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
                                                 constant: 10)
         ]
-        NSLayoutConstraint.activate(followersTextLabelConstraints)
+        NSLayoutConstraint.activate(levelTextLabelConstraints)
     }
     
-    private func configureFollowersCountLabelConstraints() {
-        let followersCountLabelConstraints = [
+    private func configureLevelCountLabelConstraints() {
+        let LevelCountLabelConstraints = [
             levelCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             levelCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
         ]
-        
-        NSLayoutConstraint.activate(followersCountLabelConstraints)
-        
+        NSLayoutConstraint.activate(LevelCountLabelConstraints)
     }
     
     private func configurePrivacyPolicyButtonConstraints() {
@@ -252,7 +253,6 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
             privacyPolicyButton.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor,
                                                      constant: 10),
             privacyPolicyButton.heightAnchor.constraint(equalToConstant: 40)
-            
         ]
         NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
     }
@@ -265,7 +265,6 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
             supportButton.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor,
                                                constant: 10),
             supportButton.heightAnchor.constraint(equalToConstant: 40)
-            
         ]
         NSLayoutConstraint.activate(supportButtonConstraints)
     }
@@ -278,7 +277,6 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
             signOutButton.topAnchor.constraint(equalTo: supportButton.bottomAnchor,
                                                constant: 10),
             signOutButton.heightAnchor.constraint(equalToConstant: 40)
-        
         ]
         NSLayoutConstraint.activate(signOutButtonConstraints)
     }
@@ -286,7 +284,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private func configureAchievementsLabelConstraints() {
         let achievementsLabelConstraints = [
             achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            achievementsLabel.topAnchor.constraint(equalTo: supportButton.bottomAnchor, constant: 60)
+            achievementsLabel.topAnchor.constraint(equalTo: supportButton.bottomAnchor, constant: 80)
         ]
         NSLayoutConstraint.activate(achievementsLabelConstraints)
     }

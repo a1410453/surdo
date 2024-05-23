@@ -26,7 +26,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0,
                                                                        y: 0,
                                                                        width: profileTableView.frame.width,
-                                                                       height: 415))
+                                                                       height: 450))
     
     private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
@@ -38,7 +38,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
-        navigationItem.title = "Профиль"
+        navigationItem.title = NSLocalizedString("Profile.profile", comment: "")
         view.addSubview(profileTableView)
         view.addSubview(statusBar)
         
@@ -67,18 +67,18 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
             let text = "\(NSLocalizedString("Profile.scored", comment: "")) \(user.learningScore)"
             self?.headerView.userBioLabel.text = text
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM YYYY"
+            dateFormatter.locale = .current
+            let text1 = dateFormatter.string(from: user.createdOn).capitalized
             self?.headerView.joinDateLabel.text =
                                 """
-                                \(NSLocalizedString("Profile.started", comment: ""))
-                                \(self?.viewModel.getFormattedDate(with: user.createdOn) ?? "Today")
+                                \(text1) \(NSLocalizedString("Profile.started", comment: ""))
                                 """
-            print(user.createdOn)
+            let text2 = NSLocalizedString("Profile.lessonCompleted", comment: "")
             self?.headerView.levelCountLabel.text = "\(user.learningProgress)"
-            if Int(user.learningProgress) ?? 0 < 5 {
-                self?.headerView.levelTextLabel.text = "урока пройдено"
-            } else if Int(user.learningProgress) ?? 0 == 0 {
-                self?.headerView.levelTextLabel.text = "урок пройдено"
-            }
+            self?.headerView.levelTextLabel.text = "\(text2)"
         }
         .store(in: &subscriptions)
     }
@@ -131,17 +131,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                                                        for: indexPath) as? AchievementsViewCell else {
             return UITableViewCell()
         }
+        cell.isUserInteractionEnabled = false
         if indexPath.row == AchievementsManager.achievements.count {
             return cell
         } else {
             cell.configureTweet(with: indexPath.row)
         }
-        cell.isUserInteractionEnabled = false
         return cell
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 200
+        return 250
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

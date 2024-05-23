@@ -39,7 +39,7 @@ enum AppImage: String, AppImageProtocol {
     case pedestalTabSelected = "person.3.sequence.fill"
     case profileTabSelected = "person.crop.circle.fill"
     case next = "arrow.forward.circle.fill"
-    case signOut = "rectangle.portrait.and.arrow.right"
+    case signOut = "rectangle.portrait.and.arrow.right.fill"
     case achieviment = "achievement"
     case pedestal = "pedestal"
     case errorIcon = "database"
