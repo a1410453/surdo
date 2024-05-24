@@ -97,8 +97,18 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     private lazy var privacyPolicyButton: UIButton = {
         let button = UIButton(type: .system)
+        
+        var configuration = UIButton.Configuration.plain()
+
+        // Adjust content insets
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+        
+        // Adjust padding between image and title
+        configuration.imagePadding = 8
+        
+        button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Политика конфидециальности", for: .normal)
+        button.setTitle(NSLocalizedString("Profile.privacy", comment: ""), for: .normal)
         button.setImage(AppImage.privacy.systemImage, for: .normal)
         button.titleLabel?.font = AppFont.regular.s14()
         button.tintColor = AppColor.red.uiColor
@@ -106,13 +116,24 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         button.backgroundColor = AppColor.tabbar.uiColor
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapPrivacyPolicyButton), for: .touchUpInside)
+        button.contentHorizontalAlignment = .leading
+        
         return button
     }()
     
     private lazy var supportButton: UIButton = {
         let button = UIButton(type: .system)
+        var configuration = UIButton.Configuration.plain()
+
+        // Adjust content insets
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+        
+        // Adjust padding between image and title
+        configuration.imagePadding = 8
+        
+        button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Сообщить о проблеме", for: .normal)
+        button.setTitle(NSLocalizedString("Profile.support", comment: ""), for: .normal)
         button.setImage(AppImage.support.systemImage, for: .normal)
         button.titleLabel?.font = AppFont.regular.s14()
         button.tintColor = AppColor.red.uiColor
@@ -120,13 +141,23 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         button.backgroundColor = AppColor.tabbar.uiColor
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapSupportButton), for: .touchUpInside)
+        button.contentHorizontalAlignment = .leading
         return button
     }()
     
     private lazy var signOutButton: UIButton = {
         let button = UIButton(type: .system)
+        var configuration = UIButton.Configuration.plain()
+
+        // Adjust content insets
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+        
+        // Adjust padding between image and title
+        configuration.imagePadding = 8
+        
+        button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Выйти из аккаунта", for: .normal)
+        button.setTitle(NSLocalizedString("Profile.logOut", comment: ""), for: .normal)
         button.setImage(AppImage.signOut.systemImage, for: .normal)
         button.clipsToBounds = true
         button.titleLabel?.font = AppFont.regular.s14()
@@ -135,6 +166,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         button.backgroundColor = AppColor.tabbar.uiColor
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
+        button.contentHorizontalAlignment = .leading
         return button
     }()
     
