@@ -131,8 +131,7 @@ class MainViewController: UIViewController {
     
     private func openHandPoses() {
         // rootView.hideCameraView()
-        self.tabBarController?.tabBar.isHidden = false
-
+        self.tabBarController?.tabBar.isHidden.toggle()
     }
     
     private func displayInfoAlert() {

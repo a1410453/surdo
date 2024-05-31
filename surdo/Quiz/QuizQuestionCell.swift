@@ -51,8 +51,13 @@ final class QuizQuestionCell: UICollectionViewCell {
         signImage.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0)
     }
     
-    func setImageForQuiz(url: URL) {
-        signImage.sd_setImage(with: url)
-    }
+//    func setImageForQuiz(url: URL) {
+//        signImage.sd_setImage(with: url)
+//    }
     
+    func setImageForQuiz(url: URL, completion: @escaping () -> Void) {
+        self.signImage.sd_setImage(with: url) { _, _, _, _ in
+            completion()
+        }
+    }
 }

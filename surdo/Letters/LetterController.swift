@@ -15,21 +15,10 @@ final class LetterController: UIViewController {
     var currentLetter = 0
     var onDismiss: (() -> Void)?
     
-    // MARK: UI components
-    private lazy var gestureView: UIImageView = {
-        let iconView = UIImageView()
-        iconView.image = AppImage.gesture.uiImage
-        iconView.contentMode = .scaleAspectFit
-        return iconView
-    }()
-    
+    // MARK: UI components    
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
-        let index = LevelAccessManager.alphabet.index(
-            LevelAccessManager.alphabet.startIndex,
-            offsetBy: currentLetter
-        )
-        label.text = String(LevelAccessManager.alphabet[index])
+        label.text = NSLocalizedString("Common.loading", comment: "")
         label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s37()
         return label
@@ -39,7 +28,7 @@ final class LetterController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
-        button.setTitle("Далее", for: .normal)
+        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
         button.titleLabel?.font = AppFont.medium.s24()
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         button.layer.cornerRadius = 12
@@ -125,6 +114,11 @@ final class LetterController: UIViewController {
     }
     
     @objc func playerDidFinishPlaying(_ notification: Notification) {
+        let index = LevelAccessManager.alphabet.index(
+            LevelAccessManager.alphabet.startIndex,
+            offsetBy: currentLetter
+        )
+        levelLabel.text = String(LevelAccessManager.alphabet[index])
         if counterOfRepetitions < 1 {
             player.seek(to: CMTime.zero)
             player.play()

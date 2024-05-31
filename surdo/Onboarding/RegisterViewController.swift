@@ -15,7 +15,7 @@ final class RegisterViewController: UIViewController {
     
     private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Создать Аккаунт", for: .normal)
+        button.setTitle(NSLocalizedString("Onboarding.createAccount", comment: ""), for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
@@ -29,7 +29,7 @@ final class RegisterViewController: UIViewController {
     private lazy var registerTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Создать ваш аккаунт"
+        label.text = NSLocalizedString("Onboarding.createAccount", comment: "")
         label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
     }()
@@ -39,7 +39,7 @@ final class RegisterViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Электронная почта",
+            string: NSLocalizedString("Register.email", comment: ""),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         return textField
@@ -50,7 +50,7 @@ final class RegisterViewController: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Пароль",
+            string: NSLocalizedString("Register.password", comment: ""),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         textField.isSecureTextEntry = true
@@ -93,8 +93,11 @@ final class RegisterViewController: UIViewController {
     }
     
     private func presentAlert(with error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        let okayButton = UIAlertAction(title: "OK", style: .default)
+        let alert = UIAlertController(title: NSLocalizedString("Register.error", comment: ""),
+                                      message: error,
+                                      preferredStyle: .alert)
+        let okayButton = UIAlertAction(title: NSLocalizedString("Common.Button.okay", comment: ""),
+                                       style: .default)
         alert.addAction(okayButton)
         present(alert, animated: true)
     }

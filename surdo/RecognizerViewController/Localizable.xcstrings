@@ -289,7 +289,7 @@
         "kk-KZ" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ым тілі фразаларын құрастырыңыз және түсініңіз."
+            "value" : "Ым тілінде сөз тіркестерін құрастырыңыз және түсініңіз."
           }
         },
         "ru" : {
@@ -380,8 +380,8 @@
         },
         "kk-KZ" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Көптеген ым тілдерінде меңгеріңіз."
+            "state" : "translated",
+            "value" : "Көптеген сөздерді ым тілдерінде меңгеріңіз."
           }
         },
         "ru" : {
@@ -403,7 +403,7 @@
         },
         "kk-KZ" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ым тілі арқылы өзіңізді білдіруде ерекше қабілеттілік танытыңыз."
           }
         },
@@ -426,7 +426,7 @@
         },
         "kk-KZ" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ым тілі арқылы сөздер жасау үшін әріптерді біріктіріңіз."
           }
         },
@@ -449,7 +449,7 @@
         },
         "kk-KZ" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Саңыраулар қауымдастығына қолдау көрсетіңіз және қорғаңыз."
           }
         },
@@ -472,7 +472,7 @@
         },
         "kk-KZ" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Тамаша ым тілі дағдыларыңыз үшін тануға қол жеткізіңіз."
           }
         },
@@ -1450,6 +1450,29 @@
         }
       }
     },
+    "Common.downloadError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download Error"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жүктеу қатесі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка загрузки"
+          }
+        }
+      }
+    },
     "Common.loading" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1538,6 +1561,167 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Да"
+          }
+        }
+      }
+    },
+    "DataForm.fill" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill your data"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деректерді толтырыңыз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заполните ваши данные"
+          }
+        }
+      }
+    },
+    "DataForm.fullName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full name"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ТАӘ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ФИО"
+          }
+        }
+      }
+    },
+    "DataForm.send" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "send"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жіберу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить"
+          }
+        }
+      }
+    },
+    "DataForm.username" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Username"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пайдаланушы Аты"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имя Пользователя"
+          }
+        }
+      }
+    },
+    "DownloadErrorDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The message did not load. This may be due to poor connectivity or\na lack of internet connection."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хабарлама жүктелмеді. Бұл нашар байланысқа байланысты болуы мүмкін немесе\n       интернетке қосылудың болмауына байланысты."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\n       Сообщение не загрузилось. Это может произойти из за плохой связи или\n       из за отсутствия интернет подключения."
+          }
+        }
+      }
+    },
+    "FinishedQuiz" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have finished this lesson"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіз бұл сабақты өттіңіз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы прошли этот урок"
+          }
+        }
+      }
+    },
+    "FinishedQuizDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congratulations, you can move on to the next level. Keep up the good work!"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құттықтаймыз сіз келесі деңгейге көтеріле аласыз. Сол бағыттан таймаңыз!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поздравляю вы можете перейти к следующему уровню. Продолжайте в том же духе!"
           }
         }
       }
@@ -1794,6 +1978,98 @@
         }
       }
     },
+    "Onboarding.createAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create an Account"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тіркелу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать аккаунт"
+          }
+        }
+      }
+    },
+    "Onboarding.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start learning Kazakh Sign Language today!"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қазақ ым тілін үйренуді бүгіннен бастаңыз!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начните изучать Казахский Язык Жестов уже сегодня"
+          }
+        }
+      }
+    },
+    "Onboarding.haveAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you have an account?"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунт бар ма?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Есть аккаунт?"
+          }
+        }
+      }
+    },
+    "Onboarding.signIn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кіру"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
+          }
+        }
+      }
+    },
     "Profile.achievements" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1959,19 +2235,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Started learning"
+            "value" : "started using"
           }
         },
         "kk-KZ" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Оқуға кірісті"
+            "value" : "тіркелді"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Начал(а) изучение"
+            "value" : "стал(а) пользователем"
           }
         }
       }
@@ -1995,6 +2271,98 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Помощь"
+          }
+        }
+      }
+    },
+    "Quiz.choose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose the correct answer:"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дұрыс жауапты таңдаңыз:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите правильный ответ:"
+          }
+        }
+      }
+    },
+    "Register.email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электрондық пошта"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электронная почта"
+          }
+        }
+      }
+    },
+    "Register.error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қате"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка"
+          }
+        }
+      }
+    },
+    "Register.password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпия сөз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
           }
         }
       }

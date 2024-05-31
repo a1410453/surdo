@@ -31,7 +31,9 @@ final class ProfileDataFormViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 8
-        textField.attributedPlaceholder = NSAttributedString(string: "ФИО",
+        textField.attributedPlaceholder = NSAttributedString(string:
+                                                                NSLocalizedString("DataForm.fullName" ,
+                                                                                  comment: ""),
                                                              attributes:
                                                                 [NSAttributedString.Key.foregroundColor:
                                                                     UIColor.gray])
@@ -47,7 +49,9 @@ final class ProfileDataFormViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 8
-        textField.attributedPlaceholder = NSAttributedString(string: "Имя Пользователя",
+        textField.attributedPlaceholder = NSAttributedString(string:
+                                                                NSLocalizedString("DataForm.username" ,
+                                                                                  comment: ""),
                                                              attributes:
                                                                 [NSAttributedString.Key.foregroundColor:
                                                                     UIColor.gray])
@@ -71,15 +75,17 @@ final class ProfileDataFormViewController: UIViewController {
     private lazy var hintLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Заполните ваши данные"
-        label.font = .systemFont(ofSize: 32, weight: .bold)
+        label.text = NSLocalizedString("DataForm.fill" ,
+                                       comment: "")
+        label.font = AppFont.bold.s28()
         label.textColor = .label
         return label
     }()
     
     private lazy var submitButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Отправить", for: .normal)
+        button.setTitle(NSLocalizedString("DataForm.send" ,
+                                          comment: ""), for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25

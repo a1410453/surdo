@@ -20,7 +20,7 @@ final class DownloadErrorView: UIView {
         let title = UILabel()
         title.font = AppFont.bold.s18()
         title.textColor = .black
-        title.text = "Ошибка загрузки"
+        title.text = NSLocalizedString("Common.downloadError", comment: "")
         title.textAlignment = .center
         return title
     }()
@@ -29,10 +29,7 @@ final class DownloadErrorView: UIView {
         let subtitle = UILabel()
         subtitle.font = AppFont.regular.s14()
         subtitle.textColor = .black
-        subtitle.text = """
-       Сообщение не загрузилось. Это может произойти из за плохой связи или
-       из за отсутствия интернет подключения.
-       """
+        subtitle.text = NSLocalizedString("DownloadErrorDescription", comment: "")
         subtitle.numberOfLines = 0
         subtitle.textAlignment = .center
         return subtitle

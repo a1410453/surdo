@@ -12,11 +12,7 @@ final class OnboardingViewController: UIViewController {
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = """
-                    Начните изучать
-                    Казахский Язык Жестов
-                    уже сегодня
-                    """
+        label.text = NSLocalizedString("Onboarding.description", comment: "")
         label.font = AppFont.semibold.s28()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -27,7 +23,7 @@ final class OnboardingViewController: UIViewController {
     private lazy var createAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Создать аккаунт", for: .normal)
+        button.setTitle(NSLocalizedString("Onboarding.createAccount", comment: ""), for: .normal)
         button.titleLabel?.font = AppFont.bold.s24()
         button.backgroundColor = AppColor.red.uiColor
         button.layer.masksToBounds = true
@@ -39,21 +35,19 @@ final class OnboardingViewController: UIViewController {
     private lazy var promptLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Есть аккаунт?"
+        label.text = NSLocalizedString("Onboarding.haveAccount", comment: "")
         label.tintColor = .gray
-        label.font = AppFont.regular.s24()
+        label.font = AppFont.semibold.s24()
         return label
     }()
     
     private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Войти", for: .normal)
-        button.titleLabel?.font = AppFont.regular.s14()
+        button.setTitle(NSLocalizedString("Onboarding.signIn", comment: ""), for: .normal)
+        button.titleLabel?.font = AppFont.semibold.s20()
         button.tintColor = AppColor.red.uiColor
-        
         return button
-        
     }()
     
     override func viewDidLoad() {

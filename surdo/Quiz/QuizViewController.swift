@@ -23,7 +23,7 @@ final class QuizViewController: UIViewController {
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.red.uiColor
-        label.text = "Выберите правильный ответ:"
+        label.text = NSLocalizedString("Quiz.choose", comment: "")
         label.font = AppFont.bold.s18()
        
         return label
@@ -58,7 +58,7 @@ final class QuizViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
-        button.setTitle("Далее", for: .normal)
+        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
         button.titleLabel?.font = AppFont.medium.s24()
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         button.layer.cornerRadius = 12
@@ -165,13 +165,28 @@ extension QuizViewController: UICollectionViewDataSource,
                                                       for: indexPath) as? QuizQuestionCell else {
         return UICollectionViewCell()
     }
+        
+        let dispatchGroup = DispatchGroup()
+        
+        let loadImage: (Int) -> Void = { middlePart in
+            dispatchGroup.enter()
+            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: middlePart)) {
+                dispatchGroup.leave()
+            }
+        }
+        
         if indexPath.item == rightAnswer {
-            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: currentLetter))
+            loadImage(currentLetter)
         } else {
             let falseAnswer = falseAnswers.removeFirst()
-            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: falseAnswer))
+            loadImage(falseAnswer)
         }
+        
         cell.didNotPressedAnswer()
+        
+        dispatchGroup.notify(queue: .main) {
+        }
+        
         return cell
     }
     

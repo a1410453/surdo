@@ -30,7 +30,7 @@ final class FinishedViewController: UIViewController {
     
     private lazy var sureCancelOrderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Вы прошли этот урок"
+        label.text = NSLocalizedString("FinishedQuiz", comment: "")
         label.font = AppFont.semibold.s18()
         label.textColor = AppColor.red.uiColor
         label.numberOfLines = 1
@@ -40,7 +40,7 @@ final class FinishedViewController: UIViewController {
     
     private lazy var blockInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Поздравляю вы можете перейти к следующему уровню. Продолжайте в том же духе!"
+        label.text = NSLocalizedString("FinishedQuizDescription", comment: "")
         label.font = AppFont.regular.s14()
         label.textColor = AppColor.red.uiColor
         label.numberOfLines = 2
@@ -54,7 +54,7 @@ final class FinishedViewController: UIViewController {
         button.layer.masksToBounds = true
         button.backgroundColor = AppColor.red.uiColor
         button.setTitleColor(AppColor.beige.uiColor, for: .normal)
-        button.setTitle("Далее", for: .normal)
+        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
         button.addTarget(self, action: #selector(didPressedConfirmButton), for: .touchUpInside)
         return button
     }()

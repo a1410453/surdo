@@ -64,7 +64,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
             guard let user = user else { return }
             self?.headerView.displayNameLabel.text = user.fullName
             self?.headerView.usernameLabel.text = "@\(user.username)"
-            let text = "\(NSLocalizedString("Profile.scored", comment: "")) \(user.learningScore)"
+            let text = "\(NSLocalizedString("Profile.scored", comment: "")) \(Int(user.learningScore) ?? 0)"
             self?.headerView.userBioLabel.text = text
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
             
