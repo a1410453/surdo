@@ -112,6 +112,76 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
         handleAuthentication()
     }
     
+    func promptForCredentials(completion: @escaping (String, String) -> Void) {
+        // TO DO: localize
+        let alertController = UIAlertController(title: "Re-authenticate",
+                                                message: "Please enter your email and password",
+                                                preferredStyle: .alert)
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Email"
+        }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+        }
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+            if let email = alertController.textFields?[0].text,
+               let password = alertController.textFields?[1].text {
+                completion(email, password)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+
+    func reauthenticateUser(email: String, password: String, completion: @escaping (Error?) -> Void) {
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        
+        Auth.auth().currentUser?.reauthenticate(with: credential) { _, error in
+            completion(error)
+        }
+    }
+
+    func deleteUserAccount() {
+        promptForCredentials { email, password in
+            self.reauthenticateUser(email: email, password: password) { error in
+                if let error = error {
+                    print("Re-authentication failed: \(error.localizedDescription)")
+                } else {
+                    self.performAccountDeletion()
+                }
+            }
+        }
+    }
+
+    func performAccountDeletion() {
+        if let user = Auth.auth().currentUser {
+            user.delete { error in
+                if let error = error {
+                    print("Error deleting user: \(error.localizedDescription)")
+                } else {
+                    print("User account deleted successfully")
+                }
+            }
+        } else {
+            print("No user is currently logged in")
+        }
+    }
+
+    func didTapDeleteAccountButton() {
+        deleteUserAccount()
+        handleAuthentication()
+    }
+    
     private func handleAuthentication() {
         if Auth.auth().currentUser == nil {
             let vc = UINavigationController(rootViewController: OnboardingViewController())
@@ -141,7 +211,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 250
+        return 350
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

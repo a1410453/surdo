@@ -7,6 +7,7 @@
 
 import UIKit
 
+// swiftlint: disable all
 final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     weak var delegate: TableViewHeaderDelegate?
     static let identifier = "ProfileTableViewHeader"
@@ -97,15 +98,9 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     private lazy var privacyPolicyButton: UIButton = {
         let button = UIButton(type: .system)
-        
         var configuration = UIButton.Configuration.plain()
-
-        // Adjust content insets
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
-        
-        // Adjust padding between image and title
         configuration.imagePadding = 8
-        
         button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString("Profile.privacy", comment: ""), for: .normal)
@@ -117,20 +112,14 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapPrivacyPolicyButton), for: .touchUpInside)
         button.contentHorizontalAlignment = .leading
-        
         return button
     }()
     
     private lazy var supportButton: UIButton = {
         let button = UIButton(type: .system)
         var configuration = UIButton.Configuration.plain()
-
-        // Adjust content insets
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
-        
-        // Adjust padding between image and title
         configuration.imagePadding = 8
-        
         button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString("Profile.support", comment: ""), for: .normal)
@@ -148,13 +137,8 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     private lazy var signOutButton: UIButton = {
         let button = UIButton(type: .system)
         var configuration = UIButton.Configuration.plain()
-
-        // Adjust content insets
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
-        
-        // Adjust padding between image and title
         configuration.imagePadding = 8
-        
         button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString("Profile.logOut", comment: ""), for: .normal)
@@ -170,21 +154,35 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         return button
     }()
     
+    private lazy var deleteAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        var configuration = UIButton.Configuration.plain()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+        configuration.imagePadding = 8
+        button.configuration = configuration
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("Profile.deleteAccount", comment: ""), for: .normal)
+        button.setImage(AppImage.deleteAccount.systemImage, for: .normal)
+        button.clipsToBounds = true
+        button.titleLabel?.font = AppFont.regular.s14()
+        button.tintColor = AppColor.red.uiColor
+        button.setTitleColor( .label, for: .normal)
+        button.backgroundColor = AppColor.tabbar.uiColor
+        button.layer.cornerRadius = 16
+        button.addTarget(self, action: #selector(didTapDeleteAccount), for: .touchUpInside)
+        button.contentHorizontalAlignment = .leading
+        return button
+    }()
+    
     // MARK: Setup Views
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        addSubview(profileAvatarImageView)
-        addSubview(displayNameLabel)
-        addSubview(usernameLabel)
-        addSubview(userBioLabel)
-        addSubview(joinDateImageView)
-        addSubview(joinDateLabel)
-        addSubview(levelTextLabel)
-        addSubview(levelCountLabel)
-        addSubview(privacyPolicyButton)
-        addSubview(supportButton)
-        addSubview(signOutButton)
-        addSubview(achievementsLabel)
+        [ profileAvatarImageView, displayNameLabel, usernameLabel, userBioLabel, joinDateImageView,
+          joinDateLabel, levelTextLabel, levelCountLabel, privacyPolicyButton, supportButton,
+          signOutButton, achievementsLabel, deleteAccountButton
+        ].forEach {
+            addSubview($0)
+        }
         configureConstraints()
     }
     
@@ -206,6 +204,7 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureSupportButtonConstraints()
         configureSignoutButtonConstraints()
         configureAchievementsLabelConstraints()
+        configureDeleteAccountButtonConstraints()
     }
     
     private func configureProfileAvatarImageViewConstraints() {
@@ -313,10 +312,22 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate(signOutButtonConstraints)
     }
     
+    private func configureDeleteAccountButtonConstraints() {
+        let deleteAccountButtonConstraints = [
+            deleteAccountButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            deleteAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            deleteAccountButton.topAnchor.constraint(equalTo: signOutButton.bottomAnchor,
+                                               constant: 10),
+            deleteAccountButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(deleteAccountButtonConstraints)
+    }
+    
     private func configureAchievementsLabelConstraints() {
         let achievementsLabelConstraints = [
             achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            achievementsLabel.topAnchor.constraint(equalTo: supportButton.bottomAnchor, constant: 80)
+            achievementsLabel.topAnchor.constraint(equalTo: deleteAccountButton.bottomAnchor, constant: 40)
         ]
         NSLayoutConstraint.activate(achievementsLabelConstraints)
     }
@@ -335,9 +346,16 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     @objc private func didTapSignOut() {
         delegate?.didTapSignOutButton()
     }
+    
+    @objc private func didTapDeleteAccount() {
+        delegate?.didTapDeleteAccountButton()
+    }
 }
 
 protocol TableViewHeaderDelegate: AnyObject {
     func didTapPrivacyPolicyButton()
     func didTapSignOutButton()
+    func didTapDeleteAccountButton()
 }
+
+// swiftlint: enable all
