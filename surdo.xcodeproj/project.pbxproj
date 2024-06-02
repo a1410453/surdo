@@ -268,6 +268,7 @@
 		5443A9472AF50ED900176F6C /* surdo */ = {
 			isa = PBXGroup;
 			children = (
+				54BB14542BE7F85600781B2A /* Localizable.xcstrings */,
 				54E4F6462BB73EA0002F279E /* RecognizerViewController */,
 				544D464F2B05277800EB49E0 /* Models */,
 				546199C42B2B428700560D28 /* ViewModel */,
@@ -434,7 +435,6 @@
 		54E4F6462BB73EA0002F279E /* RecognizerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54BB14542BE7F85600781B2A /* Localizable.xcstrings */,
 				54E4F6A52BB74152002F279E /* Generated */,
 				54E4F69F2BB7412A002F279E /* KSLClassifier.mlmodel */,
 				54E4F6792BB74116002F279E /* Source */,
@@ -616,7 +616,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					5443A9442AF50ED900176F6C = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -817,6 +817,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -877,6 +878,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -1617,7 +1617,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "send"
+            "value" : "Send"
           }
         },
         "kk-KZ" : {
@@ -1984,7 +1984,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Create an Account"
+            "value" : "Start"
           }
         },
         "kk-KZ" : {
@@ -1996,7 +1996,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Создать аккаунт"
+            "value" : "Начать"
           }
         }
       }
@@ -2030,7 +2030,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you have an account?"
+            "value" : "Have an account?"
           }
         },
         "kk-KZ" : {
@@ -2363,6 +2363,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выберите правильный ответ:"
+          }
+        }
+      }
+    },
+    "Register.createAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create account"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тіркелу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать аккаунт"
           }
         }
       }
