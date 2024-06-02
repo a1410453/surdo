@@ -123,7 +123,7 @@ final class StagesViewController: UIViewController,
     
     // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -132,8 +132,6 @@ final class StagesViewController: UIViewController,
             return 42
         case 1:
             return 42
-        case 2:
-            return 3
         default:
             return 1
         }

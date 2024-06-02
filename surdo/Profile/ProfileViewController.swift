@@ -26,7 +26,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     private lazy var headerView = ProfileTableViewHeader(frame: CGRect(x: 0,
                                                                        y: 0,
                                                                        width: profileTableView.frame.width,
-                                                                       height: 450))
+                                                                       height: 500))
     
     private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
@@ -70,7 +70,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM YYYY"
-            dateFormatter.locale = .current
+            dateFormatter.locale = .autoupdatingCurrent
             let text1 = dateFormatter.string(from: user.createdOn).capitalized
             self?.headerView.joinDateLabel.text =
                                 """
@@ -113,28 +113,31 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     }
     
     func promptForCredentials(completion: @escaping (String, String) -> Void) {
-        // TO DO: localize
-        let alertController = UIAlertController(title: "Re-authenticate",
-                                                message: "Please enter your email and password",
+        let alertController = UIAlertController(title: NSLocalizedString("Profile.reauthenticate",
+                                                                         comment: ""),
+                                                message: NSLocalizedString("Profile.please",
+                                                                           comment: ""),
                                                 preferredStyle: .alert)
         
         alertController.addTextField { textField in
-            textField.placeholder = "Email"
+            textField.placeholder = NSLocalizedString("Register.email", comment: "")
         }
         
         alertController.addTextField { textField in
-            textField.placeholder = "Password"
+            textField.placeholder = NSLocalizedString("Register.password", comment: "")
             textField.isSecureTextEntry = true
         }
         
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("Common.Button.confirm", comment: ""), 
+                                          style: .default) { _ in
             if let email = alertController.textFields?[0].text,
                let password = alertController.textFields?[1].text {
                 completion(email, password)
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Common.Button.cancel", comment: ""),
+                                         style: .cancel, handler: nil)
         
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
@@ -211,7 +214,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 350
+        return 500
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

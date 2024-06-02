@@ -90,7 +90,7 @@ final class ProfileDataFormViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.tintColor = .white
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
+        button.titleLabel?.font = AppFont.bold.s18()
         button.layer.masksToBounds = true
         button.isEnabled = false
         return button

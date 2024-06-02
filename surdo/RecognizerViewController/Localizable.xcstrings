@@ -2162,6 +2162,29 @@
         }
       }
     },
+    "Profile.please" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter your email and password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электрондық поштаңызды және құпия сөзді енгізіңіз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, введите свой адрес электронной почты и пароль"
+          }
+        }
+      }
+    },
     "Profile.privacy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2204,6 +2227,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Profile.reauthenticate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Re-authenticate"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунтты растаңыз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Подтвердите аккаунт"
           }
         }
       }

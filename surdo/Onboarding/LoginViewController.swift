@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.tintColor = .white
-        button.titleLabel?.font = AppFont.bold.s16()
+        button.titleLabel?.font = AppFont.bold.s18()
         button.layer.masksToBounds = true
         button.isEnabled = false
         return button

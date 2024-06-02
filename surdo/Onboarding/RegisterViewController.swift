@@ -20,7 +20,7 @@ final class RegisterViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.tintColor = .white
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
         button.layer.masksToBounds = true
         button.isEnabled = false
         return button

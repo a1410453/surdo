@@ -7,7 +7,6 @@
 
 import UIKit
 
-// swiftlint: disable all
 final class ProfileTableViewHeader: UITableViewHeaderFooterView {
     weak var delegate: TableViewHeaderDelegate?
     static let identifier = "ProfileTableViewHeader"
@@ -207,131 +206,6 @@ final class ProfileTableViewHeader: UITableViewHeaderFooterView {
         configureDeleteAccountButtonConstraints()
     }
     
-    private func configureProfileAvatarImageViewConstraints() {
-        let profileAvatarImageViewConstraints = [
-            profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            profileAvatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            profileAvatarImageView.widthAnchor.constraint(equalToConstant: 80),
-            profileAvatarImageView.heightAnchor.constraint(equalToConstant: 80)
-        ]
-        NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
-    }
-    
-    private func configureDisplayNameLabelConstraints() {
-        let displayNameLabelConstraints = [
-            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor,
-                                                      constant: 20),
-            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor,
-                                                  constant: 20)
-        ]
-        NSLayoutConstraint.activate(displayNameLabelConstraints)
-    }
-    
-    private func configureUsernameLabelConstraints() {
-        let usernameLabelConstraints = [
-            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10)
-        ]
-        NSLayoutConstraint.activate(usernameLabelConstraints)
-    }
-    
-    private func configureUserBioLabelConstraints() {
-        let userBioLabelConstraints = [
-            userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 10)
-        ]
-        NSLayoutConstraint.activate(userBioLabelConstraints)
-    }
-    
-    private func configureJoinDateImageViewConstraints() {
-        let joinDateImageViewConstraints = [
-            joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 10)
-        ]
-        NSLayoutConstraint.activate(joinDateImageViewConstraints)
-    }
-    
-    private func configureJoinDateLabelConstraints() {
-        let joinDateLabelConstraints = [
-            joinDateLabel.leadingAnchor.constraint(equalTo: joinDateImageView.trailingAnchor, constant: 2),
-            joinDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(joinDateLabelConstraints)
-    }
-    
-    private func configureLevelTextLabelConstraints() {
-        let levelTextLabelConstraints = [
-            levelTextLabel.leadingAnchor.constraint(equalTo: levelCountLabel.trailingAnchor,
-                                                    constant: 2),
-            levelTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
-                                                constant: 10)
-        ]
-        NSLayoutConstraint.activate(levelTextLabelConstraints)
-    }
-    
-    private func configureLevelCountLabelConstraints() {
-        let LevelCountLabelConstraints = [
-            levelCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            levelCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
-        ]
-        NSLayoutConstraint.activate(LevelCountLabelConstraints)
-    }
-    
-    private func configurePrivacyPolicyButtonConstraints() {
-        let privacyPolicyButtonConstraints = [
-            privacyPolicyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            privacyPolicyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            privacyPolicyButton.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor,
-                                                     constant: 10),
-            privacyPolicyButton.heightAnchor.constraint(equalToConstant: 40)
-        ]
-        NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
-    }
-    
-    private func configureSupportButtonConstraints() {
-        let supportButtonConstraints = [
-            supportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            supportButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                    constant: -30),
-            supportButton.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor,
-                                               constant: 10),
-            supportButton.heightAnchor.constraint(equalToConstant: 40)
-        ]
-        NSLayoutConstraint.activate(supportButtonConstraints)
-    }
-    
-    private func configureSignoutButtonConstraints() {
-        let signOutButtonConstraints = [
-            signOutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            signOutButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                    constant: -30),
-            signOutButton.topAnchor.constraint(equalTo: supportButton.bottomAnchor,
-                                               constant: 10),
-            signOutButton.heightAnchor.constraint(equalToConstant: 40)
-        ]
-        NSLayoutConstraint.activate(signOutButtonConstraints)
-    }
-    
-    private func configureDeleteAccountButtonConstraints() {
-        let deleteAccountButtonConstraints = [
-            deleteAccountButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            deleteAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                    constant: -30),
-            deleteAccountButton.topAnchor.constraint(equalTo: signOutButton.bottomAnchor,
-                                               constant: 10),
-            deleteAccountButton.heightAnchor.constraint(equalToConstant: 40)
-        ]
-        NSLayoutConstraint.activate(deleteAccountButtonConstraints)
-    }
-    
-    private func configureAchievementsLabelConstraints() {
-        let achievementsLabelConstraints = [
-            achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            achievementsLabel.topAnchor.constraint(equalTo: deleteAccountButton.bottomAnchor, constant: 40)
-        ]
-        NSLayoutConstraint.activate(achievementsLabelConstraints)
-    }
-    
     // MARK: Actions
     @objc private func didTapPrivacyPolicyButton() {
         delegate?.didTapPrivacyPolicyButton()
@@ -358,4 +232,129 @@ protocol TableViewHeaderDelegate: AnyObject {
     func didTapDeleteAccountButton()
 }
 
-// swiftlint: enable all
+private extension ProfileTableViewHeader {
+    func configureProfileAvatarImageViewConstraints() {
+        let profileAvatarImageViewConstraints = [
+            profileAvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            profileAvatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            profileAvatarImageView.widthAnchor.constraint(equalToConstant: 80),
+            profileAvatarImageView.heightAnchor.constraint(equalToConstant: 80)
+        ]
+        NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
+    }
+    
+    func configureDisplayNameLabelConstraints() {
+        let displayNameLabelConstraints = [
+            displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor,
+                                                      constant: 20),
+            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor,
+                                                  constant: 20)
+        ]
+        NSLayoutConstraint.activate(displayNameLabelConstraints)
+    }
+    
+    func configureUsernameLabelConstraints() {
+        let usernameLabelConstraints = [
+            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10)
+        ]
+        NSLayoutConstraint.activate(usernameLabelConstraints)
+    }
+    
+    func configureUserBioLabelConstraints() {
+        let userBioLabelConstraints = [
+            userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 10)
+        ]
+        NSLayoutConstraint.activate(userBioLabelConstraints)
+    }
+    
+    func configureJoinDateImageViewConstraints() {
+        let joinDateImageViewConstraints = [
+            joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 10)
+        ]
+        NSLayoutConstraint.activate(joinDateImageViewConstraints)
+    }
+    
+    func configureJoinDateLabelConstraints() {
+        let joinDateLabelConstraints = [
+            joinDateLabel.leadingAnchor.constraint(equalTo: joinDateImageView.trailingAnchor, constant: 2),
+            joinDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(joinDateLabelConstraints)
+    }
+    
+    func configureLevelTextLabelConstraints() {
+        let levelTextLabelConstraints = [
+            levelTextLabel.leadingAnchor.constraint(equalTo: levelCountLabel.trailingAnchor,
+                                                    constant: 2),
+            levelTextLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor,
+                                                constant: 10)
+        ]
+        NSLayoutConstraint.activate(levelTextLabelConstraints)
+    }
+    
+    func configureLevelCountLabelConstraints() {
+        let LevelCountLabelConstraints = [
+            levelCountLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            levelCountLabel.topAnchor.constraint(equalTo: joinDateLabel.bottomAnchor, constant: 10)
+        ]
+        NSLayoutConstraint.activate(LevelCountLabelConstraints)
+    }
+    
+    func configurePrivacyPolicyButtonConstraints() {
+        let privacyPolicyButtonConstraints = [
+            privacyPolicyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            privacyPolicyButton.topAnchor.constraint(equalTo: levelTextLabel.bottomAnchor,
+                                                     constant: 10),
+            privacyPolicyButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(privacyPolicyButtonConstraints)
+    }
+    
+    func configureSupportButtonConstraints() {
+        let supportButtonConstraints = [
+            supportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            supportButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            supportButton.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor,
+                                               constant: 10),
+            supportButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(supportButtonConstraints)
+    }
+    
+    func configureSignoutButtonConstraints() {
+        let signOutButtonConstraints = [
+            signOutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            signOutButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            signOutButton.topAnchor.constraint(equalTo: supportButton.bottomAnchor,
+                                               constant: 10),
+            signOutButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(signOutButtonConstraints)
+    }
+    
+    func configureDeleteAccountButtonConstraints() {
+        let deleteAccountButtonConstraints = [
+            deleteAccountButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            deleteAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -30),
+            deleteAccountButton.topAnchor.constraint(equalTo: signOutButton.bottomAnchor,
+                                               constant: 10),
+            deleteAccountButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(deleteAccountButtonConstraints)
+    }
+    
+    func configureAchievementsLabelConstraints() {
+        let achievementsLabelConstraints = [
+            achievementsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            achievementsLabel.topAnchor.constraint(equalTo: deleteAccountButton.bottomAnchor, constant: 20)
+        ]
+        NSLayoutConstraint.activate(achievementsLabelConstraints)
+    }
+}
