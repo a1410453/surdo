@@ -15,7 +15,7 @@ final class RegisterViewController: UIViewController {
     
     private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(NSLocalizedString("Register.createAccount", comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
         button.backgroundColor = AppColor.red.uiColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25

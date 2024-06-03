@@ -31,11 +31,11 @@ extension AppImageProtocol {
 enum AppImage: String, AppImageProtocol {
     case gesture = "gesture"
     case mainTab = "house"
-    case recognizerTab = "hand.app"
+    case recognizerTab = "hand.raised.square"
     case pedestalTab = "person.3.sequence"
     case profileTab = "person.crop.circle"
     case mainTabSelected = "house.fill"
-    case recognizerTabSelected = "hand.app.fill"
+    case recognizerTabSelected = "hand.raised.square.fill"
     case pedestalTabSelected = "person.3.sequence.fill"
     case profileTabSelected = "person.crop.circle.fill"
     case next = "arrow.forward.circle.fill"
@@ -44,7 +44,7 @@ enum AppImage: String, AppImageProtocol {
     case achieviment = "achievement"
     case pedestal = "pedestal"
     case errorIcon = "database"
-    case support = "square.and.pencil.circle.fill"
+    case support = "pencil.circle.fill"
     case privacy = "doc.text.fill"
     
     case achievement0 = "achievement0"
