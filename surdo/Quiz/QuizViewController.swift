@@ -66,12 +66,18 @@ final class QuizViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        nextButton.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor
         falseAnswers = generateUniqueRandomNumbers()
         setupViews()
         setupLayout()
+        nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
     }
     
     // MARK: - Setup
@@ -142,7 +148,7 @@ final class QuizViewController: UIViewController {
         var uniqueNumbers = Set<Int>()
         uniqueNumbers.insert(currentLetter)
         while uniqueNumbers.count < 4 {
-            let randomNumber = Int.random(in: 0...42)
+            let randomNumber = Int.random(in: 0...82)
             uniqueNumbers.insert(randomNumber)
         }
         uniqueNumbers.remove(currentLetter)
@@ -166,12 +172,8 @@ extension QuizViewController: UICollectionViewDataSource,
         return UICollectionViewCell()
     }
         
-        let dispatchGroup = DispatchGroup()
-        
         let loadImage: (Int) -> Void = { middlePart in
-            dispatchGroup.enter()
             cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: middlePart)) {
-                dispatchGroup.leave()
             }
         }
         
@@ -183,9 +185,6 @@ extension QuizViewController: UICollectionViewDataSource,
         }
         
         cell.didNotPressedAnswer()
-        
-        dispatchGroup.notify(queue: .main) {
-        }
         
         return cell
     }

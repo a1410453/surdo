@@ -196,10 +196,10 @@ final class StagesViewController: UIViewController,
                 print("Unable to cast the dequeued cell to StagesViewCell")
                 return UICollectionViewCell()
             }
-            cell.configureButton(with: 42 + letterQueue)
+            cell.configureButton(with: 43 + letterQueue)
             cell.onStageButtonTap = { [weak self] in
-                let viewController = LetterController()
-                viewController.currentLetter = letterQueue
+                let viewController = NumberController()
+                viewController.currentLetter = 43 + letterQueue
                 self?.navigationController?.pushViewController(viewController, animated: false)
                 viewController.onDismiss = { [weak self] in
                     self?.reloadCells()

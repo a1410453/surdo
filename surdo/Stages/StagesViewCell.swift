@@ -53,7 +53,7 @@ final class StagesViewCell: UICollectionViewCell {
         stageButton.setImage(UIImage(named: String(letter)), for: .normal)
         stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         if !(LevelAccessManager.shared.checkLevelAccess(level: letter)) {
-            stageButton.isEnabled = false
+            stageButton.isEnabled = true // test
         } else {
             stageButton.isEnabled = true
         }

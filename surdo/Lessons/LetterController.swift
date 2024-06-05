@@ -63,9 +63,6 @@ final class LetterController: UIViewController {
         view.addSubview(levelLabel)
         view.addSubview(nextButton)
         view.addSubview(containerView)
-        // for testing purposes:
-        nextButton.isHidden = false
-        //
     }
 
     private func setupConstraints() {
@@ -102,7 +99,6 @@ final class LetterController: UIViewController {
     
     // MARK: Action
     @objc func tappedNextButton() {
-        // self.tabBarController?.tabBar.isHidden = false
         let viewController = QuizViewController()
         viewController.passCurrentLetter(currentLetter)
         navigationController?.pushViewController(viewController, animated: true)
