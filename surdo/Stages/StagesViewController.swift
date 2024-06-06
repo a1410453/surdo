@@ -42,6 +42,11 @@ final class StagesViewController: UIViewController,
         view.layer.cornerRadius = 10
         return view
     }()
+    
+    private lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        return view
+    }()
 
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +66,7 @@ final class StagesViewController: UIViewController,
         setupViews()
         setupConstraints()
         bindViews()
+        loadImages()
         completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
     }
 
@@ -100,6 +106,15 @@ final class StagesViewController: UIViewController,
         let vc = UINavigationController(rootViewController: ProfileDataFormViewController())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    private func loadImages() {
+        DispatchQueue.global().async {
+            for i in 1...82 {
+                let url = AppConstants.makePictureURL(middlePart: i)
+                self.imageView.sd_setImage(with: url, placeholderImage: nil, options: [.continueInBackground])
+            }
+        }
     }
 
     func bindViews() {
@@ -181,7 +196,6 @@ final class StagesViewController: UIViewController,
                 let viewController = LetterController()
                 viewController.tabBarController?.tabBar.isHidden = true
                 viewController.currentLetter = letterQueue
-                print(letterQueue)
                 self?.navigationController?.pushViewController(viewController, animated: false)
                 viewController.onDismiss = { [weak self] in
                     self?.reloadCells()

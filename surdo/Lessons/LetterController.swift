@@ -49,6 +49,7 @@ final class LetterController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        nextButton.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -57,6 +58,7 @@ final class LetterController: UIViewController {
         setupViews()
         setupConstraints()
         setupVideo()
+        nextButton.isHidden = true
     }
     
     private func setupViews() {
@@ -95,6 +97,9 @@ final class LetterController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)),
                                                name: .AVPlayerItemDidPlayToEndTime,
                                                object: player.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidStartPlaying(_:)),
+                                               name: AVPlayerItem.newAccessLogEntryNotification,
+                                               object: player.currentItem)
         player.play()
     }
     
@@ -127,4 +132,11 @@ final class LetterController: UIViewController {
         }
     }
     
+    @objc func playerDidStartPlaying(_ notification: Notification) {
+        let index = LevelAccessManager.alphabet.index(
+            LevelAccessManager.alphabet.startIndex,
+            offsetBy: currentLetter
+        )
+        levelLabel.text = String(LevelAccessManager.alphabet[index])
+    }
 }

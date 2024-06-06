@@ -121,7 +121,7 @@ final class ProfileDataFormViewController: UIViewController {
     }
     
     @objc private func didTapSubmit() {
-        viewModel.imageData = UIImage(systemName: "person")
+        viewModel.imageData = AppImage.logo.uiImage
         viewModel.uploadAvatar()
     }
     
