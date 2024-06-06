@@ -31,8 +31,7 @@ final class ProfileDataFormViewViewModel: ObservableObject {
         guard let fullName = fullName,
               fullName.count > 2,
               let username = username,
-              username.count > 2,
-              imageData != nil else {
+              username.count > 2 else {
             isFormValid = false
             return
         }

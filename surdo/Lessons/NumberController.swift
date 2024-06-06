@@ -36,7 +36,7 @@ final class NumberController: UIViewController {
     private lazy var signImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = AppImage.gesture.uiImage
+        imageView.image = AppImage.logo.uiImage
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 4

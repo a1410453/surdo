@@ -29,7 +29,7 @@ extension AppImageProtocol {
 }
 
 enum AppImage: String, AppImageProtocol {
-    case gesture = "gesture"
+    case logo = "logo"
     case mainTab = "house"
     case recognizerTab = "hand.raised.square"
     case pedestalTab = "person.3.sequence"
