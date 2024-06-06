@@ -24,7 +24,7 @@ final class AuthenticationViewViewModel: ObservableObject {
             isAuthenticationFormValid = false
             return
         }
-        isAuthenticationFormValid = isValidEmail(email) && password.count >= 8
+        isAuthenticationFormValid = isValidEmail(email) && password.count >= 2
     }
     
     func isValidEmail(_ email: String) -> Bool {

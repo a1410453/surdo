@@ -55,6 +55,7 @@ final class FinishedViewController: UIViewController {
         button.backgroundColor = AppColor.red.uiColor
         button.setTitleColor(AppColor.beige.uiColor, for: .normal)
         button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
+        button.titleLabel?.font = AppFont.semibold.s24()
         button.addTarget(self, action: #selector(didPressedConfirmButton), for: .touchUpInside)
         return button
     }()

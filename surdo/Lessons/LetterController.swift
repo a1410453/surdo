@@ -53,6 +53,7 @@ final class LetterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         setupViews()
         setupConstraints()
         setupVideo()

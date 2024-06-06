@@ -65,9 +65,6 @@ final class NumberController: UIViewController {
         view.addSubview(levelLabel)
         view.addSubview(nextButton)
         view.addSubview(signImage)
-        // for testing purposes:
-        nextButton.isHidden = false
-        //
     }
 
     private func setupConstraints() {
