@@ -66,7 +66,6 @@ final class StagesViewController: UIViewController,
         setupViews()
         setupConstraints()
         bindViews()
-        loadImages()
         completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
     }
 
@@ -106,15 +105,6 @@ final class StagesViewController: UIViewController,
         let vc = UINavigationController(rootViewController: ProfileDataFormViewController())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-    }
-    
-    private func loadImages() {
-        DispatchQueue.global().async {
-            for i in 1...82 {
-                let url = AppConstants.makePictureURL(middlePart: i)
-                self.imageView.sd_setImage(with: url, placeholderImage: nil, options: [.continueInBackground])
-            }
-        }
     }
 
     func bindViews() {
