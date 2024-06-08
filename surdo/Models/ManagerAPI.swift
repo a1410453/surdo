@@ -1,5 +1,5 @@
 //
-//  AppConstants.swift
+//  ManagerAPI.swift
 //  surdo
 //
 //  Created by Rustem Orazbayev on 12/13/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AppConstants {
+struct ManagerAPI {
     // MARK: Video
     static let baseURL = 
     "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/alphabet_videos%2F"
@@ -36,6 +36,18 @@ struct AppConstants {
     
     static func makePictureURL(middlePart: Int) -> URL {
         let urlString = "\(basePictureURL)\(middlePart)\(tokenPictureURL)"
+        guard let url = URL(string: urlString) else {
+            fatalError("Invalid URL")
+        }
+        return url
+    }
+    
+    // MARK: Word
+    static let baseWordURL =
+    "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/words%2FA%2FA"
+    static let tokenWordURL = ".mp4?alt=media"
+    static func makeWordURL(middlePart: Int) -> URL {
+        let urlString = "\(baseWordURL)\(middlePart)\(tokenWordURL)"
         guard let url = URL(string: urlString) else {
             fatalError("Invalid URL")
         }

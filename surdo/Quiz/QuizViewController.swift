@@ -173,7 +173,7 @@ extension QuizViewController: UICollectionViewDataSource,
     }
         
         let loadImage: (Int) -> Void = { middlePart in
-            cell.setImageForQuiz(url: AppConstants.makePictureURL(middlePart: middlePart)) {
+            cell.setImageForQuiz(url: ManagerAPI.makePictureURL(middlePart: middlePart)) {
             }
         }
         

@@ -56,6 +56,7 @@ final class ProfileViewController: UIViewController, TableViewHeaderDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.retrieveUser()
+        bindViews()
         profileTableView.reloadData()
     }
     

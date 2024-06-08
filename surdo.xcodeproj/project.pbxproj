@@ -43,6 +43,7 @@
 		546199C62B2B42A000560D28 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */; };
 		546199C82B2B42FA00560D28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C72B2B42FA00560D28 /* LoginViewController.swift */; };
 		546199CA2B2B455400560D28 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546199C92B2B455400560D28 /* HomeViewViewModel.swift */; };
+		547E90422C14BFE600A65D19 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E90412C14BFE600A65D19 /* WordController.swift */; };
 		547FFED02B78BBFA00A65446 /* surdoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547FFECF2B78BBFA00A65446 /* surdoTests.swift */; };
 		54882E422BB16F5A00505105 /* integrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54882E412BB16F5A00505105 /* integrationTests.swift */; };
 		5498992E2B5E871B00AFB140 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498992D2B5E871B00AFB140 /* LeaderboardViewController.swift */; };
@@ -60,7 +61,7 @@
 		549BC4A62AFE82B90058FA68 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */; };
 		549BC4A82AFE830A0058FA68 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A72AFE830A0058FA68 /* TabItem.swift */; };
 		549BC4AA2AFE834A0058FA68 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */; };
-		54B7ED3B2B29E9F20064D80C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7ED3A2B29E9F20064D80C /* AppConstants.swift */; };
+		54B7ED3B2B29E9F20064D80C /* ManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7ED3A2B29E9F20064D80C /* ManagerAPI.swift */; };
 		54BB14552BE7F85600781B2A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 54BB14542BE7F85600781B2A /* Localizable.xcstrings */; };
 		54BE77A62B3D781300800D43 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 54BE77A52B3D781300800D43 /* PanModal */; };
 		54BE77A82B3D787D00800D43 /* FinishedQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */; };
@@ -147,6 +148,7 @@
 		546199C52B2B42A000560D28 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
 		546199C72B2B42FA00560D28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		546199C92B2B455400560D28 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
+		547E90412C14BFE600A65D19 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
 		547FFECD2B78BBFA00A65446 /* surdoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = surdoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547FFECF2B78BBFA00A65446 /* surdoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surdoTests.swift; sourceTree = "<group>"; };
 		54882E412BB16F5A00505105 /* integrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = integrationTests.swift; sourceTree = "<group>"; };
@@ -164,7 +166,7 @@
 		549BC4A52AFE82B90058FA68 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		549BC4A72AFE830A0058FA68 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		549BC4A92AFE834A0058FA68 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		54B7ED3A2B29E9F20064D80C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		54B7ED3A2B29E9F20064D80C /* ManagerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerAPI.swift; sourceTree = "<group>"; };
 		54BB14542BE7F85600781B2A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		54BE77A72B3D787D00800D43 /* FinishedQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedQuizController.swift; sourceTree = "<group>"; };
 		54C7A8DF2B1F55A100B925A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -317,7 +319,7 @@
 			children = (
 				549BC4762AFCF6F30058FA68 /* LevelAccessManager.swift */,
 				544D46502B05278600EB49E0 /* SurdoUser.swift */,
-				54B7ED3A2B29E9F20064D80C /* AppConstants.swift */,
+				54B7ED3A2B29E9F20064D80C /* ManagerAPI.swift */,
 				54584AC72B65255900E57219 /* AchievementsManager.swift */,
 			);
 			path = Models;
@@ -399,6 +401,7 @@
 			children = (
 				549BC47A2AFD2AF70058FA68 /* LetterController.swift */,
 				541D67BA2C0F2DBF008A4161 /* NumberController.swift */,
+				547E90412C14BFE600A65D19 /* WordController.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				549BC47B2AFD2AF70058FA68 /* LetterController.swift in Sources */,
 				5443A9602AF50FFA00176F6C /* StagesViewController.swift in Sources */,
 				544D46512B05278600EB49E0 /* SurdoUser.swift in Sources */,
+				547E90422C14BFE600A65D19 /* WordController.swift in Sources */,
 				540C7EDF2B2CC606009A1DB5 /* ProfileDataFormViewController.swift in Sources */,
 				546199C12B2B413200560D28 /* OnboardingViewController.swift in Sources */,
 				54E4F6822BB74116002F279E /* CameraStatus.swift in Sources */,
@@ -778,7 +782,7 @@
 				54C7A8E02B1F55A100B925A9 /* ProfileViewController.swift in Sources */,
 				54E4F6932BB74116002F279E /* ThemeFonts.swift in Sources */,
 				541D31322B21C71C009D7E85 /* QuizViewController.swift in Sources */,
-				54B7ED3B2B29E9F20064D80C /* AppConstants.swift in Sources */,
+				54B7ED3B2B29E9F20064D80C /* ManagerAPI.swift in Sources */,
 				544D46322B0221DC00EB49E0 /* StagesHeaderSectionView.swift in Sources */,
 				549BC4802AFD32000058FA68 /* AppImage.swift in Sources */,
 				54584AC22B64EA2100E57219 /* DownloadErrorView.swift in Sources */,

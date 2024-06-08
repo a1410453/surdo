@@ -967,6 +967,1688 @@
         }
       }
     },
+    "Acquaintance(currentWord-82)" : {
+
+    },
+    "Acquaintance1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мен"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Я"
+          }
+        }
+      }
+    },
+    "Acquaintance2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сен"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ты"
+          }
+        }
+      }
+    },
+    "Acquaintance3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "He"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ол"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Он"
+          }
+        }
+      }
+    },
+    "Acquaintance4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Біз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мы"
+          }
+        }
+      }
+    },
+    "Acquaintance5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "They"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Олар"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Они"
+          }
+        }
+      }
+    },
+    "Acquaintance6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Менің"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мой"
+          }
+        }
+      }
+    },
+    "Acquaintance7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To me"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маған"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мне"
+          }
+        }
+      }
+    },
+    "Acquaintance8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At my place"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Менің үйімде"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У меня"
+          }
+        }
+      }
+    },
+    "Acquaintance9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At your place"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздің үйіңізде"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вас"
+          }
+        }
+      }
+    },
+    "Acquaintance10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздің"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш"
+          }
+        }
+      }
+    },
+    "Acquaintance11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "His"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оның"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Его"
+          }
+        }
+      }
+    },
+    "Acquaintance12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өзі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сам"
+          }
+        }
+      }
+    },
+    "Acquaintance13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Own"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свой"
+          }
+        }
+      }
+    },
+    "Acquaintance14" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қайда"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Где"
+          }
+        }
+      }
+    },
+    "Acquaintance15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Why"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неге"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зачем"
+          }
+        }
+      }
+    },
+    "Acquaintance16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Which"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қайсы"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Какой"
+          }
+        }
+      }
+    },
+    "Acquaintance17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қашан"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Когда"
+          }
+        }
+      }
+    },
+    "Acquaintance18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кім"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кто"
+          }
+        }
+      }
+    },
+    "Acquaintance19" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where to"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қайда"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Куда"
+          }
+        }
+      }
+    },
+    "Acquaintance20" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From where"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қайдан"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откуда"
+          }
+        }
+      }
+    },
+    "Acquaintance21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How many"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қанша"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сколько"
+          }
+        }
+      }
+    },
+    "Acquaintance22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Что"
+          }
+        }
+      }
+    },
+    "Acquaintance23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бұл"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Этот"
+          }
+        }
+      }
+    },
+    "Acquaintance24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Often"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жиі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Часто"
+          }
+        }
+      }
+    },
+    "Acquaintance25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ештеңе"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ничего"
+          }
+        }
+      }
+    },
+    "Acquaintance26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ешқашан"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никогда"
+          }
+        }
+      }
+    },
+    "Acquaintance27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nobody"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ешкім"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никто"
+          }
+        }
+      }
+    },
+    "Acquaintance28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Барлығы"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "Acquaintance29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жоқ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет"
+          }
+        }
+      }
+    },
+    "Acquaintance30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Иә"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да"
+          }
+        }
+      }
+    },
+    "Acquaintance31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rarely"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сирек"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редко"
+          }
+        }
+      }
+    },
+    "Acquaintance32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сәлеметсіз бе"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здравствуйте"
+          }
+        }
+      }
+    },
+    "Acquaintance33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goodbye"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сау болыңыз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "До свидания"
+          }
+        }
+      }
+    },
+    "Acquaintance34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invite"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шақыру"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приглашать"
+          }
+        }
+      }
+    },
+    "Acquaintance35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apologize"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кешірім сұрау"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Извиниться"
+          }
+        }
+      }
+    },
+    "Acquaintance36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өтінемін"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста"
+          }
+        }
+      }
+    },
+    "Acquaintance37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рақмет"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спасибо"
+          }
+        }
+      }
+    },
+    "Acquaintance38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nice to meet you"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Танысқаныма қуаныштымын"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рад знакомству"
+          }
+        }
+      }
+    },
+    "Acquaintance39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Friend"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дос"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друг"
+          }
+        }
+      }
+    },
+    "Acquaintance40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mister"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мырза"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Господин"
+          }
+        }
+      }
+    },
+    "Acquaintance41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surname"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тегі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фамилия"
+          }
+        }
+      }
+    },
+    "Acquaintance42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аты"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имя"
+          }
+        }
+      }
+    },
+    "Acquaintance43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patronymic"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Әкесінің аты"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отчество"
+          }
+        }
+      }
+    },
+    "Acquaintance44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign name"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ым аты"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жестовое имя"
+          }
+        }
+      }
+    },
+    "Acquaintance45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Why"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неге"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почему"
+          }
+        }
+      }
+    },
+    "Acquaintance46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whose"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кімдікі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чей"
+          }
+        }
+      }
+    },
+    "Acquaintance47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hobby"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хобби"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хобби"
+          }
+        }
+      }
+    },
+    "Acquaintance48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phone number"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Телефон нөмірі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер телефона"
+          }
+        }
+      }
+    },
+    "Acquaintance49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кездесу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свидание"
+          }
+        }
+      }
+    },
+    "Acquaintance50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жас"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Возраст"
+          }
+        }
+      }
+    },
+    "Acquaintance51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You (plural/formal)"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздер"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы"
+          }
+        }
+      }
+    },
+    "Acquaintance52" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жақсы"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хорошо"
+          }
+        }
+      }
+    },
+    "Acquaintance53" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жаман"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Плохо"
+          }
+        }
+      }
+    },
+    "Acquaintance54" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mutuality"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өзара қарым-қатынас"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Взаимность"
+          }
+        }
+      }
+    },
+    "Acquaintance55" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Together (two people)"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екеуіміз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вдвоем"
+          }
+        }
+      }
+    },
+    "Acquaintance56" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twice as much"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екі есе"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вдвойне"
+          }
+        }
+      }
+    },
+    "Acquaintance57" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бәрі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "Acquaintance58" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instead"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оның орнына"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bместо"
+          }
+        }
+      }
+    },
+    "Acquaintance59" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inside"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ішінде"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bнутри"
+          }
+        }
+      }
+    },
+    "Acquaintance60" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At first"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Алдымен"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bначале"
+          }
+        }
+      }
+    },
+    "Acquaintance61" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exactly"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Солай"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Во-во"
+          }
+        }
+      }
+    },
+    "Acquaintance62" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On time"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уақытында"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вовремя"
+          }
+        }
+      }
+    },
+    "Acquaintance63" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Absolutely"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мүлдем"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вовсе"
+          }
+        }
+      }
+    },
+    "Acquaintance64" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completely"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Түгелдей"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вовсю"
+          }
+        }
+      }
+    },
+    "Acquaintance65" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Secondly"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екіншіден"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Во-вторых"
+          }
+        }
+      }
+    },
+    "Acquaintance66" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquarius"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суқұйғыш"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Водолей"
+          }
+        }
+      }
+    },
+    "Acquaintance67" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Five people"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бесеуіміз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Впятером"
+          }
+        }
+      }
+    },
+    "Acquaintance68" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Secretly"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жасырын"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Втайне"
+          }
+        }
+      }
+    },
+    "Acquaintance69" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Four people"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Төртеуміз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вчетвером"
+          }
+        }
+      }
+    },
+    "Acquaintance70" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Болды"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Было"
+          }
+        }
+      }
+    },
+    "Acquaintance71" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To be"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Болу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Быть"
+          }
+        }
+      }
+    },
+    "Acquaintance72" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To greet"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cәлемдесу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здороваться"
+          }
+        }
+      }
+    },
+    "Acquaintance73" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facebook"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фейсбук"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facebook"
+          }
+        }
+      }
+    },
     "Alert.failedToPredictHandPose" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2488,19 +4170,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Me and you"
+            "value" : "Acquaintance"
           }
         },
         "kk-KZ" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Мен және Сен"
+            "value" : "Танысу"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Я и Ты"
+            "value" : "Знакомства"
           }
         }
       }

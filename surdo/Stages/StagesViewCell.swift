@@ -50,10 +50,14 @@ final class StagesViewCell: UICollectionViewCell {
     
     // MARK: Actions
     public func configureButton(with letter: Int) {
-        stageButton.setImage(UIImage(named: String(letter)), for: .normal)
+        if letter < 83 {
+            stageButton.setImage(UIImage(named: String(letter)), for: .normal)
+        } else {
+            stageButton.setImage(UIImage(named: String(83)), for: .normal)
+        }
         stageButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         if !(LevelAccessManager.shared.checkLevelAccess(level: letter)) {
-            stageButton.isEnabled = false
+            stageButton.isEnabled = true
         } else {
             stageButton.isEnabled = true
         }

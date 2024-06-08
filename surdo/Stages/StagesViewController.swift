@@ -128,7 +128,7 @@ final class StagesViewController: UIViewController,
     
     // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -136,7 +136,9 @@ final class StagesViewController: UIViewController,
         case 0:
             return 42
         case 1:
-            return 42
+            return 40
+        case 2:
+            return 73
         default:
             return 1
         }
@@ -220,10 +222,11 @@ final class StagesViewController: UIViewController,
                 print("Unable to cast the dequeued cell to StagesViewCell")
                 return UICollectionViewCell()
             }
-            cell.configureButton(with: letterQueue)
+            cell.configureButton(with: 83 + letterQueue)
             cell.onStageButtonTap = { [weak self] in
-                let viewController = LetterController()
-                viewController.currentLetter = letterQueue
+                let viewController = WordController()
+                viewController.currentWord = 83 + letterQueue
+                viewController.topic = indexPath.section
                 self?.navigationController?.pushViewController(viewController, animated: false)
                 viewController.onDismiss = { [weak self] in
                     self?.reloadCells()
@@ -231,6 +234,8 @@ final class StagesViewController: UIViewController,
             }
             return cell
         }
+        
+        
     }
     
     // swiftlint: enable all

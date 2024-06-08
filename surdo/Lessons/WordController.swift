@@ -1,27 +1,45 @@
 //
-//  LetterController.swift
+//  WordController.swift
 //  surdo
 //
-//  Created by Rustem Orazbayev on 11/9/23.
+//  Created by Rustem Orazbayev on 6/8/24.
 //
 
 import UIKit
 import AVKit
 import AVFoundation
+import FirebaseAuth
+import FirebaseStorage
+import Combine
 
-final class LetterController: UIViewController {
+final class WordController: UIViewController {
     
     var letter = " "
-    var currentLetter = 0
+    var currentWord = 0
+    var topic = 0
     var onDismiss: (() -> Void)?
+    private var subscriptions: Set<AnyCancellable> = []
     
-    // MARK: UI components    
+    @Published var error: String = ""
+    
+    // MARK: UI components
     private lazy var levelLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("Common.loading", comment: "")
         label.textColor = AppColor.red.uiColor
         label.font = AppFont.bold.s37()
         return label
+    }()
+    
+    private lazy var repeatButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = AppColor.red.uiColor
+        button.tintColor = AppColor.beige.uiColor
+        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
+        button.titleLabel?.font = AppFont.medium.s24()
+        button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        button.layer.cornerRadius = 12
+        return button
     }()
     
     private lazy var nextButton: UIButton = {
@@ -37,8 +55,7 @@ final class LetterController: UIViewController {
     
     private lazy var containerView = UIView()
     private lazy var player: AVPlayer = {
-        ManagerAPI.middle = currentLetter + 1
-        let player = AVPlayer(url: ManagerAPI.makeURL())
+        let player = AVPlayer(url: ManagerAPI.makeWordURL(middlePart: currentWord-81))
         return player
     }()
     private var playerLayer: AVPlayerLayer!
@@ -105,23 +122,52 @@ final class LetterController: UIViewController {
     
     // MARK: Action
     @objc func tappedNextButton() {
-        let viewController = QuizViewController()
-        viewController.passCurrentLetter(currentLetter)
-        navigationController?.pushViewController(viewController, animated: true)
-        viewController.onDismiss = { [weak self] in
-            self?.tabBarController?.tabBar.isHidden = false
-            self?.navigationController?.popViewController(animated: false)
-            self?.onDismiss?()
+        // dismiss
+        updateUserScore()
+        unlockNextLevel()
+    }
+    
+    private func updateUserScore() {
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        
+        let updatedFields: [String: Any] = [
+            "learningScore": "\(LevelAccessManager.learningScore)",
+            "learningProgress": "\(LevelAccessManager.currentLevel)"
+        ]
+        
+        DatabaseManager.shared.collectionUsers(updateFields: updatedFields, for: id)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    print(error.localizedDescription)
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { _ in
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func unlockNextLevel() {
+        if LevelAccessManager.currentLevel == 0 {
+            AchievementsManager.achievements.append(1)
         }
+        if LevelAccessManager.currentLevel == 42 {
+            AchievementsManager.achievements.append(2)
+        }
+        if LevelAccessManager.currentLevel == 43 {
+            AchievementsManager.achievements.append(3)
+        }
+        if LevelAccessManager.currentLevel == 82 {
+            AchievementsManager.achievements.append(3)
+        }
+        if LevelAccessManager.currentLevel == 173 {
+            AchievementsManager.achievements.append(3)
+        }
+        LevelAccessManager.currentLevel += 1
+        LevelAccessManager.shared.unlockLevelAccess()
     }
     
     @objc func playerDidFinishPlaying(_ notification: Notification) {
-        let index = LevelAccessManager.alphabet.index(
-            LevelAccessManager.alphabet.startIndex,
-            offsetBy: currentLetter
-        )
-        levelLabel.text = String(LevelAccessManager.alphabet[index])
-        if counterOfRepetitions < 1 {
+        if counterOfRepetitions < 2 {
             player.seek(to: CMTime.zero)
             player.play()
             counterOfRepetitions += 1
@@ -133,10 +179,7 @@ final class LetterController: UIViewController {
     }
     
     @objc func playerDidStartPlaying(_ notification: Notification) {
-        let index = LevelAccessManager.alphabet.index(
-            LevelAccessManager.alphabet.startIndex,
-            offsetBy: currentLetter
-        )
-        levelLabel.text = String(LevelAccessManager.alphabet[index])
+        levelLabel.text = NSLocalizedString("Acquaintance\(currentWord-82)", comment: "")
+        
     }
 }

@@ -49,14 +49,14 @@ final class NumberController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        self.setImageForNumber(url: AppConstants.makePictureURL(middlePart: currentLetter))
+        self.setImageForNumber(url: ManagerAPI.makePictureURL(middlePart: currentLetter))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
-        self.setImageForNumber(url: AppConstants.makePictureURL(middlePart: currentLetter))
+        self.setImageForNumber(url: ManagerAPI.makePictureURL(middlePart: currentLetter))
         self.tabBarController?.tabBar.isHidden = true
     }
     
