@@ -58,6 +58,13 @@ final class StagesViewController: UIViewController,
         completionProgressView.changeProgress(by: Double(LevelAccessManager.currentLevel) * 0.0238)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let indexPath = IndexPath(item: 0, section: LevelAccessManager.currentSection)
+        collectionView.scrollToItem(at: indexPath,
+                                    at: .centeredVertically, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColor.beige.uiColor

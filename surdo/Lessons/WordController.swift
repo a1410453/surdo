@@ -35,9 +35,9 @@ final class WordController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = AppColor.red.uiColor
         button.tintColor = AppColor.beige.uiColor
-        button.setTitle(NSLocalizedString("Common.Button.next", comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString("Common.Button.repeat", comment: ""), for: .normal)
         button.titleLabel?.font = AppFont.medium.s24()
-        button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedRepeatButton), for: .touchUpInside)
         button.layer.cornerRadius = 12
         return button
     }()
@@ -76,11 +76,13 @@ final class WordController: UIViewController {
         setupConstraints()
         setupVideo()
         nextButton.isHidden = true
+        repeatButton.isHidden = true
     }
     
     private func setupViews() {
         view.backgroundColor = .clear
         view.addSubview(levelLabel)
+        view.addSubview(repeatButton)
         view.addSubview(nextButton)
         view.addSubview(containerView)
     }
@@ -100,6 +102,13 @@ final class WordController: UIViewController {
         
         nextButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-80)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(200)
+            make.height.equalTo(60)
+        }
+        
+        repeatButton.snp.makeConstraints { make in
+            make.bottom.equalTo(nextButton.snp.top).offset(-50)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
             make.height.equalTo(60)
@@ -125,6 +134,12 @@ final class WordController: UIViewController {
         // dismiss
         updateUserScore()
         unlockNextLevel()
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    @objc func tappedRepeatButton() {
+        player.seek(to: CMTime.zero)
+        player.play()
     }
     
     private func updateUserScore() {
@@ -152,12 +167,14 @@ final class WordController: UIViewController {
         }
         if LevelAccessManager.currentLevel == 42 {
             AchievementsManager.achievements.append(2)
+            LevelAccessManager.currentSection = 1
         }
         if LevelAccessManager.currentLevel == 43 {
             AchievementsManager.achievements.append(3)
         }
         if LevelAccessManager.currentLevel == 82 {
             AchievementsManager.achievements.append(3)
+            LevelAccessManager.currentSection = 2
         }
         if LevelAccessManager.currentLevel == 173 {
             AchievementsManager.achievements.append(3)
@@ -175,11 +192,11 @@ final class WordController: UIViewController {
             counterOfRepetitions = 0
             player.pause()
             nextButton.isHidden = false
+            repeatButton.isHidden = false
         }
     }
     
     @objc func playerDidStartPlaying(_ notification: Notification) {
         levelLabel.text = NSLocalizedString("Acquaintance\(currentWord-82)", comment: "")
-        
     }
 }

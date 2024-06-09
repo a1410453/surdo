@@ -14,6 +14,7 @@ final class LevelAccessManager {
                           100, 200, 300, 400, 500, 600, 700, 800, 900, 
                           1000, 1000000, 1000000000, 0]
     static var currentLevel: Int = 0
+    static var currentSection: Int = 0
     static var learningScore: Int = 0
     static private var levelAccess: Int = 0
     
