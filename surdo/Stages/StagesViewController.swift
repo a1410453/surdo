@@ -135,7 +135,7 @@ final class StagesViewController: UIViewController,
     
     // MARK: Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,6 +146,10 @@ final class StagesViewController: UIViewController,
             return 40
         case 2:
             return 73
+        case 3:
+            return 95
+        case 4:
+            return 61
         default:
             return 1
         }
@@ -221,6 +225,8 @@ final class StagesViewController: UIViewController,
                 }
             }
             return cell
+            
+        // Acquaintance
         default:
             let letterQueue = indexPath.row
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StagesViewCell",
@@ -232,7 +238,7 @@ final class StagesViewController: UIViewController,
             cell.configureButton(with: 83 + letterQueue)
             cell.onStageButtonTap = { [weak self] in
                 let viewController = WordController()
-                viewController.currentWord = 83 + letterQueue
+                viewController.currentWord = 2 + letterQueue
                 viewController.topic = indexPath.section
                 self?.navigationController?.pushViewController(viewController, animated: false)
                 viewController.onDismiss = { [weak self] in
@@ -241,8 +247,7 @@ final class StagesViewController: UIViewController,
             }
             return cell
         }
-        
-        
+
     }
     
     // swiftlint: enable all

@@ -55,7 +55,17 @@ final class WordController: UIViewController {
     
     private lazy var containerView = UIView()
     private lazy var player: AVPlayer = {
-        let player = AVPlayer(url: ManagerAPI.makeWordURL(middlePart: currentWord-81))
+        switch topic {
+        case 2:
+            ManagerAPI.wordTopic = "%2FA%2FA"
+        case 3:
+            ManagerAPI.wordTopic = "%2FB%2FB"
+        case 4:
+            ManagerAPI.wordTopic = "%2FC%2FC"
+        default:
+            ManagerAPI.wordTopic = "%2FA%2FA"
+        }
+        let player = AVPlayer(url: ManagerAPI.makeWordURL(middlePart: currentWord))
         return player
     }()
     private var playerLayer: AVPlayerLayer!
@@ -197,6 +207,20 @@ final class WordController: UIViewController {
     }
     
     @objc func playerDidStartPlaying(_ notification: Notification) {
-        levelLabel.text = NSLocalizedString("Acquaintance\(currentWord-82)", comment: "")
+        switch topic {
+        case 2:
+            levelLabel.text = NSLocalizedString("Acquaintance\(currentWord-1)",
+                                                comment: "")
+        case 3:
+            levelLabel.text = NSLocalizedString("Person\(currentWord-1)",
+                                                comment: "")
+        case 4:
+            levelLabel.text = NSLocalizedString("home\(currentWord-1)",
+                                                comment: "")
+        default:
+            levelLabel.text = NSLocalizedString("Common.downloadError",
+                                                comment: "")
+        }
+
     }
 }

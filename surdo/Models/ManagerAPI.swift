@@ -43,14 +43,15 @@ struct ManagerAPI {
     }
     
     // MARK: Word
-    static let baseWordURL =
-    "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/words%2FA%2FA"
+    static let baseWordURL = "https://firebasestorage.googleapis.com/v0/b/surdo-e3bd9.appspot.com/o/words"
+    static var wordTopic = "%2FA%2FA"
     static let tokenWordURL = ".mp4?alt=media"
     static func makeWordURL(middlePart: Int) -> URL {
-        let urlString = "\(baseWordURL)\(middlePart)\(tokenWordURL)"
+        let urlString = "\(baseWordURL)\(wordTopic)\(middlePart)\(tokenWordURL)"
         guard let url = URL(string: urlString) else {
             fatalError("Invalid URL")
         }
+        print(url)
         return url
     }
 }

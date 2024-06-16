@@ -57,6 +57,10 @@ final class StagesHeaderSectionView: UICollectionReusableView {
             levelLabel.text = NSLocalizedString("Stages.numbers", comment: "")
         case 2:
             levelLabel.text = NSLocalizedString("Stages.meAndYou", comment: "")
+        case 3:
+            levelLabel.text = NSLocalizedString("Stages.Human&Family", comment: "")
+        case 4:
+            levelLabel.text = NSLocalizedString("Stages.Home", comment: "")
         default:
             levelLabel.text = "s"
         }
