@@ -1,18 +1,20 @@
-![Logo](https://github.com/a1410453/surdo/tree/master/surdo/App%20Resources/ForReadMe/App_Icon_150.png)
+![App_Icon_150](https://github.com/a1410453/surdo/assets/58412297/a9bc5f38-2bb1-4cff-bbfa-1a5b6b1fa334)
+
+
 # Surdo - Application to learn Kazakh Sign Language
 __Learn and practice sign language letters, words and numbers__
 
-![Image](https://github.com/a1410453/surdo/tree/master/surdo/App%20Resources/ForReadMe/AppShowcase.png)
+![AppShowcase](https://github.com/a1410453/surdo/assets/58412297/55d6a6c9-9541-4d58-9bce-ed9ccfadc463)
 
-###Interesting Lessons
+### Interesting Lessons
 Alphabet Mastery: Learn the sign language alphabet through easy-to-follow lessons.
 Numbers: Gain proficiency in signing individual numbers.
 
-###Quizzes and Rankings
+### Quizzes and Rankings
 Challenge Yourself: Test your knowledge with interactive quizzes.
 Track Your Progress: See how you rank against other learners and strive for the top.
 
-###Real-Time Sign Identification
+### Real-Time Sign Identification
 Camera Integration: Use your device's camera to identify sign letters in real-time.
 Instant Feedback: Practice signing and receive immediate feedback to improve your accuracy.
 
@@ -31,7 +33,7 @@ SnapKit for Auto Layout
 
 It is based on MVC architecture and is fully open-source [documented](https://github.com/a1410453/surdo) on GitHub.
 
-[![Download on the App Store](https://github.com/a1410453/surdo/tree/master/surdo/App%20Resources/ForReadMe/Download_on_the_App_Store_Badge_US_180px.png)](https://apps.apple.com/us/app/asl-recognizer/id1612140503)
+[![Download_on_the_App_Store_Badge_US_180px](https://github.com/a1410453/surdo/assets/58412297/b2b853aa-d698-458f-8830-9900e7d8d31e)](https://apps.apple.com/kz/app/surdo/id6480447302)
 
 
 ## Features and Data Sets
@@ -39,14 +41,16 @@ It is based on MVC architecture and is fully open-source [documented](https://gi
 The application uses __Kazakh Sign Language (KSL)__ machine learning based recognition model that is organized, trained, and tested via Xcode Create ML tools.
 
 While the developer does not provide any related data sets, it is worth mentioning that the data set for this specific ML model that application uses consists of images (that were used for training and validation of an aforementioned ML model) provided by Anara Sandygulova https://krslproject.github.io/krsl20/
-    [Mukushev, M., A. Sabyrov, A. Imashev, K. Koishybay, V. Kimmelman & A. Sandygulova. (2020). Evaluation of Manual and Non-manual Components for Sign Language Recognition. In Proceedings of The 12th Language Resources and Evaluation Conference, 6075-6080. Marseille, France: European Language Resources Association. https://www.aclweb.org/anthology/2020.lrec-1.745. ]
+
+[Mukushev, M., A. Sabyrov, A. Imashev, K. Koishybay, V. Kimmelman & A. Sandygulova. (2020). Evaluation of Manual and Non-manual Components for Sign Language Recognition. In Proceedings of The 12th Language Resources and Evaluation Conference, 6075-6080. Marseille, France: European Language Resources Association. https://www.aclweb.org/anthology/2020.lrec-1.745. ]
+
 ## What can be recognized?
 
 KSL Recognizer detects only 29 alphabet letters. Hand gesture detection output is shown within the main application interface. Each detected symbol (letter or number) is added to the current value with previously detected symbols.
 
 ## Availability
 
-The project is written on Xcode 15 __for iOS/iPadOS devices from iOS 15__.
+The project is written on Xcode 15 __for iOS devices from iOS 15__.
 
 ## ML model
 
