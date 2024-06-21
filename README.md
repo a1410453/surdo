@@ -1,6 +1,6 @@
 ![Logo](https://github.com/a1410453/surdo/tree/master/surdo/App%20Resources/ForReadMe/App_Icon_150.png)
 # Surdo - Application to learn Kazakh Sign Language
-__Learn and practice sign language letters, words and numbers
+__Learn and practice sign language letters, words and numbers__
 
 ![Image](https://github.com/a1410453/surdo/tree/master/surdo/App%20Resources/ForReadMe/AppShowcase.png)
 
@@ -42,7 +42,7 @@ While the developer does not provide any related data sets, it is worth mentioni
     [Mukushev, M., A. Sabyrov, A. Imashev, K. Koishybay, V. Kimmelman & A. Sandygulova. (2020). Evaluation of Manual and Non-manual Components for Sign Language Recognition. In Proceedings of The 12th Language Resources and Evaluation Conference, 6075-6080. Marseille, France: European Language Resources Association. https://www.aclweb.org/anthology/2020.lrec-1.745. ]
 ## What can be recognized?
 
-__KSL Recognizer detects only 29 alphabet letters. Hand gesture detection output is shown within the main application interface. Each detected symbol (letter or number) is added to the current value with previously detected symbols.
+KSL Recognizer detects only 29 alphabet letters. Hand gesture detection output is shown within the main application interface. Each detected symbol (letter or number) is added to the current value with previously detected symbols.
 
 ## Availability
 
